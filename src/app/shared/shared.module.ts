@@ -3,8 +3,9 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { MDImportsModule } from './md-imports.module';
-
+import { HeaderComponent } from './components/header/header.component';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
+
 
 const SHARED_MODULES = [
   FormsModule,
@@ -14,6 +15,7 @@ const SHARED_MODULES = [
 ];
 
 const SHARED_COMPONENTS = [
+  HeaderComponent,
   SidenavComponent
 ];
 

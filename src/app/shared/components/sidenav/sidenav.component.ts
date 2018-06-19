@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
+import { SidenavLink } from '../../models/index';
 
 @Component({
   selector: 'app-sidenav',
@@ -6,10 +9,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./sidenav.component.scss']
 })
 export class SidenavComponent implements OnInit {
+  @Input()
+  links: SidenavLink[];
 
-  constructor() { }
+  constructor(private router: Router) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
+  }
+
+  navigateLink(event: Event, link: string): void {
+    this.router.navigate([link]);
   }
 
 }

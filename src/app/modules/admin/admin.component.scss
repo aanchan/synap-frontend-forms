@@ -1,0 +1,46 @@
+:host {
+  .sidenav-container {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: transparent;
+  }
+
+  ::ng-deep mat-sidenav {
+    background: url('/assets/sidebar-1.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow-y: hidden;
+
+    & .sidenav-wrapper {
+      padding: 10px 15px;
+      width: auto;
+      height: 100%;
+      margin: 0;
+      background: rgba(rebeccapurple, 0.8);
+    }
+
+    & .logo {
+      padding-top: 20px;
+      padding-bottom: 20px;
+      font-weight: bold;
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: center;
+      align-items: center;
+      border-bottom: thin solid rgba(#fff, 0.5);
+      margin-bottom: 20px;
+      color: #fff;
+    }
+
+    & .sidenav-links {
+      padding-top: 5px;
+      padding-bottom: 5px;
+      width: 200px;
+      margin-bottom: 10px;
+      color: #fff;
+    }
+  }
+}

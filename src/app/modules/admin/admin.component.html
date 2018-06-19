@@ -1,0 +1,14 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #sidenav
+    [mode]="mode"
+    opened="true"
+    class="mat-elevation-z4">
+    <app-sidenav [links]="sidenavLinks"></app-sidenav>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <div class="grid-container">
+      <app-header (toggle)="toggleSidenav()"></app-header>
+    </div>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

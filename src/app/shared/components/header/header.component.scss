@@ -1,0 +1,35 @@
+mat-toolbar {
+  background: transparent;
+  color: #000;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+
+  & .left-group, & .right-group {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+
+    & .example-form {
+      min-width: 400px;
+      max-width: 800px;
+      width: 100%;
+      margin-right: 50px;
+    }
+
+    & .input-full-width {
+      width: 100%;
+    }
+  }
+
+  & button {
+    margin-right: 10px;
+    font-size: 20px;
+  }
+
+  & .fills-remaining-space {
+    flex: 1 1 auto;
+  }
+}

@@ -1,4 +1,14 @@
-<mat-sidenav-container>
-  <mat-sidenav [mode]="side">Start</mat-sidenav>
-  <mat-sidenav-content>Main</mat-sidenav-content>
-</mat-sidenav-container>
+<div class="sidenav-wrapper">
+  <div class="logo">
+    <h1 class=" mat-h1">Synaptitude<br>Brain Health</h1>
+  </div>
+  <div class="button-row">
+    <button mat-flat-button
+       class="sidenav-links"
+       *ngFor="let link of links"
+       (click)="navigateLink($event, link.url)">
+      <i class="{{ link.iconClass }}"></i>
+      {{ link.text }}
+  </button>
+  </div>
+</div>
