@@ -1,0 +1,125 @@
+.grid-container {
+  margin: 20px;
+}
+
+.dashboard-card {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  right: 15px;
+  bottom: 15px;
+}
+
+.more-button {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+}
+
+.dashboard-card-content {
+  text-align: center;
+}
+
+.sidenav-container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: transparent;
+}
+
+mat-sidenav {
+  background: url('/assets/sidebar-1.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow-y: hidden;
+
+  & .sidenav-wrapper {
+    padding: 10px 15px;
+    width: auto;
+    height: 100%;
+    margin: 0;
+    background: rgba(rebeccapurple, 0.8);
+  }
+
+  & .logo {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-weight: bold;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    border-bottom: thin solid rgba(#fff, 0.5);
+    margin-bottom: 20px;
+    color: #fff;
+  }
+
+  & .sidenav-links {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    width: 200px;
+    margin-bottom: 10px;
+    color: #fff;
+  }
+}
+
+mat-toolbar {
+  background: transparent;
+  color: #000;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+
+  & .left-group, & .right-group {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+
+    & .example-form {
+      min-width: 400px;
+      max-width: 800px;
+      width: 100%;
+      margin-right: 50px;
+    }
+
+    & .input-full-width {
+      width: 100%;
+    }
+  }
+
+  & button {
+    margin-right: 10px;
+    font-size: 20px;
+  }
+
+  & .fills-remaining-space {
+    flex: 1 1 auto;
+  }
+}
+
+mat-grid-list {
+  margin-top: 20px;
+}
+
+.page-title-bar {
+  padding: 0 16px;
+
+  & h1 {
+    color: #000;
+  }
+}
+
+.button-row {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.dashboard-card {
+  border-radius: 6px;
+}

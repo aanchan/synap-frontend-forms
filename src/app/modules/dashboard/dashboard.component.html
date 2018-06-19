@@ -1,0 +1,79 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #sidenav
+               [mode]="mode"
+               class="mat-elevation-z4">
+    <div class="sidenav-wrapper">
+      <div class="logo">
+        <h1 class=" mat-h1">Synaptitude<br>Brain Health</h1>
+      </div>
+      <div class="button-row">
+        <a mat-flat-button class="sidenav-links" routerLink="/">
+          <i class="fa fa-file"></i>&nbsp;&nbsp;
+          2017 PAR-Q+
+        </a>
+        <a mat-flat-button class="sidenav-links" routerLink="/">Link 2</a>
+        <a mat-flat-button class="sidenav-links" routerLink="/">Link 3</a>
+        <a mat-flat-button class="sidenav-links" routerLink="/">Link 4</a>
+        <a mat-flat-button class="sidenav-links" routerLink="/">Link 5</a>
+      </div>
+    </div>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <div class="grid-container">
+      <mat-toolbar>
+        <span class="left-group">
+          <button
+            mat-raised-button
+            color="primary"
+            (click)="sidenav.toggle()">
+            <i class="fa fa-bars"></i>
+            Toggle Menu
+          </button>
+        </span>
+        <span class="right-group">
+          <form class="example-form">
+            <mat-form-field class="input-full-width">
+              <input matInput placeholder="Search" value="">
+              <i class="fa fa-search"></i>
+            </mat-form-field>
+          </form>
+          <button mat-icon-button
+                  [matMenuTriggerFor]="appMenu">
+            <i class="fa fa-user"></i>
+          </button>
+          <mat-menu #appMenu="matMenu"
+                  yPosition="below"
+                  xPosition="before"
+                  [overlapTrigger]="false">
+          <button mat-menu-item>Settings</button>
+          <button mat-menu-item>Help</button>
+        </mat-menu>
+        </span>
+      </mat-toolbar>
+      <div class="page-title-bar">
+        <h1 class="display-1">Dashboard</h1>
+      </div>
+      <mat-grid-list cols="2" rowHeight="350px">
+        <mat-grid-tile *ngFor="let card of cards" [colspan]="card.cols" [rowspan]="card.rows">
+          <mat-card class="dashboard-card">
+            <mat-card-header>
+              <mat-card-title>
+                {{card.title}}
+                <button mat-icon-button class="more-button" [matMenuTriggerFor]="menu" aria-label="Toggle menu">
+                  <mat-icon>more_vert</mat-icon>
+                </button>
+                <mat-menu #menu="matMenu" xPosition="before">
+                  <button mat-menu-item>Expand</button>
+                  <button mat-menu-item>Remove</button>
+                </mat-menu>
+              </mat-card-title>
+            </mat-card-header>
+            <mat-card-content class="dashboard-card-content">
+              <div>Card Content Here</div>
+            </mat-card-content>
+          </mat-card>
+        </mat-grid-tile>
+      </mat-grid-list>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
