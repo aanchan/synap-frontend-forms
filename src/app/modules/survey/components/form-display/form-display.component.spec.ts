@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { IpaqComponent } from './ipaq.component';
+import { FormDisplayComponent } from './form-display.component';
 
-describe('IpaqComponent', () => {
-  let component: IpaqComponent;
-  let fixture: ComponentFixture<IpaqComponent>;
+describe('FormDisplayComponent', () => {
+  let component: FormDisplayComponent;
+  let fixture: ComponentFixture<FormDisplayComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ IpaqComponent ]
+      declarations: [ FormDisplayComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(IpaqComponent);
+    fixture = TestBed.createComponent(FormDisplayComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

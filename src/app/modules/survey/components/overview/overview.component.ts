@@ -7,6 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OverviewComponent implements OnInit {
 
+  formToRender: string;
+
+  showPart2 = false;
+
   cards = [
     { title: 'Select a Survey', cols: 2, rows: 1 }
   ];
@@ -14,53 +18,21 @@ export class OverviewComponent implements OnInit {
   items = [
     {
       title: 'Physical Activity Readiness form',
-      formID: 1,
-      path: '../par-q'
+      formID: 1
     },
     {
       title: 'IPAQ form',
-      formID: 2,
-      path: '../ipaq'
+      formID: 2
     },
     {
       title: 'Personal Health Questionnaire Depression Scale (PHQ-8) form',
-      formID: 3,
-      path: '../phq'
-    },
-    {
-      title: 'Physical Activity Readiness form 4',
-      formID: 4,
-      path: '../phq'
-    },
-    {
-      title: 'Physical Activity Readiness form 5',
-      formID: 5
-    },
-    {
-      title: 'Physical Activity Readiness form 6',
-      formID: 6
-    },
-    {
-      title: 'Physical Activity Readiness form 7',
-      formID: 7
-    },
-    {
-      title: 'Physical Activity Readiness form 8',
-      formID: 8
-    },
-    {
-      title: 'Physical Activity Readiness form 9',
-      formID: 9
-    },
-    {
-      title: 'Physical Activity Readiness form 10',
-      formID: 10
+      formID: 3
     }
   ];
 
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit(): void {
   }
 
   showInfo(item: any): void {

@@ -5,10 +5,9 @@ import { SharedModule } from '../../shared/shared.module';
 
 import { SurveyRoutingModule } from './survey-routing';
 import { SurveyComponent } from './survey.component';
-import { ParQComponent } from './components/par-q/par-q.component';
+import { SurveyService } from './survey.service';
 import { OverviewComponent } from './components/overview/overview.component';
-import { IpaqComponent } from './components/ipaq/ipaq.component';
-import { PhqComponent } from './components/phq/phq.component';
+import { FormDisplayComponent } from './components/form-display/form-display.component';
 
 @NgModule({
   imports: [
@@ -18,10 +17,9 @@ import { PhqComponent } from './components/phq/phq.component';
   ],
   declarations: [
     SurveyComponent,
-    ParQComponent,
     OverviewComponent,
-    IpaqComponent,
-    PhqComponent
-  ]
+    FormDisplayComponent
+  ],
+  providers: [SurveyService]
 })
 export class SurveyModule { }
