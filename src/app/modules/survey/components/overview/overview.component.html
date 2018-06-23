@@ -1,0 +1,24 @@
+<div class="page-title-bar">
+  <h1 class="display-1">Surveys</h1>
+</div>
+<mat-grid-list cols="2" rowHeight="600px">
+  <mat-grid-tile *ngFor="let card of cards" [colspan]="2" [rowspan]="1">
+    <mat-card class="dashboard-card">
+      <mat-card-header>
+        <mat-card-title>
+          <h4>{{card.title}}</h4>
+        </mat-card-title>
+      </mat-card-header>
+      <mat-divider></mat-divider>
+      <mat-card-content class="dashboard-card-content custom-scroll">
+          <mat-nav-list>
+            <a  mat-list-item
+                class="file-list"
+                [routerLink]="['../par-q']"
+                *ngFor="let item of items">
+                {{ item.title }}</a>
+          </mat-nav-list>
+      </mat-card-content>
+    </mat-card>
+  </mat-grid-tile>
+</mat-grid-list>

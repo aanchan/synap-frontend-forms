@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { SidenavLink } from '../../shared/models/index';
+import { SidenavLink } from '../../shared/models';
 
 @Injectable({
   providedIn: 'root'
@@ -14,9 +14,9 @@ export class AdminService {
       url: '/admin/dashboard'
     },
     {
-      iconClass: 'fa fa-file',
-      text: 'PARQ+',
-      url: '/admin/parq'
+      iconClass: 'fa fa-question-circle',
+      text: 'Surveys',
+      url: '/admin/surveys'
     }
   ];
 

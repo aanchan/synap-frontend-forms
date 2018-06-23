@@ -1,0 +1,197 @@
+<mat-grid-list cols="2" rowHeight="fit">
+  <mat-grid-tile [colspan]="2" [rowspan]="1">
+    <mat-card class="dashboard-card">
+      <mat-card-header>
+        <mat-card-title>
+          <h2>Physical Activity Readiness Questionnaire</h2>
+        </mat-card-title>
+      </mat-card-header>
+      <mat-divider></mat-divider>
+      <mat-card-content class="dashboard-card-content custom-scroll">
+        <form>
+          <div class="question">
+            <span class="question__text">
+              <p>Has your doctor ever said that you have a heart condition OR high blood pressure ?</p>
+            </span>
+            <mat-radio-group class="radio-group" (change)="onChange($event)">
+              <mat-radio-button value="yes">Yes</mat-radio-button>
+              <mat-radio-button value="no">No</mat-radio-button>
+            </mat-radio-group>
+          </div>
+          <div class="question">
+            <span class="question__text">
+              <p>Do you feel pain in your chest at rest, during your daily activities of living,
+              OR when you do physical activity?</p>
+            </span>
+            <mat-radio-group class="radio-group">
+              <mat-radio-button value="yes">Yes</mat-radio-button>
+              <mat-radio-button value="no">No</mat-radio-button>
+            </mat-radio-group>
+          </div>
+          <div class="question">
+            <span class="question__text">
+              <p>Do you lose balance because of dizziness OR have you lost consciousness in the
+              last 12 months?</p>
+            </span>
+            <mat-radio-group class="radio-group">
+              <mat-radio-button value="yes">Yes</mat-radio-button>
+              <mat-radio-button value="no">No</mat-radio-button>
+            </mat-radio-group>
+          </div>
+          <div class="question">
+            <span class="question__text">
+              <p>Have you ever been diagnosed with another chronic medical condition (other than
+                heart disease or high blood pressure)?</p>
+            </span>
+            <mat-radio-group class="radio-group">
+              <mat-radio-button value="yes">Yes</mat-radio-button>
+              <mat-radio-button value="no">No</mat-radio-button>
+            </mat-radio-group>
+          </div>
+          <div class="question">
+            <span class="question__text">
+              <p>Are you currently taking prescribed medications for a chronic medical condition?</p>
+            </span>
+            <mat-radio-group class="radio-group">
+              <mat-radio-button value="yes">Yes</mat-radio-button>
+              <mat-radio-button value="no">No</mat-radio-button>
+            </mat-radio-group>
+          </div>
+          <div class="question">
+            <span class="question__text">
+              <p>Do you currently have (or have had within the past 12 months) a bone, joint, or soft
+                tissue (muscle, ligament, or tendon) problem that could be made worse by becoming
+                more physically active?</p>
+            </span>
+            <mat-radio-group class="radio-group">
+              <mat-radio-button value="yes">Yes</mat-radio-button>
+              <mat-radio-button value="no">No</mat-radio-button>
+            </mat-radio-group>
+          </div>
+          <div class="question">
+            <span class="question__text">
+              <p>Has your doctor ever said that you should only do medically supervised
+                physical activity?</p>
+            </span>
+            <mat-radio-group class="radio-group">
+              <mat-radio-button value="yes">Yes</mat-radio-button>
+              <mat-radio-button value="no">No</mat-radio-button>
+            </mat-radio-group>
+          </div>
+
+          <ng-container *ngIf="showPart2">
+            <div class="question">
+              <span class="question__text">
+                <p> Do you have Arthritis, Osteoporosis, or Back Problems?</p>
+              </span>
+              <mat-radio-group class="radio-group">
+                <mat-radio-button value="yes">Yes</mat-radio-button>
+                <mat-radio-button value="no">No</mat-radio-button>
+              </mat-radio-group>
+            </div>
+            <div class="question">
+              <span class="question__text">
+                <p>Do you currently have Cancer of any kind?</p>
+              </span>
+              <mat-radio-group class="radio-group">
+                <mat-radio-button value="yes">Yes</mat-radio-button>
+                <mat-radio-button value="no">No</mat-radio-button>
+              </mat-radio-group>
+            </div>
+            <div class="question">
+              <span class="question__text">
+                <p>Do you have a Heart or Cardiovascular Condition? <small>This includes Coronary Artery Disease, Heart Failure,
+                    Diagnosed Abnormality of Heart Rhythm</small></p>
+              </span>
+              <mat-radio-group class="radio-group">
+                <mat-radio-button value="yes">Yes</mat-radio-button>
+                <mat-radio-button value="no">No</mat-radio-button>
+              </mat-radio-group>
+            </div>
+            <div class="question">
+              <span class="question__text">
+                <p>Do you have High Blood Pressure?</p>
+              </span>
+              <mat-radio-group class="radio-group">
+                <mat-radio-button value="yes">Yes</mat-radio-button>
+                <mat-radio-button value="no">No</mat-radio-button>
+              </mat-radio-group>
+            </div>
+            <div class="question">
+              <span class="question__text">
+                <p>Do you have a resting blood pressure equal to or greater than 160/90 mmHg with or without medication?
+                    <small>Answer YES if you do not know your resting blood pressure</small></p>
+              </span>
+              <mat-radio-group class="radio-group">
+                <mat-radio-button value="yes">Yes</mat-radio-button>
+                <mat-radio-button value="no">No</mat-radio-button>
+              </mat-radio-group>
+            </div>
+            <div class="question">
+              <span class="question__text">
+                <p>Do you have any Metabolic Conditions?
+                  <small>This includes Type 1 Diabetes, Type 2 Diabetes, Pre-Diabetes</small></p>
+              </span>
+              <mat-radio-group class="radio-group">
+                <mat-radio-button value="yes">Yes</mat-radio-button>
+                <mat-radio-button value="no">No</mat-radio-button>
+              </mat-radio-group>
+            </div>
+            <div class="question">
+              <span class="question__text">
+                <p>Do you have any Mental Health Problems or Learning Difficulties?
+                  <small>This includes Alzheimer’s, Dementia, Depression, Anxiety Disorder, Eating Disorder,
+                    Psychotic Disorder, Intellectual Disability, Down Syndrome</small></p>
+              </span>
+              <mat-radio-group class="radio-group">
+                <mat-radio-button value="yes">Yes</mat-radio-button>
+                <mat-radio-button value="no">No</mat-radio-button>
+              </mat-radio-group>
+            </div>
+            <div class="question">
+              <span class="question__text">
+                <p>Do you have a Respiratory Disease?
+                  <small>This includes Chronic Obstructive Pulmonary Disease, Asthma, Pulmonary High
+                    Blood Pressure</small></p>
+              </span>
+              <mat-radio-group class="radio-group">
+                <mat-radio-button value="yes">Yes</mat-radio-button>
+                <mat-radio-button value="no">No</mat-radio-button>
+              </mat-radio-group>
+            </div>
+            <div class="question">
+              <span class="question__text">
+                <p>Do you have a Spinal Cord Injury?
+                  <small>This includes Tetraplegia and Paraplegia</small></p>
+              </span>
+              <mat-radio-group class="radio-group">
+                <mat-radio-button value="yes">Yes</mat-radio-button>
+                <mat-radio-button value="no">No</mat-radio-button>
+              </mat-radio-group>
+            </div>
+            <div class="question">
+              <span class="question__text">
+                <p>Have you had a Stroke?<small>This includes Transient Ischemic Attack (TIA) or
+                  Cerebrovascular Event</small></p>
+              </span>
+              <mat-radio-group class="radio-group">
+                <mat-radio-button value="yes">Yes</mat-radio-button>
+                <mat-radio-button value="no">No</mat-radio-button>
+              </mat-radio-group>
+            </div>
+            <div class="question">
+              <span class="question__text">
+                <p>Do you have any other medical condition not listed above or do you have two
+                  or more medical conditions?</p>
+              </span>
+              <mat-radio-group class="radio-group">
+                <mat-radio-button value="yes">Yes</mat-radio-button>
+                <mat-radio-button value="no">No</mat-radio-button>
+              </mat-radio-group>
+            </div>
+          </ng-container>
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </mat-grid-tile>
+</mat-grid-list>

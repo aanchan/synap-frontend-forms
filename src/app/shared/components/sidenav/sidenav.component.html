@@ -4,11 +4,11 @@
   </div>
   <div class="button-row">
     <button mat-flat-button
-       class="sidenav-links"
-       *ngFor="let link of links"
-       (click)="navigateLink($event, link.url)">
+      class="sidenav-links"
+      *ngFor="let link of links"
+      (click)="navigateLink($event, link.url)">
       <i class="{{ link.iconClass }}"></i>
       {{ link.text }}
-  </button>
+    </button>
   </div>
 </div>

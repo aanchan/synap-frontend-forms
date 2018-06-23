@@ -1,0 +1,17 @@
+.page-title-bar {
+  padding: 0 16px;
+
+  & h1 {
+    color: #000;
+  }
+}
+
+.dashboard-card {
+  border-radius: 6px !important;
+}
+
+mat-card-title {
+  h1, h2, h3, h4 {
+    margin: 0;
+  }
+}

@@ -7,20 +7,19 @@ import { AdminRoutingModule } from './admin-routing';
 import { AdminComponent } from './admin.component';
 import { AdminService } from './admin.service';
 import { DashboardComponent } from '../dashboard/dashboard.component';
-import { IndexComponent } from '../index/index.component';
-import { PARQComponent } from '../parq/parq.component';
 
 @NgModule({
   imports: [
-    AdminRoutingModule,
     CommonModule,
-    SharedModule
+    SharedModule,
+    AdminRoutingModule
   ],
   declarations: [
     AdminComponent,
-    DashboardComponent,
-    PARQComponent
+    DashboardComponent
   ],
-  providers: [AdminService]
+  providers: [
+    AdminService,
+  ]
 })
 export class AdminModule { }

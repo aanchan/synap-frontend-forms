@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { AdminComponent } from './admin.component';
 import { DashboardComponent } from '../dashboard/dashboard.component';
-import { PARQComponent } from '../parq/parq.component';
+import { SurveyComponent } from '../survey/survey.component';
 
 const routes: Routes = [
   {
@@ -20,8 +20,8 @@ const routes: Routes = [
         component: DashboardComponent
       },
       {
-        path: 'parq',
-        component: PARQComponent
+        path: 'surveys',
+        loadChildren: '../survey/survey.module#SurveyModule'
       }
     ]
   },

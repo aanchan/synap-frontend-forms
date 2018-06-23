@@ -1,0 +1,23 @@
+.dashboard-card {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  right: 15px;
+  bottom: 15px;
+  height: 430px;
+}
+
+.dashboard-card-content {
+  text-align: left;
+  max-height: 400px;
+  height: auto;
+  overflow-y: auto;
+}
+
+.file-list {
+  & i {
+    margin-right: 20px;
+  }
+}
+
+
