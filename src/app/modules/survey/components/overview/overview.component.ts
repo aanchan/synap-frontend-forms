@@ -13,20 +13,24 @@ export class OverviewComponent implements OnInit {
 
   items = [
     {
-      title: 'Physical Activity Readiness form 1',
-      formID: 1
+      title: 'Physical Activity Readiness form',
+      formID: 1,
+      path: '../par-q'
     },
     {
-      title: 'Physical Activity Readiness form 2',
-      formID: 2
+      title: 'IPAQ form',
+      formID: 2,
+      path: '../ipaq'
     },
     {
-      title: 'Physical Activity Readiness form 3',
-      formID: 3
+      title: 'Personal Health Questionnaire Depression Scale (PHQ-8) form',
+      formID: 3,
+      path: '../phq'
     },
     {
       title: 'Physical Activity Readiness form 4',
-      formID: 4
+      formID: 4,
+      path: '../phq'
     },
     {
       title: 'Physical Activity Readiness form 5',

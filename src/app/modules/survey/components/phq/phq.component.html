@@ -3,7 +3,7 @@
     <mat-card class="dashboard-card">
       <mat-card-header>
         <mat-card-title>
-          <h2>Physical Activity Readiness Questionnaire</h2>
+          <h2>Personal Health Questionnaire Depression Scale (PHQ-8)</h2>
         </mat-card-title>
       </mat-card-header>
       <mat-divider></mat-divider>
@@ -11,11 +11,14 @@
         <form>
           <div class="question">
             <span class="question__text">
-              <p>Has your doctor ever said that you have a heart condition OR high blood pressure ?</p>
+              <p>Little interest or pleasure in
+                  doing things</p>
             </span>
-            <mat-radio-group class="radio-group" (change)="onChange($event)">
-              <mat-radio-button value="yes">Yes</mat-radio-button>
-              <mat-radio-button value="no">No</mat-radio-button>
+            <mat-radio-group class="radio-group">
+              <mat-radio-button value="not at all">0</mat-radio-button>
+              <mat-radio-button value="several days">1</mat-radio-button>
+              <mat-radio-button value="more than half the days">2</mat-radio-button>
+              <mat-radio-button value="nearly every day">3</mat-radio-button>
             </mat-radio-group>
           </div>
           <div class="question">
@@ -192,10 +195,6 @@
           </ng-container>
         </form>
       </mat-card-content>
-      <mat-card-footer>
-        <button mat-raised-button class="submit-btn">Submit</button>
-        <button mat-raised-button class="reset-btn">Reset</button>
-      </mat-card-footer>
     </mat-card>
   </mat-grid-tile>
 </mat-grid-list>

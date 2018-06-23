@@ -7,6 +7,8 @@ import { SurveyRoutingModule } from './survey-routing';
 import { SurveyComponent } from './survey.component';
 import { ParQComponent } from './components/par-q/par-q.component';
 import { OverviewComponent } from './components/overview/overview.component';
+import { IpaqComponent } from './components/ipaq/ipaq.component';
+import { PhqComponent } from './components/phq/phq.component';
 
 @NgModule({
   imports: [
@@ -17,7 +19,9 @@ import { OverviewComponent } from './components/overview/overview.component';
   declarations: [
     SurveyComponent,
     ParQComponent,
-    OverviewComponent
+    OverviewComponent,
+    IpaqComponent,
+    PhqComponent
   ]
 })
 export class SurveyModule { }
