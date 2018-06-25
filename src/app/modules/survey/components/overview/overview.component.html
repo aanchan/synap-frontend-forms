@@ -14,9 +14,9 @@
         <mat-nav-list>
           <a  mat-list-item
               class="file-list"
-              [routerLink]="['../session', item.formID]"
-              *ngFor="let item of items">
-              {{ item.title }}</a>
+              [routerLink]="['../session', link.formID]"
+              *ngFor="let link of formLinks">
+              {{ link.title }}</a>
         </mat-nav-list>
       </mat-card-content>
     </mat-card>

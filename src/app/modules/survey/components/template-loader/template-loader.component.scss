@@ -1,0 +1,75 @@
+.question {
+  font-size: 16px;
+  display: table-row;
+  width: 100%;
+  transition: background-color 0.4s ease;
+  margin: 0 16px !important;
+
+  &::before{
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    content: '\f105';
+    padding: 0 5px 0 16px;
+    margin: 0;
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    vertical-align: middle;
+  }
+
+  &:hover {
+    background-color: #f5f5f5;
+    cursor: pointer;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  small {
+    display: block;
+    padding: 5px 0;
+  }
+
+  &__text {
+    margin: 0;
+    display: table-cell;
+    width: 85%;
+    padding: 15px 0;
+    vertical-align: middle;
+    word-wrap: break-word;
+    border-bottom: thin solid #f5f5f5;
+  }
+
+  & .radio-group {
+    display: table-cell;
+    vertical-align: -50%;
+    padding: 15px 10px;
+  }
+}
+
+.question-th {
+  width: 100%;
+  font-size: 16px;
+  display: table-row;
+  margin: 0 16px !important;
+
+  p {
+    margin: 0;
+  }
+
+  &__text {
+    display: table-cell;
+    font-weight: bold;
+    padding: 15px 0;
+    vertical-align: middle;
+  }
+}
+
+.question-th__text {
+  &:first-of-type {
+    width: 85%;
+  }
+}
