@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { SurveyService } from '../../survey.service';
 
 export interface FormMetadata {
@@ -15,9 +15,6 @@ export class TemplateLoaderComponent implements OnInit {
   @Input()
   formId: number;
 
-  @Output()
-  loaded: EventEmitter<string> = new EventEmitter();
-
   formTitle: string;
   showPart2 = false;
   templateToRender: string;
@@ -26,9 +23,6 @@ export class TemplateLoaderComponent implements OnInit {
 
   ngOnInit(): void {
     this.loadSurveyForm(this.formId);
-    setTimeout(() => {
-      this.loaded.emit(this.formTitle);
-    }, 0);
   }
 
   loadSurveyForm(formId: number): void {
