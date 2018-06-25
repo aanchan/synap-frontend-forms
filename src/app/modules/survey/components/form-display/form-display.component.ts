@@ -1,6 +1,5 @@
-import { Component, ElementRef, OnInit, Renderer2} from '@angular/core';
+import { Component, ElementRef, OnInit} from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { filter } from 'rxjs/operators';
 import { SurveyService } from '../../survey.service';
 
 export interface FormMetadata {
@@ -22,8 +21,7 @@ export class FormDisplayComponent implements OnInit {
 
   constructor(
     private surService: SurveyService,
-    private route: ActivatedRoute,
-    private renderer: Renderer2
+    private route: ActivatedRoute
   ) { }
 
   ngOnInit(): void {
@@ -32,7 +30,9 @@ export class FormDisplayComponent implements OnInit {
   }
 
   getFormTitle(formId: number) {
-    this.formTitle = this.surService.getFormLinks().filter(link => link['formID'] === formId)[0].title;
+    this.formTitle = this.surService
+                         .getFormLinks()
+                         .filter(link => link['formID'] === formId)[0].title;
   }
 
   submitForm(): void {

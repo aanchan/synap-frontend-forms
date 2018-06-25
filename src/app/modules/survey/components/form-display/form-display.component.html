@@ -8,7 +8,7 @@
       </mat-card-header>
       <mat-divider></mat-divider>
       <mat-card-content class="dashboard-card-content custom-scroll">
-        <app-template-loader [formId]="formId"></app-template-loader>
+        <app-template-loader #template [formId]="formId"></app-template-loader>
       </mat-card-content>
       <mat-card-footer>
         <button mat-raised-button class="submit-btn" (click)="submitForm()">Submit</button>

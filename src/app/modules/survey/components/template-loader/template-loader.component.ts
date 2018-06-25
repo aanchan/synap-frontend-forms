@@ -19,6 +19,13 @@ export class TemplateLoaderComponent implements OnInit {
   showPart2 = false;
   templateToRender: string;
 
+  phqOptions = [
+    {value: 'Not at all'},
+    {value: 'Several days'},
+    {value: 'More than half the days'},
+    {value: 'Nearly every day'},
+  ];
+
   constructor(private surService: SurveyService) { }
 
   ngOnInit(): void {
