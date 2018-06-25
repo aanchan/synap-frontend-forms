@@ -125,6 +125,30 @@ mat-card-content {
   }
 }
 
+.question-th {
+  width: 100%;
+  font-size: 16px;
+  display: table-row;
+  margin: 0 16px !important;
+
+  p {
+    margin: 0;
+  }
+
+  &__text {
+    display: table-cell;
+    font-weight: bold;
+    padding: 15px 0;
+    vertical-align: middle;
+  }
+}
+
+.question-th__text {
+  &:first-of-type {
+    width: 85%;
+  }
+}
+
 :host {
   ::ng-deep mat-radio-group {
 

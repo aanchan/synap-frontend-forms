@@ -8,6 +8,7 @@ import { SurveyComponent } from './survey.component';
 import { SurveyService } from './survey.service';
 import { OverviewComponent } from './components/overview/overview.component';
 import { FormDisplayComponent } from './components/form-display/form-display.component';
+import { TemplateLoaderComponent } from './components/template-loader/template-loader.component';
 
 @NgModule({
   imports: [
@@ -18,7 +19,8 @@ import { FormDisplayComponent } from './components/form-display/form-display.com
   declarations: [
     SurveyComponent,
     OverviewComponent,
-    FormDisplayComponent
+    FormDisplayComponent,
+    TemplateLoaderComponent
   ],
   providers: [SurveyService]
 })

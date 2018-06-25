@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnInit, Renderer2, TemplateRef, ViewChild} from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 
 import { filter } from 'rxjs/operators';
@@ -16,30 +16,32 @@ export interface FormMetadata {
   templateUrl: './form-display.component.html',
   styleUrls: ['./form-display.component.scss']
 })
-export class FormDisplayComponent implements OnInit {
+export class FormDisplayComponent implements AfterViewInit, OnInit {
+  @ViewChild('surveyForm')
+  form: ElementRef;
 
   showPart2 = false;
-  isTemplateVisible: boolean;
   formTitle: string;
   templateToRender: string;
 
   constructor(
     private surService: SurveyService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private renderer: Renderer2
   ) { }
 
   ngOnInit(): void {
-    this.isTemplateVisible = true;
     const id = Number(this.route.snapshot.params['id']);
     this.loadSurveyForm(id);
   }
 
-  onChange(event): void {
-    this.showPart2 = event.value === 'yes' ? event.value : this.showPart2;
+  ngAfterViewInit(): void {
+    console.log(this.form);
   }
 
-  showTemplate() {
-    this.isTemplateVisible = !this.isTemplateVisible;
+
+  onChange(event): void {
+    this.showPart2 = event.value === 'yes' ? event.value : this.showPart2;
   }
 
   loadSurveyForm(formId: number) {
@@ -77,6 +79,15 @@ export class FormDisplayComponent implements OnInit {
     }
 
     return value + 'h';
+  }
+
+  onFormSubmit(event) {
+    console.log(event);
+  }
+
+  submitForm(): void {
+    const btn: HTMLButtonElement = document.querySelector('button.hidden-form-btn');
+    btn.click();
   }
 
 }

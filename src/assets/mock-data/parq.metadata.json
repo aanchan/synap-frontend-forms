@@ -14,6 +14,56 @@
       "id": 3,
       "title": "Personal Health Questionnaire Scale (PHQ-8) form",
       "prefix": "PHQ"
+    },
+    {
+      "id": 4,
+      "title": "Edinburgh Handedness Inventory",
+      "prefix": "EHI"
+    },
+    {
+      "id": 5,
+      "title": "Everyday Memory Questionnaire",
+      "prefix": "EMQ"
+    },
+    {
+      "id": 6,
+      "title": "Sleep Diary Form",
+      "prefix": "SDF"
+    },
+    {
+      "id": 7,
+      "title": "Santa Barbara Sense-of-Direction Scale",
+      "prefix": "SDS"
+    },
+    {
+      "id": 8,
+      "title": "Pittsburgh Sleep Quality Index (PSQI)",
+      "prefix": "SPSQI"
+    },
+    {
+      "id": 9,
+      "title": "Nutrition Goals Form",
+      "prefix": "SNG"
+    },
+    {
+      "id": 10,
+      "title": "Perceived Stress Scale",
+      "prefix": "SPSS"
+    },
+    {
+      "id": 11,
+      "title": "CHAMPS Activities Questionnaier for Older Adults",
+      "prefix": "CHAMPS"
+    },
+    {
+      "id": 12,
+      "title": "STOP-BANG Sleep Apnea Questionnaire",
+      "prefix": "SBSA"
+    },
+    {
+      "id": 13,
+      "title": "Motor Function Assessment",
+      "prefix": "MFA"
     }
   ]
 }

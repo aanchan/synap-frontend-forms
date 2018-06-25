@@ -18,10 +18,40 @@
           <ng-container *ngSwitchCase="'PHQTemplate'">
             <ng-container *ngTemplateOutlet="PHQTemplate"></ng-container>
           </ng-container>
+          <ng-container *ngSwitchCase="'EHITemplate'">
+            <ng-container *ngTemplateOutlet="EHITemplate"></ng-container>
+          </ng-container>
+          <ng-container *ngSwitchCase="'EMQTemplate'">
+            <ng-container *ngTemplateOutlet="EMQTemplate"></ng-container>
+          </ng-container>
+          <ng-container *ngSwitchCase="'SDFTemplate'">
+            <ng-container *ngTemplateOutlet="SDFTemplate"></ng-container>
+          </ng-container>
+          <ng-container *ngSwitchCase="'SDSTemplate'">
+            <ng-container *ngTemplateOutlet="SDSTemplate"></ng-container>
+          </ng-container>
+          <ng-container *ngSwitchCase="'SPSQITemplate'">
+            <ng-container *ngTemplateOutlet="SPSQITemplate"></ng-container>
+          </ng-container>
+          <ng-container *ngSwitchCase="'SNGTemplate'">
+            <ng-container *ngTemplateOutlet="SNGTemplate"></ng-container>
+          </ng-container>
+          <ng-container *ngSwitchCase="'CHAMPSTemplate'">
+            <ng-container *ngTemplateOutlet="CHAMPSTemplate"></ng-container>
+          </ng-container>
+          <ng-container *ngSwitchCase="'SPSSTemplate'">
+            <ng-container *ngTemplateOutlet="SPSSTemplate"></ng-container>
+          </ng-container>
+          <ng-container *ngSwitchCase="'SBSATemplate'">
+            <ng-container *ngTemplateOutlet="SBSATemplate"></ng-container>
+          </ng-container>
+          <ng-container *ngSwitchCase="'MFATemplate'">
+            <ng-container *ngTemplateOutlet="MFATemplate"></ng-container>
+          </ng-container>
         </ng-container>
       </mat-card-content>
       <mat-card-footer>
-        <button mat-raised-button class="submit-btn">Submit</button>
+        <button mat-raised-button class="submit-btn" (click)="submitForm()">Submit</button>
         <button mat-raised-button class="reset-btn">Reset</button>
       </mat-card-footer>
     </mat-card>
@@ -29,7 +59,7 @@
 </mat-grid-list>
 
 <ng-template #PARQTemplate>
-  <form>
+  <form #surveyForm (ngSubmit)="onFormSubmit(surveyForm)">
     <div class="question">
       <span class="question__text">
         <p>Has your doctor ever said that you have a heart condition OR high blood pressure ?</p>
@@ -211,11 +241,12 @@
         </mat-radio-group>
       </div>
     </ng-container>
+    <button class="hidden-form-btn" style="display: none" type="submit"></button>
   </form>
 </ng-template>
 
 <ng-template #IPAQTemplate>
-  <form style="margin-top: 20px">
+  <form style="margin-top: 20px" #surveyForm (ngSubmit)="onFormSubmit(surveyForm)">
     <div class="question">
       <span class="question__text">
         <p>During the last 7 days, on how many days did you do vigorous physical activities
@@ -295,11 +326,12 @@
         min="1"
         max="24"></mat-slider>
     </div>
+    <button class="hidden-form-btn" style="display: none" type="submit"></button>
   </form>
 </ng-template>
 
 <ng-template #PHQTemplate>
-  <form>
+  <form #surveyForm>
     <div class="question">
       <span class="question__text">
         <p>Little interest or pleasure in
@@ -485,4 +517,1462 @@
       </div>
     </ng-container>
   </form>
+</ng-template>
+
+<ng-template #EHITemplate>
+  <form #surveyForm>
+    <div class="question-th">
+      <span class="question-th__text">
+        <p>Action</p>
+      </span>
+      <span class="question-th__text">
+        <p>Left</p>
+      </span>
+      <span class="question-th__text">
+        <p>Right</p>
+      </span>
+    </div>
+    <div class="question">
+      <span class="question__text">
+        <p>Writing</p>
+      </span>
+      <mat-radio-group class="radio-group">
+        <mat-radio-button value="not at all">0</mat-radio-button>
+        <mat-radio-button value="several days">1</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <div class="question">
+      <span class="question__text">
+        <p>Drawing</p>
+      </span>
+      <mat-radio-group class="radio-group">
+        <mat-radio-button value="yes">Yes</mat-radio-button>
+        <mat-radio-button value="no">No</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <div class="question">
+      <span class="question__text">
+        <p>Throwing</p>
+      </span>
+      <mat-radio-group class="radio-group">
+        <mat-radio-button value="yes">Yes</mat-radio-button>
+        <mat-radio-button value="no">No</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <div class="question">
+      <span class="question__text">
+        <p>Scissors</p>
+      </span>
+      <mat-radio-group class="radio-group">
+        <mat-radio-button value="yes">Yes</mat-radio-button>
+        <mat-radio-button value="no">No</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <div class="question">
+      <span class="question__text">
+        <p>Toothbrush</p>
+      </span>
+      <mat-radio-group class="radio-group">
+        <mat-radio-button value="yes">Yes</mat-radio-button>
+        <mat-radio-button value="no">No</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <div class="question">
+      <span class="question__text">
+        <p>Knife (without fork)</p>
+      </span>
+      <mat-radio-group class="radio-group">
+        <mat-radio-button value="yes">Yes</mat-radio-button>
+        <mat-radio-button value="no">No</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <div class="question">
+      <span class="question__text">
+        <p>Spoon</p>
+      </span>
+      <mat-radio-group class="radio-group">
+        <mat-radio-button value="yes">Yes</mat-radio-button>
+        <mat-radio-button value="no">No</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <div class="question">
+      <span class="question__text">
+        <p>Broom (upper hand)</p>
+      </span>
+      <mat-radio-group class="radio-group">
+        <mat-radio-button value="yes">Yes</mat-radio-button>
+        <mat-radio-button value="no">No</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <div class="question">
+      <span class="question__text">
+        <p>Striking Match (match)</p>
+      </span>
+      <mat-radio-group class="radio-group">
+        <mat-radio-button value="yes">Yes</mat-radio-button>
+        <mat-radio-button value="no">No</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <div class="question">
+      <span class="question__text">
+        <p>Opening box (lid)</p>
+      </span>
+      <mat-radio-group class="radio-group">
+        <mat-radio-button value="yes">Yes</mat-radio-button>
+        <mat-radio-button value="no">No</mat-radio-button>
+      </mat-radio-group>
+    </div>
+  </form>
+</ng-template>
+
+<ng-template #EMQTemplate>
+    <form #surveyForm>
+      <div class="question">
+        <span class="question__text">
+          <p>Forgetting where you have put something. Losing things around the house.</p>
+        </span>
+        <mat-radio-group class="radio-group">
+          <mat-radio-button value="not at all">0</mat-radio-button>
+          <mat-radio-button value="several days">1</mat-radio-button>
+        </mat-radio-group>
+      </div>
+      <div class="question">
+        <span class="question__text">
+          <p>Failing to recognize places that you are told you have been to before.</p>
+        </span>
+        <mat-radio-group class="radio-group">
+          <mat-radio-button value="yes">Yes</mat-radio-button>
+          <mat-radio-button value="no">No</mat-radio-button>
+        </mat-radio-group>
+      </div>
+      <div class="question">
+        <span class="question__text">
+          <p>Not remembering changes in you daily routine, such as a change in the place
+            where something is kept or a change in the time something happens. Following your
+            old routine by mistake.</p>
+        </span>
+        <mat-radio-group class="radio-group">
+          <mat-radio-button value="yes">Yes</mat-radio-button>
+          <mat-radio-button value="no">No</mat-radio-button>
+        </mat-radio-group>
+      </div>
+      <div class="question">
+        <span class="question__text">
+          <p>Having to go back to check whether you have done something you meant to do.</p>
+        </span>
+        <mat-radio-group class="radio-group">
+          <mat-radio-button value="yes">Yes</mat-radio-button>
+          <mat-radio-button value="no">No</mat-radio-button>
+        </mat-radio-group>
+      </div>
+      <div class="question">
+        <span class="question__text">
+          <p>Forgetting when it was that something happened; for example, whether it was
+            yesterday or last week.</p>
+        </span>
+        <mat-radio-group class="radio-group">
+          <mat-radio-button value="yes">Yes</mat-radio-button>
+          <mat-radio-button value="no">No</mat-radio-button>
+        </mat-radio-group>
+      </div>
+      <div class="question">
+        <span class="question__text">
+          <p>Completely forgetting to take things with you, or leaving things behind and having to go back and fetch
+              them.</p>
+        </span>
+        <mat-radio-group class="radio-group">
+          <mat-radio-button value="yes">Yes</mat-radio-button>
+          <mat-radio-button value="no">No</mat-radio-button>
+        </mat-radio-group>
+      </div>
+      <div class="question">
+        <span class="question__text">
+          <p>Forgetting you were told something yesterday or a few days ago, and maybe having to be reminded
+              about it.</p>
+        </span>
+        <mat-radio-group class="radio-group">
+          <mat-radio-button value="yes">Yes</mat-radio-button>
+          <mat-radio-button value="no">No</mat-radio-button>
+        </mat-radio-group>
+      </div>
+      <div class="question">
+        <span class="question__text">
+          <p>Starting to read something (a book or an article in a newspaper or magazine) without realizing you have
+              already read it before.</p>
+        </span>
+        <mat-radio-group class="radio-group">
+          <mat-radio-button value="yes">Yes</mat-radio-button>
+          <mat-radio-button value="no">No</mat-radio-button>
+        </mat-radio-group>
+      </div>
+      <div class="question">
+        <span class="question__text">
+          <p>Letting yourself ramble on, to speak about unimportant or irrelevant things.</p>
+        </span>
+        <mat-radio-group class="radio-group">
+          <mat-radio-button value="yes">Yes</mat-radio-button>
+          <mat-radio-button value="no">No</mat-radio-button>
+        </mat-radio-group>
+      </div>
+      <div class="question">
+        <span class="question__text">
+          <p>Failing to recognize, by sight, close friends or relatives whom you meet frequently.</p>
+        </span>
+        <mat-radio-group class="radio-group">
+          <mat-radio-button value="yes">Yes</mat-radio-button>
+          <mat-radio-button value="no">No</mat-radio-button>
+        </mat-radio-group>
+      </div>
+      <div class="question">
+        <span class="question__text">
+          <p>Having difficulty in picking up a new skill; for example, finding it hard to learn a new game, or to work
+              some new gadget after you have practised it once or twice.</p>
+        </span>
+        <mat-radio-group class="radio-group">
+          <mat-radio-button value="yes">Yes</mat-radio-button>
+          <mat-radio-button value="no">No</mat-radio-button>
+        </mat-radio-group>
+      </div>
+      <div class="question">
+        <span class="question__text">
+          <p>Finding that a word is ‘on the tip of your tongue’. You know what it is but cannot quite find it.</p>
+        </span>
+        <mat-radio-group class="radio-group">
+          <mat-radio-button value="yes">Yes</mat-radio-button>
+          <mat-radio-button value="no">No</mat-radio-button>
+        </mat-radio-group>
+      </div>
+      <div class="question">
+        <span class="question__text">
+          <p>Completely forgetting to do things you said you would do and you planned to do.</p>
+        </span>
+        <mat-radio-group class="radio-group">
+          <mat-radio-button value="yes">Yes</mat-radio-button>
+          <mat-radio-button value="no">No</mat-radio-button>
+        </mat-radio-group>
+      </div>
+      <div class="question">
+        <span class="question__text">
+          <p>Forgetting important details of what you did or what happened to you the day before.</p>
+        </span>
+        <mat-radio-group class="radio-group">
+          <mat-radio-button value="yes">Yes</mat-radio-button>
+          <mat-radio-button value="no">No</mat-radio-button>
+        </mat-radio-group>
+      </div>
+      <div class="question">
+        <span class="question__text">
+          <p>When talking to someone, forgetting what you have just said. Maybe saying, “What was I just talking
+              about?”</p>
+        </span>
+        <mat-radio-group class="radio-group">
+          <mat-radio-button value="yes">Yes</mat-radio-button>
+          <mat-radio-button value="no">No</mat-radio-button>
+        </mat-radio-group>
+      </div>
+      <div class="question">
+        <span class="question__text">
+          <p>When reading a newspaper or magazine being unable to follow the thread of a story; losing track of what
+              it is about.</p>
+        </span>
+        <mat-radio-group class="radio-group">
+          <mat-radio-button value="yes">Yes</mat-radio-button>
+          <mat-radio-button value="no">No</mat-radio-button>
+        </mat-radio-group>
+      </div>
+      <div class="question">
+        <span class="question__text">
+          <p>Forgetting to tell someone something important. Perhaps forgetting to pass on a message or remind
+              someone of something.</p>
+        </span>
+        <mat-radio-group class="radio-group">
+          <mat-radio-button value="yes">Yes</mat-radio-button>
+          <mat-radio-button value="no">No</mat-radio-button>
+        </mat-radio-group>
+      </div>
+      <div class="question">
+        <span class="question__text">
+          <p>Forgetting important details about yourself; for example, your birthdate, or where you live.</p>
+        </span>
+        <mat-radio-group class="radio-group">
+          <mat-radio-button value="yes">Yes</mat-radio-button>
+          <mat-radio-button value="no">No</mat-radio-button>
+        </mat-radio-group>
+      </div>
+      <div class="question">
+        <span class="question__text">
+          <p>Getting the details of what someone has told you mixed up and confused.</p>
+        </span>
+        <mat-radio-group class="radio-group">
+          <mat-radio-button value="yes">Yes</mat-radio-button>
+          <mat-radio-button value="no">No</mat-radio-button>
+        </mat-radio-group>
+      </div>
+      <div class="question">
+        <span class="question__text">
+          <p>Telling someone a story or joke that you have told them once already.</p>
+        </span>
+        <mat-radio-group class="radio-group">
+          <mat-radio-button value="yes">Yes</mat-radio-button>
+          <mat-radio-button value="no">No</mat-radio-button>
+        </mat-radio-group>
+      </div>
+      <div class="question">
+        <span class="question__text">
+          <p>Forgetting details of things you do regularly, whether at home or at work. For example,
+              forgetting details of what to do, or forgetting at what time to do it.</p>
+        </span>
+        <mat-radio-group class="radio-group">
+          <mat-radio-button value="yes">Yes</mat-radio-button>
+          <mat-radio-button value="no">No</mat-radio-button>
+        </mat-radio-group>
+      </div>
+      <div class="question">
+        <span class="question__text">
+          <p>Finding that the faces of famous people seen on television or in photographs look unfamiliar.</p>
+        </span>
+        <mat-radio-group class="radio-group">
+          <mat-radio-button value="yes">Yes</mat-radio-button>
+          <mat-radio-button value="no">No</mat-radio-button>
+        </mat-radio-group>
+      </div>
+      <div class="question">
+        <span class="question__text">
+          <p>Forgetting where things are normally kept or looking for them in the wrong place.</p>
+        </span>
+        <mat-radio-group class="radio-group">
+          <mat-radio-button value="yes">Yes</mat-radio-button>
+          <mat-radio-button value="no">No</mat-radio-button>
+        </mat-radio-group>
+      </div>
+      <div class="question">
+        <span class="question__text">
+          <p>Getting lost or turning in the wrong direction on a journey, on a walk or in a building where you have
+              often been before.</p>
+        </span>
+        <mat-radio-group class="radio-group">
+          <mat-radio-button value="yes">Yes</mat-radio-button>
+          <mat-radio-button value="no">No</mat-radio-button>
+        </mat-radio-group>
+      </div>
+      <div class="question">
+        <span class="question__text">
+          <p>Getting lost or turning in the wrong direction on a journey, on a walk or in a building where you have
+              only been once or twice before.</p>
+        </span>
+        <mat-radio-group class="radio-group">
+          <mat-radio-button value="yes">Yes</mat-radio-button>
+          <mat-radio-button value="no">No</mat-radio-button>
+        </mat-radio-group>
+      </div>
+      <div class="question">
+        <span class="question__text">
+          <p>Doing some routine things twice by mistake. For example, putting 2 lots of tea in the teapot or going to
+              brush/comb your hair when you have just done so.</p>
+        </span>
+        <mat-radio-group class="radio-group">
+          <mat-radio-button value="yes">Yes</mat-radio-button>
+          <mat-radio-button value="no">No</mat-radio-button>
+        </mat-radio-group>
+      </div>
+      <div class="question">
+        <span class="question__text">
+          <p>Repeating to someone what you have just told them or asking the same question twice.</p>
+        </span>
+        <mat-radio-group class="radio-group">
+          <mat-radio-button value="yes">Yes</mat-radio-button>
+          <mat-radio-button value="no">No</mat-radio-button>
+        </mat-radio-group>
+      </div>
+    </form>
+</ng-template>
+
+<ng-template #SDFTemplate>
+  <form #surveyForm>
+    <div class="question">
+      <span class="question__text">
+        <p>What time did you getinto bed?</p>
+      </span>
+      <mat-radio-group class="radio-group">
+        <mat-radio-button value="not at all">0</mat-radio-button>
+        <mat-radio-button value="several days">1</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <div class="question">
+      <span class="question__text">
+        <p>How long did it takeyou to fall asleep?</p>
+      </span>
+      <mat-radio-group class="radio-group">
+        <mat-radio-button value="yes">Yes</mat-radio-button>
+        <mat-radio-button value="no">No</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <div class="question">
+      <span class="question__text">
+        <p>How many times didyou wake up, notcounting the final time?</p>
+      </span>
+      <mat-radio-group class="radio-group">
+        <mat-radio-button value="yes">Yes</mat-radio-button>
+        <mat-radio-button value="no">No</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <div class="question">
+      <span class="question__text">
+        <p>In total, how long didthese awakenings last?</p>
+      </span>
+      <mat-radio-group class="radio-group">
+        <mat-radio-button value="yes">Yes</mat-radio-button>
+        <mat-radio-button value="no">No</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <div class="question">
+      <span class="question__text">
+        <p>What time was yourfinal awakening?</p>
+      </span>
+      <mat-radio-group class="radio-group">
+        <mat-radio-button value="yes">Yes</mat-radio-button>
+        <mat-radio-button value="no">No</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <div class="question">
+      <span class="question__text">
+        <p>What time did you finish trying to sleep?</p>
+      </span>
+      <mat-radio-group class="radio-group">
+        <mat-radio-button value="yes">Yes</mat-radio-button>
+        <mat-radio-button value="no">No</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <div class="question">
+      <span class="question__text">
+        <p>How would you ratethe quality of yoursleep?</p>
+      </span>
+      <mat-radio-group class="radio-group">
+        <mat-radio-button value="yes">Yes</mat-radio-button>
+        <mat-radio-button value="no">No</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <div class="question">
+      <span class="question__text">
+        <p>Comments (if applicable)</p>
+      </span>
+      <mat-radio-group class="radio-group">
+        <mat-radio-button value="yes">Yes</mat-radio-button>
+        <mat-radio-button value="no">No</mat-radio-button>
+      </mat-radio-group>
+    </div>
+  </form>
+</ng-template>
+
+<ng-template #SDSTemplate>
+  <form #surveyForm>
+    <div class="question">
+      <span class="question__text">
+        <p>I am very good at giving directions.</p>
+      </span>
+      <mat-radio-group class="radio-group">
+        <mat-radio-button value="not at all">0</mat-radio-button>
+        <mat-radio-button value="several days">1</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <div class="question">
+      <span class="question__text">
+        <p>I have a poor memory for where I left things.</p>
+      </span>
+      <mat-radio-group class="radio-group">
+        <mat-radio-button value="yes">Yes</mat-radio-button>
+        <mat-radio-button value="no">No</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <div class="question">
+      <span class="question__text">
+        <p>I am very good at judging distances.</p>
+      </span>
+      <mat-radio-group class="radio-group">
+        <mat-radio-button value="yes">Yes</mat-radio-button>
+        <mat-radio-button value="no">No</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <div class="question">
+      <span class="question__text">
+        <p>My "sense of direction" is very good.</p>
+      </span>
+      <mat-radio-group class="radio-group">
+        <mat-radio-button value="yes">Yes</mat-radio-button>
+        <mat-radio-button value="no">No</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <div class="question">
+      <span class="question__text">
+        <p>I tend to think of my environment in terms of cardinal directions (N, S, E, W).</p>
+      </span>
+      <mat-radio-group class="radio-group">
+        <mat-radio-button value="yes">Yes</mat-radio-button>
+        <mat-radio-button value="no">No</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <div class="question">
+      <span class="question__text">
+        <p>I very easily get lost in a new city.</p>
+      </span>
+      <mat-radio-group class="radio-group">
+        <mat-radio-button value="yes">Yes</mat-radio-button>
+        <mat-radio-button value="no">No</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <div class="question">
+      <span class="question__text">
+        <p>I enjoy reading maps.</p>
+      </span>
+      <mat-radio-group class="radio-group">
+        <mat-radio-button value="yes">Yes</mat-radio-button>
+        <mat-radio-button value="no">No</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <div class="question">
+      <span class="question__text">
+        <p>I have trouble understanding directions.</p>
+      </span>
+      <mat-radio-group class="radio-group">
+        <mat-radio-button value="yes">Yes</mat-radio-button>
+        <mat-radio-button value="no">No</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <div class="question">
+      <span class="question__text">
+        <p>I am very good at reading maps.</p>
+      </span>
+      <mat-radio-group class="radio-group">
+        <mat-radio-button value="yes">Yes</mat-radio-button>
+        <mat-radio-button value="no">No</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <div class="question">
+      <span class="question__text">
+        <p>I don't remember routes very well while riding as a passenger in a car.</p>
+      </span>
+      <mat-radio-group class="radio-group">
+        <mat-radio-button value="yes">Yes</mat-radio-button>
+        <mat-radio-button value="no">No</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <div class="question">
+      <span class="question__text">
+        <p>I don't enjoy giving directions.</p>
+      </span>
+      <mat-radio-group class="radio-group">
+        <mat-radio-button value="yes">Yes</mat-radio-button>
+        <mat-radio-button value="no">No</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <div class="question">
+      <span class="question__text">
+        <p>It's not important to me to know where I am.</p>
+      </span>
+      <mat-radio-group class="radio-group">
+        <mat-radio-button value="yes">Yes</mat-radio-button>
+        <mat-radio-button value="no">No</mat-radio-button>
+      </mat-radio-group>
+    </div>
+  </form>
+</ng-template>
+
+<ng-template #SPSQITemplate>
+  <form #surveyForm>
+    <div class="question">
+      <span class="question__text">
+        <p>During the past month, when have you usually gone to bed at night?.</p>
+      </span>
+      <mat-radio-group class="radio-group">
+        <mat-radio-button value="not at all">0</mat-radio-button>
+        <mat-radio-button value="several days">1</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <div class="question">
+      <span class="question__text">
+        <p>During the past month, how long (in minutes) has it usually taken you to fall
+          asleep each night</p>
+      </span>
+      <mat-radio-group class="radio-group">
+        <mat-radio-button value="yes">Yes</mat-radio-button>
+        <mat-radio-button value="no">No</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <div class="question">
+      <span class="question__text">
+        <p>During the past month, when have you usually gotten up in the morning</p>
+      </span>
+      <mat-radio-group class="radio-group">
+        <mat-radio-button value="yes">Yes</mat-radio-button>
+        <mat-radio-button value="no">No</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <div class="question">
+      <span class="question__text">
+        <p>During the past month, how many hours of actual sleep did you get at night?
+          (This may be different than the number of hours you spend in bed)</p>
+      </span>
+      <mat-radio-group class="radio-group">
+        <mat-radio-button value="yes">Yes</mat-radio-button>
+        <mat-radio-button value="no">No</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <div class="question">
+      <span class="question__text">
+        <p>During the past month, how often have you had trouble sleeping because you</p>
+      </span>
+      <mat-radio-group class="radio-group">
+        <mat-radio-button value="yes">Yes</mat-radio-button>
+        <mat-radio-button value="no">No</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <div class="question">
+      <span class="question__text">
+        <p>...cannot get to sleep within 30 minutes</p>
+      </span>
+      <mat-radio-group class="radio-group">
+        <mat-radio-button value="yes">Yes</mat-radio-button>
+        <mat-radio-button value="no">No</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <div class="question">
+      <span class="question__text">
+        <p>...wake up in the middle of the night or early morning</p>
+      </span>
+      <mat-radio-group class="radio-group">
+        <mat-radio-button value="yes">Yes</mat-radio-button>
+        <mat-radio-button value="no">No</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <div class="question">
+      <span class="question__text">
+        <p>...have to get up to use the bathroom</p>
+      </span>
+      <mat-radio-group class="radio-group">
+        <mat-radio-button value="yes">Yes</mat-radio-button>
+        <mat-radio-button value="no">No</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <div class="question">
+      <span class="question__text">
+        <p>...cannot breathe comfortably</p>
+      </span>
+      <mat-radio-group class="radio-group">
+        <mat-radio-button value="yes">Yes</mat-radio-button>
+        <mat-radio-button value="no">No</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <div class="question">
+      <span class="question__text">
+        <p>...cough or snore loudly</p>
+      </span>
+      <mat-radio-group class="radio-group">
+        <mat-radio-button value="yes">Yes</mat-radio-button>
+        <mat-radio-button value="no">No</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <div class="question">
+      <span class="question__text">
+        <p>...feel too cold</p>
+      </span>
+      <mat-radio-group class="radio-group">
+        <mat-radio-button value="yes">Yes</mat-radio-button>
+        <mat-radio-button value="no">No</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <div class="question">
+      <span class="question__text">
+        <p>...feel too hot</p>
+      </span>
+      <mat-radio-group class="radio-group">
+        <mat-radio-button value="yes">Yes</mat-radio-button>
+        <mat-radio-button value="no">No</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <div class="question">
+      <span class="question__text">
+        <p>...had bad dreams</p>
+      </span>
+      <mat-radio-group class="radio-group">
+        <mat-radio-button value="yes">Yes</mat-radio-button>
+        <mat-radio-button value="no">No</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <div class="question">
+      <span class="question__text">
+        <p>...have pains</p>
+      </span>
+      <mat-radio-group class="radio-group">
+        <mat-radio-button value="yes">Yes</mat-radio-button>
+        <mat-radio-button value="no">No</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <div class="question">
+      <span class="question__text">
+        <p>Other reason(s), please describe</p>
+      </span>
+      <mat-radio-group class="radio-group">
+        <mat-radio-button value="yes">Yes</mat-radio-button>
+        <mat-radio-button value="no">No</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <div class="question">
+      <span class="question__text">
+        <p>How often during the past month have you had trouble sleeping because of this</p>
+      </span>
+      <mat-radio-group class="radio-group">
+        <mat-radio-button value="yes">Yes</mat-radio-button>
+        <mat-radio-button value="no">No</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <div class="question">
+      <span class="question__text">
+        <p>During the past month, how would you rate your sleep quality overall?</p>
+      </span>
+      <mat-radio-group class="radio-group">
+        <mat-radio-button value="yes">Yes</mat-radio-button>
+        <mat-radio-button value="no">No</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <div class="question">
+      <span class="question__text">
+        <p>During the past month, how often have you taken medicine (prescribed or "over
+          the counter") to help you sleep</p>
+      </span>
+      <mat-radio-group class="radio-group">
+        <mat-radio-button value="yes">Yes</mat-radio-button>
+        <mat-radio-button value="no">No</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <div class="question">
+      <span class="question__text">
+        <p>During the past month, how often have you had trouble staying awake while driving,
+          eating meals, or engaging in social activity</p>
+      </span>
+      <mat-radio-group class="radio-group">
+        <mat-radio-button value="yes">Yes</mat-radio-button>
+        <mat-radio-button value="no">No</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <div class="question">
+      <span class="question__text">
+        <p>During the past month, how much of a problem has it been for you to keep up
+          enough enthusiasm to get things done?</p>
+      </span>
+      <mat-radio-group class="radio-group">
+        <mat-radio-button value="yes">Yes</mat-radio-button>
+        <mat-radio-button value="no">No</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <div class="question">
+      <span class="question__text">
+        <p>Do you have a bed partner or a roommate?</p>
+      </span>
+      <mat-radio-group class="radio-group">
+        <mat-radio-button value="yes">Yes</mat-radio-button>
+        <mat-radio-button value="no">No</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <div>
+      <p>If you have a roommate or bed partner, ask him/her how often in the past month you have had...</p>
+    </div>
+    <div class="question">
+      <span class="question__text">
+        <p>...loud snoring</p>
+      </span>
+      <mat-radio-group class="radio-group">
+        <mat-radio-button value="yes">Yes</mat-radio-button>
+        <mat-radio-button value="no">No</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <div class="question">
+      <span class="question__text">
+        <p>...long pauses between breaths while asleep</p>
+      </span>
+      <mat-radio-group class="radio-group">
+        <mat-radio-button value="yes">Yes</mat-radio-button>
+        <mat-radio-button value="no">No</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <div class="question">
+      <span class="question__text">
+        <p>...legs twitching or jerking while you sleep</p>
+      </span>
+      <mat-radio-group class="radio-group">
+        <mat-radio-button value="yes">Yes</mat-radio-button>
+        <mat-radio-button value="no">No</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <div class="question">
+      <span class="question__text">
+        <p>...episodes of disorientation or confusion during sleep</p>
+      </span>
+      <mat-radio-group class="radio-group">
+        <mat-radio-button value="yes">Yes</mat-radio-button>
+        <mat-radio-button value="no">No</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <div class="question">
+      <span class="question__text">
+        <p>...Other restlessness while you sleep. Please describe:</p>
+      </span>
+      <mat-radio-group class="radio-group">
+        <mat-radio-button value="yes">Yes</mat-radio-button>
+        <mat-radio-button value="no">No</mat-radio-button>
+      </mat-radio-group>
+    </div>
+  </form>
+</ng-template>
+
+<ng-template #SNGTemplate>
+  <form #surveyForm>
+    <div class="question">
+      <span class="question__text">
+        <p>What are your nutrition and healthy living goals?</p>
+      </span>
+      <mat-radio-group class="radio-group">
+        <mat-radio-button value="not at all">0</mat-radio-button>
+        <mat-radio-button value="several days">1</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <div class="question">
+      <span class="question__text">
+        <p>What barriers are you facing to prevent you from achieving these goals?</p>
+      </span>
+      <mat-radio-group class="radio-group">
+        <mat-radio-button value="yes">Yes</mat-radio-button>
+        <mat-radio-button value="no">No</mat-radio-button>
+      </mat-radio-group>
+    </div>
+  </form>
+</ng-template>
+
+<ng-template #SPSSTemplate>
+  <form #surveyForm>
+    <div class="question">
+      <span class="question__text">
+        <p>In the last month, how often have you been upset because of
+            something that happened unexpectedly?</p>
+      </span>
+      <mat-radio-group class="radio-group">
+        <mat-radio-button value="not at all">0</mat-radio-button>
+        <mat-radio-button value="several days">1</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <div class="question">
+      <span class="question__text">
+        <p>In the last month, how often have you felt that you were unable to
+            control the important things in your life?</p>
+      </span>
+      <mat-radio-group class="radio-group">
+        <mat-radio-button value="yes">Yes</mat-radio-button>
+        <mat-radio-button value="no">No</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <div class="question">
+      <span class="question__text">
+        <p>In the last month, how often have you felt nervous and “stressed”?</p>
+      </span>
+      <mat-radio-group class="radio-group">
+        <mat-radio-button value="yes">Yes</mat-radio-button>
+        <mat-radio-button value="no">No</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <div class="question">
+      <span class="question__text">
+        <p>In the last month, how often have you felt confident about your
+            ability to handle your personal problems?</p>
+      </span>
+      <mat-radio-group class="radio-group">
+        <mat-radio-button value="yes">Yes</mat-radio-button>
+        <mat-radio-button value="no">No</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <div class="question">
+      <span class="question__text">
+        <p>In the last month, how often have you felt that things were going
+            your way?</p>
+      </span>
+      <mat-radio-group class="radio-group">
+        <mat-radio-button value="yes">Yes</mat-radio-button>
+        <mat-radio-button value="no">No</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <div class="question">
+      <span class="question__text">
+        <p>In the last month, how often have you found that you could not cope
+            with all the things that you had to do?</p>
+      </span>
+      <mat-radio-group class="radio-group">
+        <mat-radio-button value="yes">Yes</mat-radio-button>
+        <mat-radio-button value="no">No</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <div class="question">
+      <span class="question__text">
+        <p>In the last month, how often have you been able to control irritations
+            in your life?</p>
+      </span>
+      <mat-radio-group class="radio-group">
+        <mat-radio-button value="yes">Yes</mat-radio-button>
+        <mat-radio-button value="no">No</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <div class="question">
+      <span class="question__text">
+        <p>In the last month, how often have you felt that you were on top of
+            things?</p>
+      </span>
+      <mat-radio-group class="radio-group">
+        <mat-radio-button value="yes">Yes</mat-radio-button>
+        <mat-radio-button value="no">No</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <div class="question">
+      <span class="question__text">
+        <p>In the last month, how often have you been angered because of
+            things that were outside of your control?</p>
+      </span>
+      <mat-radio-group class="radio-group">
+        <mat-radio-button value="yes">Yes</mat-radio-button>
+        <mat-radio-button value="no">No</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <div class="question">
+      <span class="question__text">
+        <p>In the last month, how often have you felt difficulties were piling up
+            so high that you could not overcome them?</p>
+      </span>
+      <mat-radio-group class="radio-group">
+        <mat-radio-button value="yes">Yes</mat-radio-button>
+        <mat-radio-button value="no">No</mat-radio-button>
+      </mat-radio-group>
+    </div>
+  </form>
+</ng-template>
+
+<ng-template #CHAMPSTemplate>
+  <form #surveyForm>
+    <div class="question">
+      <span class="question__text">
+        <p>Visit with friends or family (other than those you live with)?</p>
+      </span>
+      <mat-radio-group class="radio-group">
+        <mat-radio-button value="not at all">0</mat-radio-button>
+        <mat-radio-button value="several days">1</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <div class="question">
+      <span class="question__text">
+        <p>Visit with friends or family (other than those you live with)?</p>
+      </span>
+      <mat-radio-group class="radio-group">
+        <mat-radio-button value="yes">Yes</mat-radio-button>
+        <mat-radio-button value="no">No</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <div class="question">
+      <span class="question__text">
+        <p>Go to the senior center?</p>
+      </span>
+      <mat-radio-group class="radio-group">
+        <mat-radio-button value="yes">Yes</mat-radio-button>
+        <mat-radio-button value="no">No</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <div class="question">
+      <span class="question__text">
+        <p>Do volunteer work?</p>
+      </span>
+      <mat-radio-group class="radio-group">
+        <mat-radio-button value="yes">Yes</mat-radio-button>
+        <mat-radio-button value="no">No</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <div class="question">
+      <span class="question__text">
+        <p>Attend church or take part in church activities?</p>
+      </span>
+      <mat-radio-group class="radio-group">
+        <mat-radio-button value="yes">Yes</mat-radio-button>
+        <mat-radio-button value="no">No</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <div class="question">
+      <span class="question__text">
+        <p>Attend other club or group meetings?</p>
+      </span>
+      <mat-radio-group class="radio-group">
+        <mat-radio-button value="yes">Yes</mat-radio-button>
+        <mat-radio-button value="no">No</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <div class="question">
+      <span class="question__text">
+        <p>Use a computer?</p>
+      </span>
+      <mat-radio-group class="radio-group">
+        <mat-radio-button value="yes">Yes</mat-radio-button>
+        <mat-radio-button value="no">No</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <div class="question">
+      <span class="question__text">
+        <p>Dance (such as square, folk, line, ballroom) (do not count aerobic dance here)?</p>
+      </span>
+      <mat-radio-group class="radio-group">
+        <mat-radio-button value="yes">Yes</mat-radio-button>
+        <mat-radio-button value="no">No</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <div class="question">
+      <span class="question__text">
+        <p>Do woodworking, needlework, drawing, or other arts or crafts?</p>
+      </span>
+      <mat-radio-group class="radio-group">
+        <mat-radio-button value="yes">Yes</mat-radio-button>
+        <mat-radio-button value="no">No</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <div class="question">
+      <span class="question__text">
+        <p>Play golf, carrying or pulling your equipment (count walking time only)?</p>
+      </span>
+      <mat-radio-group class="radio-group">
+        <mat-radio-button value="yes">Yes</mat-radio-button>
+        <mat-radio-button value="no">No</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <div class="question">
+      <span class="question__text">
+        <p>Attend a concert, movie, lecture, or sport event?</p>
+      </span>
+      <mat-radio-group class="radio-group">
+        <mat-radio-button value="yes">Yes</mat-radio-button>
+        <mat-radio-button value="no">No</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <div class="question">
+      <span class="question__text">
+        <p>Play cards, bingo, or board games with other people?</p>
+      </span>
+      <mat-radio-group class="radio-group">
+        <mat-radio-button value="yes">Yes</mat-radio-button>
+        <mat-radio-button value="no">No</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <div class="question">
+      <span class="question__text">
+        <p>Shoot pool or billiards?</p>
+      </span>
+      <mat-radio-group class="radio-group">
+        <mat-radio-button value="yes">Yes</mat-radio-button>
+        <mat-radio-button value="no">No</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <div class="question">
+      <span class="question__text">
+        <p>Play singles tennis (do not count doubles)?</p>
+      </span>
+      <mat-radio-group class="radio-group">
+        <mat-radio-button value="yes">Yes</mat-radio-button>
+        <mat-radio-button value="no">No</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <div class="question">
+      <span class="question__text">
+        <p>Skate (ice, roller, in-line)?</p>
+      </span>
+      <mat-radio-group class="radio-group">
+        <mat-radio-button value="yes">Yes</mat-radio-button>
+        <mat-radio-button value="no">No</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <div class="question">
+      <span class="question__text">
+        <p>Play a musical instrument?</p>
+      </span>
+      <mat-radio-group class="radio-group">
+        <mat-radio-button value="yes">Yes</mat-radio-button>
+        <mat-radio-button value="no">No</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <div class="question">
+      <span class="question__text">
+        <p>Read?</p>
+      </span>
+      <mat-radio-group class="radio-group">
+        <mat-radio-button value="yes">Yes</mat-radio-button>
+        <mat-radio-button value="no">No</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <div class="question">
+      <span class="question__text">
+        <p>Do heavy work around the house (such as washing windows, cleaning gutters)?</p>
+      </span>
+      <mat-radio-group class="radio-group">
+        <mat-radio-button value="yes">Yes</mat-radio-button>
+        <mat-radio-button value="no">No</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <div class="question">
+      <span class="question__text">
+        <p>Do light work around the house (such as sweeping or vacuuming)?</p>
+      </span>
+      <mat-radio-group class="radio-group">
+        <mat-radio-button value="yes">Yes</mat-radio-button>
+        <mat-radio-button value="no">No</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <div class="question">
+      <span class="question__text">
+        <p>Do heavy gardening (such as spading, raking)?</p>
+      </span>
+      <mat-radio-group class="radio-group">
+        <mat-radio-button value="yes">Yes</mat-radio-button>
+        <mat-radio-button value="no">No</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <div class="question">
+      <span class="question__text">
+        <p>Do light gardening (such as watering plants)?</p>
+      </span>
+      <mat-radio-group class="radio-group">
+        <mat-radio-button value="yes">Yes</mat-radio-button>
+        <mat-radio-button value="no">No</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <div class="question">
+      <span class="question__text">
+        <p>Work on your car, truck, lawn mower, or other machinery?</p>
+      </span>
+      <mat-radio-group class="radio-group">
+        <mat-radio-button value="yes">Yes</mat-radio-button>
+        <mat-radio-button value="no">No</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <div class="question">
+      <span class="question__text">
+        <p>Jog or run?</p>
+      </span>
+      <mat-radio-group class="radio-group">
+        <mat-radio-button value="yes">Yes</mat-radio-button>
+        <mat-radio-button value="no">No</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <div class="question">
+      <span class="question__text">
+        <p>Walk uphill or hike uphill (count only uphill part)?</p>
+      </span>
+      <mat-radio-group class="radio-group">
+        <mat-radio-button value="yes">Yes</mat-radio-button>
+        <mat-radio-button value="no">No</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <div class="question">
+      <span class="question__text">
+        <p>Walk fast or briskly for exercise (do not count walking leisurely or uphill)?</p>
+      </span>
+      <mat-radio-group class="radio-group">
+        <mat-radio-button value="yes">Yes</mat-radio-button>
+        <mat-radio-button value="no">No</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <div class="question">
+      <span class="question__text">
+        <p>Walk to do errands (such as to/from a store or to take children to school – count walk time only)?</p>
+      </span>
+      <mat-radio-group class="radio-group">
+        <mat-radio-button value="yes">Yes</mat-radio-button>
+        <mat-radio-button value="no">No</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <div class="question">
+      <span class="question__text">
+        <p>Walk leisurely for exercise or pleasure?</p>
+      </span>
+      <mat-radio-group class="radio-group">
+        <mat-radio-button value="yes">Yes</mat-radio-button>
+        <mat-radio-button value="no">No</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <div class="question">
+      <span class="question__text">
+        <p>Ride a bicycle or stationary cycle?</p>
+      </span>
+      <mat-radio-group class="radio-group">
+        <mat-radio-button value="yes">Yes</mat-radio-button>
+        <mat-radio-button value="no">No</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <div class="question">
+      <span class="question__text">
+        <p>Do other aerobic machines such as rowing, or step machines (do not count treadmill or stationary cycle)?</p>
+      </span>
+      <mat-radio-group class="radio-group">
+        <mat-radio-button value="yes">Yes</mat-radio-button>
+        <mat-radio-button value="no">No</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <div class="question">
+      <span class="question__text">
+        <p>Do water exercises (do not count other swimming)?</p>
+      </span>
+      <mat-radio-group class="radio-group">
+        <mat-radio-button value="yes">Yes</mat-radio-button>
+        <mat-radio-button value="no">No</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <div class="question">
+      <span class="question__text">
+        <p>Swim moderately or fast?</p>
+      </span>
+      <mat-radio-group class="radio-group">
+        <mat-radio-button value="yes">Yes</mat-radio-button>
+        <mat-radio-button value="no">No</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <div class="question">
+      <span class="question__text">
+        <p>Swim gently?</p>
+      </span>
+      <mat-radio-group class="radio-group">
+        <mat-radio-button value="yes">Yes</mat-radio-button>
+        <mat-radio-button value="no">No</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <div class="question">
+      <span class="question__text">
+        <p>Do stretching or flexibility exercises (do not count yoga or Tai-chi)?</p>
+      </span>
+      <mat-radio-group class="radio-group">
+        <mat-radio-button value="yes">Yes</mat-radio-button>
+        <mat-radio-button value="no">No</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <div class="question">
+      <span class="question__text">
+        <p>Do yoga or Tai-chi?</p>
+      </span>
+      <mat-radio-group class="radio-group">
+        <mat-radio-button value="yes">Yes</mat-radio-button>
+        <mat-radio-button value="no">No</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <div class="question">
+      <span class="question__text">
+        <p>Do aerobics or aerobic dancing?</p>
+      </span>
+      <mat-radio-group class="radio-group">
+        <mat-radio-button value="yes">Yes</mat-radio-button>
+        <mat-radio-button value="no">No</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <div class="question">
+      <span class="question__text">
+        <p>Do moderate to heavy strength training (such as hand-held weights of more
+          than 5 lbs., weight machines, or push-ups)?</p>
+      </span>
+      <mat-radio-group class="radio-group">
+        <mat-radio-button value="yes">Yes</mat-radio-button>
+        <mat-radio-button value="no">No</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <div class="question">
+      <span class="question__text">
+        <p>Do light strength training (such as hand-held weights of 5 lbs. or less
+          or elastic bands)?</p>
+      </span>
+      <mat-radio-group class="radio-group">
+        <mat-radio-button value="yes">Yes</mat-radio-button>
+        <mat-radio-button value="no">No</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <div class="question">
+      <span class="question__text">
+        <p>Do general conditioning exercises, such as light calisthenics or chair
+          exercises (do not count strength training)?</p>
+      </span>
+      <mat-radio-group class="radio-group">
+        <mat-radio-button value="yes">Yes</mat-radio-button>
+        <mat-radio-button value="no">No</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <div class="question">
+      <span class="question__text">
+        <p>Play basketball, soccer, or racquetball (do not count time on sidelines)?</p>
+      </span>
+      <mat-radio-group class="radio-group">
+        <mat-radio-button value="yes">Yes</mat-radio-button>
+        <mat-radio-button value="no">No</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <div class="question">
+      <span class="question__text">
+        <p>Any other types of physical activity not previously mentioned (please specify)?</p>
+      </span>
+      <mat-radio-group class="radio-group">
+        <mat-radio-button value="yes">Yes</mat-radio-button>
+        <mat-radio-button value="no">No</mat-radio-button>
+      </mat-radio-group>
+    </div>
+  </form>
+</ng-template>
+
+<ng-template #SBSATemplate>
+    <form #surveyForm>
+      <div>
+        <h4>Stop</h4>
+      </div>
+      <div class="question">
+        <span class="question__text">
+          <p>Do you SNORE loudly (louder than talking or loud
+              enough to be heard through closed doors)?</p>
+        </span>
+        <mat-radio-group class="radio-group">
+          <mat-radio-button value="not at all">0</mat-radio-button>
+          <mat-radio-button value="several days">1</mat-radio-button>
+        </mat-radio-group>
+      </div>
+      <div class="question">
+        <span class="question__text">
+          <p>Do you often feel TIRED, fatigued, or sleepy during
+              daytime?</p>
+        </span>
+        <mat-radio-group class="radio-group">
+          <mat-radio-button value="yes">Yes</mat-radio-button>
+          <mat-radio-button value="no">No</mat-radio-button>
+        </mat-radio-group>
+      </div>
+      <div class="question">
+        <span class="question__text">
+          <p>Has anyone OBSERVED you stop breathing during
+              your sleep?</p>
+        </span>
+        <mat-radio-group class="radio-group">
+          <mat-radio-button value="yes">Yes</mat-radio-button>
+          <mat-radio-button value="no">No</mat-radio-button>
+        </mat-radio-group>
+      </div>
+      <div class="question">
+        <span class="question__text">
+          <p>Do you have or are you being treated for high blood
+              PRESSURE?</p>
+        </span>
+        <mat-radio-group class="radio-group">
+          <mat-radio-button value="yes">Yes</mat-radio-button>
+          <mat-radio-button value="no">No</mat-radio-button>
+        </mat-radio-group>
+      </div>
+      <div>
+        <h4>Bang</h4>
+      </div>
+      <div class="question">
+        <span class="question__text">
+          <p>BMI more than 35kg/m2?</p>
+        </span>
+        <mat-radio-group class="radio-group">
+          <mat-radio-button value="yes">Yes</mat-radio-button>
+          <mat-radio-button value="no">No</mat-radio-button>
+        </mat-radio-group>
+      </div>
+      <div class="question">
+        <span class="question__text">
+          <p>AGE over 50 years old?</p>
+        </span>
+        <mat-radio-group class="radio-group">
+          <mat-radio-button value="yes">Yes</mat-radio-button>
+          <mat-radio-button value="no">No</mat-radio-button>
+        </mat-radio-group>
+      </div>
+      <div class="question">
+        <span class="question__text">
+          <p>NECK circumference > 16 inches (40cm)?</p>
+        </span>
+        <mat-radio-group class="radio-group">
+          <mat-radio-button value="yes">Yes</mat-radio-button>
+          <mat-radio-button value="no">No</mat-radio-button>
+        </mat-radio-group>
+      </div>
+      <div class="question">
+        <span class="question__text">
+          <p>GENDER: Male?</p>
+        </span>
+        <mat-radio-group class="radio-group">
+          <mat-radio-button value="yes">Yes</mat-radio-button>
+          <mat-radio-button value="no">No</mat-radio-button>
+        </mat-radio-group>
+      </div>
+    </form>
+</ng-template>
+
+<ng-template #MFATemplate>
+  <form #surveyForm>
+    <div class="question">
+      <span class="question__text">
+        <p>Handedness</p>
+      </span>
+      <mat-radio-group class="radio-group">
+        <mat-radio-button value="not at all">0</mat-radio-button>
+        <mat-radio-button value="several days">1</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <div class="question">
+      <span class="question__text">
+        <p>9-Hole Pegboard</p>
+      </span>
+      <mat-radio-group class="radio-group">
+        <mat-radio-button value="yes">Yes</mat-radio-button>
+        <mat-radio-button value="no">No</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <div class="question">
+      <span class="question__text">
+        <p>Grip strength</p>
+      </span>
+      <mat-radio-group class="radio-group">
+        <mat-radio-button value="yes">Yes</mat-radio-button>
+        <mat-radio-button value="no">No</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <div class="question">
+      <span class="question__text">
+        <p>4-meter gait speed</p>
+      </span>
+      <mat-radio-group class="radio-group">
+        <mat-radio-button value="yes">Yes</mat-radio-button>
+        <mat-radio-button value="no">No</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <div class="question">
+      <span class="question__text">
+        <p>Repeated chair stands</p>
+      </span>
+      <mat-radio-group class="radio-group">
+        <mat-radio-button value="yes">Yes</mat-radio-button>
+        <mat-radio-button value="no">No</mat-radio-button>
+      </mat-radio-group>
+    </div>
+  </form>
+</ng-template>
+
+<ng-template #SFFTemplate>
+</ng-template>
+
+<ng-template #SNATemplate>
+</ng-template>
+
+<ng-template #SSDSTemplate>
+</ng-template>
+
+<ng-template #SPWHTemplate>
+</ng-template>
+
+<ng-template #SEMQTemplate>
+</ng-template>
+
+<ng-template #SGKYTemplate>
+</ng-template>
+
+<ng-template #SPHTemplate>
 </ng-template>
