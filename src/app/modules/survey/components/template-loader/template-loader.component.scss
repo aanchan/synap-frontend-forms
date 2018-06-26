@@ -24,34 +24,36 @@
   &__text {
     margin: 0;
     flex-basis: 75%;
-    // width: 85%;
     padding: 10px 15px 10px 25px;
     vertical-align: middle;
     word-wrap: break-word;
     border-bottom: thin solid #f5f5f5;
   }
 
-  & .radio-group {
-    // display: table-cell;
-    vertical-align: -50%;
-    padding: 15px 10px;
-  }
-
   & .input-field {
+    flex-basis: 15%;
     padding: 15px 10px;
-
+    background-color: #f5f5f5;
     &-wrappable {
       display: flex;
       flex-flow: row wrap;
       align-items: center;
       justify-content: flex-end;
+
+      > mat-form-field {
+        width: 200px;
+      }
     }
 
     &-non-wrappable {
       display: flex;
       flex-flow: row nowrap;
       align-items: center;
-      justify-content: flex-end;
+      justify-content: center;
+
+      > mat-form-field {
+        width: 200px;
+      }
     }
   }
 }
