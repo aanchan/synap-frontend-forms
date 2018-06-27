@@ -479,7 +479,19 @@
 </ng-template>
 
 <ng-template #PHQTemplate>
-<form #surveyForm (ngSubmit)="onFormSubmit(surveyForm)">
+  <div class="instructions-block">
+    <h4><i class="fa fa-info-circle"></i> Instructions</h4>
+    <p>Over the last 2 weeks, how often have you been bothered by any of the
+    following problems? (select from dropdown list for each line)</p>
+  </div>
+<form
+  #surveyForm
+  [formGroup]="surveyFormGroup"
+  (ngSubmit)="onFormSubmit(surveyForm)">
+  <div *ngIf="showFormError"
+    class="invalid">
+    Please Fill in all required values
+  </div>
   <div class="question">
     <span class="question__text">
       <p>Little interest or pleasure in
@@ -487,7 +499,7 @@
     </span>
     <span class="input-field input-field-non-wrappable">
       <mat-form-field>
-        <mat-select placeholder="Select an option">
+        <mat-select placeholder="Select an option" formControlName="q1">
           <mat-option *ngFor="let option of phqOptions" [value]="option.value">
             {{ option.value }}
           </mat-option>
@@ -501,7 +513,7 @@
     </span>
     <span class="input-field input-field-non-wrappable">
       <mat-form-field>
-        <mat-select placeholder="Select an option">
+        <mat-select placeholder="Select an option" formControlName="q2">
           <mat-option *ngFor="let option of phqOptions" [value]="option.value">
             {{ option.value }}
           </mat-option>
@@ -515,7 +527,7 @@
     </span>
     <span class="input-field input-field-non-wrappable">
       <mat-form-field>
-        <mat-select placeholder="Select an option">
+        <mat-select placeholder="Select an option" formControlName="q3">
           <mat-option *ngFor="let option of phqOptions" [value]="option.value">
             {{ option.value }}
           </mat-option>
@@ -529,7 +541,7 @@
     </span>
     <span class="input-field input-field-non-wrappable">
       <mat-form-field>
-        <mat-select placeholder="Select an option">
+        <mat-select placeholder="Select an option" formControlName="q4">
           <mat-option *ngFor="let option of phqOptions" [value]="option.value">
             {{ option.value }}
           </mat-option>
@@ -543,7 +555,7 @@
     </span>
     <span class="input-field input-field-non-wrappable">
       <mat-form-field>
-        <mat-select placeholder="Select an option">
+        <mat-select placeholder="Select an option" formControlName="q5">
           <mat-option *ngFor="let option of phqOptions" [value]="option.value">
             {{ option.value }}
           </mat-option>
@@ -558,7 +570,7 @@
     </span>
     <span class="input-field input-field-non-wrappable">
       <mat-form-field>
-        <mat-select placeholder="Select an option">
+        <mat-select placeholder="Select an option" formControlName="q6">
           <mat-option *ngFor="let option of phqOptions" [value]="option.value">
             {{ option.value }}
           </mat-option>
@@ -573,7 +585,7 @@
     </span>
     <span class="input-field input-field-non-wrappable">
       <mat-form-field>
-        <mat-select placeholder="Select an option">
+        <mat-select placeholder="Select an option" formControlName="q7">
           <mat-option *ngFor="let option of phqOptions" [value]="option.value">
             {{ option.value }}
           </mat-option>
@@ -591,7 +603,7 @@
     </span>
     <span class="input-field input-field-non-wrappable">
       <mat-form-field>
-        <mat-select placeholder="Select an option">
+        <mat-select placeholder="Select an option" formControlName="q8">
           <mat-option *ngFor="let option of phqOptions" [value]="option.value">
             {{ option.value }}
           </mat-option>
@@ -606,7 +618,7 @@
     </span>
     <span class="input-field input-field-non-wrappable">
       <mat-form-field>
-        <mat-select placeholder="Select an option">
+        <mat-select placeholder="Select an option" formControlName="q9">
           <mat-option *ngFor="let option of phqOptions" [value]="option.value">
             {{ option.value }}
           </mat-option>
@@ -623,7 +635,7 @@
     </span>
     <span class="input-field input-field-non-wrappable">
       <mat-form-field>
-        <mat-select placeholder="Select an option">
+        <mat-select placeholder="Select an option" formControlName="q10">
           <mat-option *ngFor="let option of phqOptions" [value]="option.value">
             {{ option.value }}
           </mat-option>
