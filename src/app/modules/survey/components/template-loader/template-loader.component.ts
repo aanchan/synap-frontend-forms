@@ -1,10 +1,12 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Renderer2 } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { SurveyService } from '../../survey.service';
 
 export interface FormMetadata {
   id: number;
   title: string;
   prefix: string;
+  qCount?: number;
 }
 @Component({
   selector: 'app-template-loader',
@@ -15,9 +17,14 @@ export class TemplateLoaderComponent implements OnInit {
   @Input()
   formId: number;
 
+  surveyFormGroup: FormGroup;
+
   formTitle: string;
   showPart2 = false;
   templateToRender: string;
+  activeFormMeta: FormMetadata;
+  formControls = {};
+  showFormError = false;
 
   phqOptions = [
     {value: 'Not at all'},
@@ -26,10 +33,17 @@ export class TemplateLoaderComponent implements OnInit {
     {value: 'Nearly every day'},
   ];
 
-  constructor(private surService: SurveyService) { }
+  constructor(
+    private surService: SurveyService,
+    private fb: FormBuilder,
+    private renderer: Renderer2
+  ) { }
 
   ngOnInit(): void {
     this.loadSurveyForm(this.formId);
+    // setTimeout(() => {
+    //   this.addValidationStateWatcher();
+    // }, 0);
   }
 
   loadSurveyForm(formId: number): void {
@@ -40,13 +54,48 @@ export class TemplateLoaderComponent implements OnInit {
         return res.id === formId;
       })[0];
 
+      this.activeFormMeta = formMetadata;
       this.formTitle = formMetadata.title;
       this.templateToRender = `${formMetadata.prefix}Template`;
+      this.buildFormControls();
+      this.initFormGroup();
+    });
+  }
+
+  initFormGroup() {
+    this.surveyFormGroup = this.fb.group(this.formControls);
+  }
+
+  buildFormControls() {
+    for (let i = 1; i <= this.activeFormMeta.qCount; i++) {
+      if (i >= 8) {
+        this.formControls[`q${i}`] = [''];
+      } else {
+        this.formControls[`q${i}`] = ['', Validators.required];
+      }
+    }
+  }
+
+  addValidationStateWatcher() {
+    const qElements: Element[] = Array.from(document.querySelectorAll('.question'));
+    qElements.forEach((item) => {
+      this.renderer.listen(item, 'click', ($event) => {
+        const formControl = item.children.item(1).firstElementChild;
+        if ((formControl.classList.contains('ng-invalid') &&
+             formControl.classList.contains('ng-touched'))) {
+          this.renderer.addClass(item, 'invalid');
+        } else if ((formControl.classList.contains('ng-valid'))) {
+          this.renderer.removeClass(item, 'invalid');
+        }
+      });
     });
   }
 
   onFormSubmit(event) {
-    console.log(event);
+    this.showFormError = this.surveyFormGroup.status === 'INVALID'? !this.showFormError : this.showFormError;
+    if (this.surveyFormGroup.status === 'VALID') {
+      this.surService.saveSurveyEntries(this.surveyFormGroup.value);
+    }
   }
 
   onChange(event): void {

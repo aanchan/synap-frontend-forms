@@ -79,4 +79,8 @@ export class SurveyService {
     return this.formLinks;
   }
 
+  saveSurveyEntries(entries: any): void {
+    console.log(JSON.stringify(entries));
+  }
+
 }

@@ -41,13 +41,23 @@
 </ng-container>
 
 <ng-template #PARQTemplate>
-  <form #surveyForm (ngSubmit)="onFormSubmit(surveyForm)">
+  <div *ngIf="showFormError"
+    class="invalid">
+    Please Fill in all required values
+  </div>
+  <form
+    #surveyForm
+    [formGroup]="surveyFormGroup"
+    (ngSubmit)="onFormSubmit(surveyForm)">
     <div class="question">
       <span class="question__text">
         <p>Has your doctor ever said that you have a heart condition OR high blood pressure ?</p>
       </span>
       <span class="input-field input-field-non-wrappable">
-        <mat-radio-group class="radio-group" (change)="onChange($event)">
+        <mat-radio-group
+          class="radio-group"
+          formControlName = "q1"
+          (change)="onChange($event)">
           <mat-radio-button value="yes">Yes</mat-radio-button>
           <mat-radio-button value="no">No</mat-radio-button>
         </mat-radio-group>
@@ -59,7 +69,9 @@
         OR when you do physical activity?</p>
       </span>
       <span class="input-field input-field-non-wrappable">
-        <mat-radio-group class="radio-group" (change)="onChange($event)">
+        <mat-radio-group
+          class="radio-group"
+          formControlName = "q2">
           <mat-radio-button value="yes">Yes</mat-radio-button>
           <mat-radio-button value="no">No</mat-radio-button>
         </mat-radio-group>
@@ -71,7 +83,9 @@
         last 12 months?</p>
       </span>
       <span class="input-field input-field-non-wrappable">
-        <mat-radio-group class="radio-group" (change)="onChange($event)">
+        <mat-radio-group
+          class="radio-group"
+          formControlName = "q3">
           <mat-radio-button value="yes">Yes</mat-radio-button>
           <mat-radio-button value="no">No</mat-radio-button>
         </mat-radio-group>
@@ -83,7 +97,9 @@
           heart disease or high blood pressure)?</p>
       </span>
       <span class="input-field input-field-non-wrappable">
-        <mat-radio-group class="radio-group" (change)="onChange($event)">
+        <mat-radio-group
+          class="radio-group"
+          formControlName = "q4">
           <mat-radio-button value="yes">Yes</mat-radio-button>
           <mat-radio-button value="no">No</mat-radio-button>
         </mat-radio-group>
@@ -94,7 +110,9 @@
         <p>Are you currently taking prescribed medications for a chronic medical condition?</p>
       </span>
       <span class="input-field input-field-non-wrappable">
-        <mat-radio-group class="radio-group" (change)="onChange($event)">
+        <mat-radio-group
+          class="radio-group"
+          formControlName = "q5">
           <mat-radio-button value="yes">Yes</mat-radio-button>
           <mat-radio-button value="no">No</mat-radio-button>
         </mat-radio-group>
@@ -107,7 +125,9 @@
           more physically active?</p>
       </span>
       <span class="input-field input-field-non-wrappable">
-        <mat-radio-group class="radio-group" (change)="onChange($event)">
+        <mat-radio-group
+          class="radio-group"
+          formControlName = "q6">
           <mat-radio-button value="yes">Yes</mat-radio-button>
           <mat-radio-button value="no">No</mat-radio-button>
         </mat-radio-group>
@@ -119,7 +139,9 @@
           physical activity?</p>
       </span>
       <span class="input-field input-field-non-wrappable">
-        <mat-radio-group class="radio-group" (change)="onChange($event)">
+        <mat-radio-group
+          class="radio-group"
+          formControlName = "q7">
           <mat-radio-button value="yes">Yes</mat-radio-button>
           <mat-radio-button value="no">No</mat-radio-button>
         </mat-radio-group>
@@ -132,7 +154,9 @@
           <p> Do you have Arthritis, Osteoporosis, or Back Problems?</p>
         </span>
         <span class="input-field input-field-non-wrappable">
-          <mat-radio-group class="radio-group" (change)="onChange($event)">
+          <mat-radio-group
+            class="radio-group"
+            formControlName = "q8">
             <mat-radio-button value="yes">Yes</mat-radio-button>
             <mat-radio-button value="no">No</mat-radio-button>
           </mat-radio-group>
@@ -143,7 +167,9 @@
           <p>Do you currently have Cancer of any kind?</p>
         </span>
         <span class="input-field input-field-non-wrappable">
-          <mat-radio-group class="radio-group" (change)="onChange($event)">
+          <mat-radio-group
+            class="radio-group"
+            formControlName = "q9">
             <mat-radio-button value="yes">Yes</mat-radio-button>
             <mat-radio-button value="no">No</mat-radio-button>
           </mat-radio-group>
@@ -155,7 +181,9 @@
               Diagnosed Abnormality of Heart Rhythm</small></p>
         </span>
         <span class="input-field input-field-non-wrappable">
-          <mat-radio-group class="radio-group" (change)="onChange($event)">
+          <mat-radio-group
+            class="radio-group"
+            formControlName = "q10">
             <mat-radio-button value="yes">Yes</mat-radio-button>
             <mat-radio-button value="no">No</mat-radio-button>
           </mat-radio-group>
@@ -166,7 +194,9 @@
           <p>Do you have High Blood Pressure?</p>
         </span>
         <span class="input-field input-field-non-wrappable">
-          <mat-radio-group class="radio-group" (change)="onChange($event)">
+          <mat-radio-group
+            class="radio-group"
+            formControlName = "q11">
             <mat-radio-button value="yes">Yes</mat-radio-button>
             <mat-radio-button value="no">No</mat-radio-button>
           </mat-radio-group>
@@ -178,7 +208,9 @@
               <small>Answer YES if you do not know your resting blood pressure</small></p>
         </span>
         <span class="input-field input-field-non-wrappable">
-          <mat-radio-group class="radio-group" (change)="onChange($event)">
+          <mat-radio-group
+            class="radio-group"
+            formControlName = "q12">
             <mat-radio-button value="yes">Yes</mat-radio-button>
             <mat-radio-button value="no">No</mat-radio-button>
           </mat-radio-group>
@@ -190,7 +222,9 @@
             <small>This includes Type 1 Diabetes, Type 2 Diabetes, Pre-Diabetes</small></p>
         </span>
         <span class="input-field input-field-non-wrappable">
-          <mat-radio-group class="radio-group" (change)="onChange($event)">
+          <mat-radio-group
+            class="radio-group"
+            formControlName = "q13">
             <mat-radio-button value="yes">Yes</mat-radio-button>
             <mat-radio-button value="no">No</mat-radio-button>
           </mat-radio-group>
@@ -203,7 +237,9 @@
               Psychotic Disorder, Intellectual Disability, Down Syndrome</small></p>
         </span>
         <span class="input-field input-field-non-wrappable">
-          <mat-radio-group class="radio-group" (change)="onChange($event)">
+          <mat-radio-group
+            class="radio-group"
+            formControlName = "q14">
             <mat-radio-button value="yes">Yes</mat-radio-button>
             <mat-radio-button value="no">No</mat-radio-button>
           </mat-radio-group>
@@ -216,7 +252,9 @@
               Blood Pressure</small></p>
         </span>
         <span class="input-field input-field-non-wrappable">
-          <mat-radio-group class="radio-group" (change)="onChange($event)">
+          <mat-radio-group
+            class="radio-group"
+            formControlName = "q15">
             <mat-radio-button value="yes">Yes</mat-radio-button>
             <mat-radio-button value="no">No</mat-radio-button>
           </mat-radio-group>
@@ -228,7 +266,9 @@
             <small>This includes Tetraplegia and Paraplegia</small></p>
         </span>
         <span class="input-field input-field-non-wrappable">
-          <mat-radio-group class="radio-group" (change)="onChange($event)">
+          <mat-radio-group
+            class="radio-group"
+            formControlName = "q16">
             <mat-radio-button value="yes">Yes</mat-radio-button>
             <mat-radio-button value="no">No</mat-radio-button>
           </mat-radio-group>
@@ -240,7 +280,9 @@
             Cerebrovascular Event</small></p>
         </span>
         <span class="input-field input-field-non-wrappable">
-          <mat-radio-group class="radio-group" (change)="onChange($event)">
+          <mat-radio-group
+            class="radio-group"
+            formControlName = "q17">
             <mat-radio-button value="yes">Yes</mat-radio-button>
             <mat-radio-button value="no">No</mat-radio-button>
           </mat-radio-group>
@@ -252,7 +294,9 @@
             or more medical conditions?</p>
         </span>
         <span class="input-field input-field-non-wrappable">
-          <mat-radio-group class="radio-group" (change)="onChange($event)">
+          <mat-radio-group
+            class="radio-group"
+            formControlName = "q18">
             <mat-radio-button value="yes">Yes</mat-radio-button>
             <mat-radio-button value="no">No</mat-radio-button>
           </mat-radio-group>
