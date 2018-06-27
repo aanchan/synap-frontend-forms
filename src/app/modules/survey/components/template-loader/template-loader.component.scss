@@ -1,3 +1,20 @@
+.instructions-block {
+  padding: 10px 10px 10px 25px;
+  background-color: #333333;
+
+  h4, p, i {
+    color: #fff;
+  }
+
+  h4 {
+    text-transform: uppercase;
+  }
+
+  i {
+    margin-right: 10px;
+  }
+}
+
 .question {
   font-size: 16px;
   width: 100%;
@@ -20,6 +37,7 @@
   small {
     display: block;
     padding: 5px 0;
+    font-weight: bold;
   }
 
   &__text {
@@ -91,4 +109,5 @@
   width: 100%;
   padding: 10px 15px 10px 25px;
   display: block;
+  font-weight: bold;
 }

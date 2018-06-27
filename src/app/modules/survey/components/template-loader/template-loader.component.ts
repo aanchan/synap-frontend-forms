@@ -41,9 +41,6 @@ export class TemplateLoaderComponent implements OnInit {
 
   ngOnInit(): void {
     this.loadSurveyForm(this.formId);
-    // setTimeout(() => {
-    //   this.addValidationStateWatcher();
-    // }, 0);
   }
 
   loadSurveyForm(formId: number): void {
@@ -67,11 +64,17 @@ export class TemplateLoaderComponent implements OnInit {
   }
 
   buildFormControls() {
-    for (let i = 1; i <= this.activeFormMeta.qCount; i++) {
-      if (i >= 8) {
-        this.formControls[`q${i}`] = [''];
-      } else {
-        this.formControls[`q${i}`] = ['', Validators.required];
+    if (this.activeFormMeta.id === 1) {
+      for (let i = 1; i <= this.activeFormMeta.qCount; i++) {
+        if (i >= 8) {
+          this.formControls[`q${i}`] = [''];
+        } else {
+          this.formControls[`q${i}`] = ['', Validators.required];
+        }
+      }
+    } else {
+      for (let i = 1; i <= this.activeFormMeta.qCount; i++) {
+          this.formControls[`q${i}`] = ['', Validators.required];
       }
     }
   }
@@ -92,7 +95,7 @@ export class TemplateLoaderComponent implements OnInit {
   }
 
   onFormSubmit(event) {
-    this.showFormError = this.surveyFormGroup.status === 'INVALID'? !this.showFormError : this.showFormError;
+    this.showFormError = this.surveyFormGroup.status === 'INVALID' ? !this.showFormError : this.showFormError;
     if (this.surveyFormGroup.status === 'VALID') {
       this.surService.saveSurveyEntries(this.surveyFormGroup.value);
     }
