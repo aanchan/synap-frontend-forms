@@ -33,6 +33,36 @@ export class TemplateLoaderComponent implements OnInit {
     {value: 'Nearly every day'},
   ];
 
+  emqOptions = [
+    {value: 'Not at all'},
+    {value: 'About once'},
+    {value: 'More than once, but less than once a month'},
+    {value: 'About once a month'},
+    {value: 'More than once a month, but less than once a week'},
+    {value: 'About once a week'},
+    {value: 'More than once a week, but less than once a day'},
+    {value: 'About once a day'},
+    {value: 'More than once a day'}
+  ];
+
+  sdsOptions = [
+    {value: 1},
+    {value: 2},
+    {value: 3},
+    {value: 4},
+    {value: 5},
+    {value: 6},
+    {value: 7},
+  ];
+
+  spssOptions = [
+    {value: 'Never'},
+    {value: 'Almost never'},
+    {value: 'Sometimes'},
+    {value: 'Fairly often'},
+    {value: 'Very often'}
+  ];
+
   constructor(
     private surService: SurveyService,
     private fb: FormBuilder,
@@ -95,7 +125,7 @@ export class TemplateLoaderComponent implements OnInit {
   }
 
   onFormSubmit(event) {
-    this.showFormError = this.surveyFormGroup.status === 'INVALID' ? !this.showFormError : this.showFormError;
+    this.showFormError = this.surveyFormGroup.status === 'INVALID' ? true : false;
     if (this.surveyFormGroup.status === 'VALID') {
       this.surService.saveSurveyEntries(this.surveyFormGroup.value);
     }

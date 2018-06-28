@@ -51,6 +51,7 @@
   & .input-field {
     flex-basis: 15%;
     padding: 15px 10px;
+
     &-wrappable {
       display: flex;
       flex-flow: row wrap;
@@ -71,6 +72,14 @@
       > mat-form-field {
         width: 200px;
       }
+    }
+  }
+}
+
+.input-field__checkbox {
+  mat-checkbox {
+    &:first-of-type {
+      margin-right: 5px !important;
     }
   }
 }

@@ -38,22 +38,26 @@
     {
       "id": 7,
       "title": "Santa Barbara Sense-of-Direction Scale",
-      "prefix": "SDS"
+      "prefix": "SDS",
+      "qCount": 12
     },
     {
       "id": 8,
       "title": "Pittsburgh Sleep Quality Index (PSQI)",
-      "prefix": "SPSQI"
+      "prefix": "SPSQI",
+      "qCount": 24
     },
     {
       "id": 9,
       "title": "Nutrition Goals Form",
-      "prefix": "SNG"
+      "prefix": "SNG",
+      "qCount": 2
     },
     {
       "id": 10,
       "title": "Perceived Stress Scale",
-      "prefix": "SPSS"
+      "prefix": "SPSS",
+      "qCount": 10
     },
     {
       "id": 11,

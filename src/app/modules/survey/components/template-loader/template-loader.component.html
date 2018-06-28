@@ -648,6 +648,18 @@
 </ng-template>
 
 <ng-template #EHITemplate>
+  <div class="instructions-block">
+    <h4><i class="fa fa-info-circle"></i> Instructions</h4>
+    <p>Please indicate your preferences in the use of hands in the following
+    activities by putting a check in the appropriate column. Where the
+    preference is so strong that you would never try to use the other hand,
+    unless absolutely forced to, put 2 checks. If in any case you are really
+    indifferent, put a check in both columns.</p>
+    <p>Some of the activities listed below require the use of both hands. In
+    these cases, the part of the task, or object, for which hand preference is
+    wanted is indicated in parentheses.</p>
+    <p>Please try and answer all of the questions, and only leave a blank if  you have no experience at all with the object or task.</p>
+  </div>
   <form #surveyForm (ngSubmit)="onFormSubmit(surveyForm)">
     <div class="question-th">
       <span class="question-th__text">
@@ -664,170 +676,130 @@
       <span class="question__text">
         <p>Writing</p>
       </span>
-      <span class="input-field input-non-wrappable">
-        <mat-radio-group class="radio-group">
-          <mat-radio-button value="not at all"></mat-radio-button>
-          <mat-radio-button value="several days"></mat-radio-button>
-        </mat-radio-group>
+      <span class="input-field input-non-wrappable input-field__checkbox">
+        <mat-checkbox></mat-checkbox>
+        <mat-checkbox></mat-checkbox>
       </span>
-      <span class="input-field input-non-wrappable">
-        <mat-radio-group class="radio-group">
-          <mat-radio-button value="not at all"></mat-radio-button>
-          <mat-radio-button value="several days"></mat-radio-button>
-        </mat-radio-group>
+      <span class="input-field input-non-wrappable input-field__checkbox">
+        <mat-checkbox></mat-checkbox>
+        <mat-checkbox></mat-checkbox>
       </span>
     </div>
     <div class="question">
       <span class="question__text">
         <p>Drawing</p>
       </span>
-      <span class="input-field input-non-wrappable">
-        <mat-radio-group class="radio-group">
-          <mat-radio-button value="not at all"></mat-radio-button>
-          <mat-radio-button value="several days"></mat-radio-button>
-        </mat-radio-group>
+      <span class="input-field input-non-wrappable input-field__checkbox">
+        <mat-checkbox></mat-checkbox>
+        <mat-checkbox></mat-checkbox>
       </span>
-      <span class="input-field input-non-wrappable">
-        <mat-radio-group class="radio-group">
-          <mat-radio-button value="not at all"></mat-radio-button>
-          <mat-radio-button value="several days"></mat-radio-button>
-        </mat-radio-group>
+      <span class="input-field input-non-wrappable input-field__checkbox">
+        <mat-checkbox></mat-checkbox>
+        <mat-checkbox></mat-checkbox>
       </span>
     </div>
     <div class="question">
       <span class="question__text">
         <p>Throwing</p>
       </span>
-      <span class="input-field input-non-wrappable">
-        <mat-radio-group class="radio-group">
-          <mat-radio-button value="not at all"></mat-radio-button>
-          <mat-radio-button value="several days"></mat-radio-button>
-        </mat-radio-group>
+      <span class="input-field input-non-wrappable input-field__checkbox">
+        <mat-checkbox></mat-checkbox>
+        <mat-checkbox></mat-checkbox>
       </span>
-      <span class="input-field input-non-wrappable">
-        <mat-radio-group class="radio-group">
-          <mat-radio-button value="not at all"></mat-radio-button>
-          <mat-radio-button value="several days"></mat-radio-button>
-        </mat-radio-group>
+      <span class="input-field input-non-wrappable input-field__checkbox">
+        <mat-checkbox></mat-checkbox>
+        <mat-checkbox></mat-checkbox>
       </span>
     </div>
     <div class="question">
       <span class="question__text">
         <p>Scissors</p>
       </span>
-      <span class="input-field input-non-wrappable">
-        <mat-radio-group class="radio-group">
-          <mat-radio-button value="not at all"></mat-radio-button>
-          <mat-radio-button value="several days"></mat-radio-button>
-        </mat-radio-group>
+      <span class="input-field input-non-wrappable input-field__checkbox">
+        <mat-checkbox></mat-checkbox>
+        <mat-checkbox></mat-checkbox>
       </span>
-      <span class="input-field input-non-wrappable">
-        <mat-radio-group class="radio-group">
-          <mat-radio-button value="not at all"></mat-radio-button>
-          <mat-radio-button value="several days"></mat-radio-button>
-        </mat-radio-group>
+      <span class="input-field input-non-wrappable input-field__checkbox">
+        <mat-checkbox></mat-checkbox>
+        <mat-checkbox></mat-checkbox>
       </span>
     </div>
     <div class="question">
       <span class="question__text">
         <p>Toothbrush</p>
       </span>
-      <span class="input-field input-non-wrappable">
-        <mat-radio-group class="radio-group">
-          <mat-radio-button value="not at all"></mat-radio-button>
-          <mat-radio-button value="several days"></mat-radio-button>
-        </mat-radio-group>
+      <span class="input-field input-non-wrappable input-field__checkbox">
+        <mat-checkbox></mat-checkbox>
+        <mat-checkbox></mat-checkbox>
       </span>
-      <span class="input-field input-non-wrappable">
-        <mat-radio-group class="radio-group">
-          <mat-radio-button value="not at all"></mat-radio-button>
-          <mat-radio-button value="several days"></mat-radio-button>
-        </mat-radio-group>
+      <span class="input-field input-non-wrappable input-field__checkbox">
+        <mat-checkbox></mat-checkbox>
+        <mat-checkbox></mat-checkbox>
       </span>
     </div>
     <div class="question">
       <span class="question__text">
         <p>Knife (without fork)</p>
       </span>
-      <span class="input-field input-non-wrappable">
-        <mat-radio-group class="radio-group">
-          <mat-radio-button value="not at all"></mat-radio-button>
-          <mat-radio-button value="several days"></mat-radio-button>
-        </mat-radio-group>
+      <span class="input-field input-non-wrappable input-field__checkbox">
+        <mat-checkbox></mat-checkbox>
+        <mat-checkbox></mat-checkbox>
       </span>
-      <span class="input-field input-non-wrappable">
-        <mat-radio-group class="radio-group">
-          <mat-radio-button value="not at all"></mat-radio-button>
-          <mat-radio-button value="several days"></mat-radio-button>
-        </mat-radio-group>
+      <span class="input-field input-non-wrappable input-field__checkbox">
+        <mat-checkbox></mat-checkbox>
+        <mat-checkbox></mat-checkbox>
       </span>
     </div>
     <div class="question">
       <span class="question__text">
         <p>Spoon</p>
       </span>
-      <span class="input-field input-non-wrappable">
-        <mat-radio-group class="radio-group">
-          <mat-radio-button value="not at all"></mat-radio-button>
-          <mat-radio-button value="several days"></mat-radio-button>
-        </mat-radio-group>
+      <span class="input-field input-non-wrappable input-field__checkbox">
+        <mat-checkbox></mat-checkbox>
+        <mat-checkbox></mat-checkbox>
       </span>
-      <span class="input-field input-non-wrappable">
-        <mat-radio-group class="radio-group">
-          <mat-radio-button value="not at all"></mat-radio-button>
-          <mat-radio-button value="several days"></mat-radio-button>
-        </mat-radio-group>
+      <span class="input-field input-non-wrappable input-field__checkbox">
+        <mat-checkbox></mat-checkbox>
+        <mat-checkbox></mat-checkbox>
       </span>
     </div>
     <div class="question">
       <span class="question__text">
         <p>Broom (upper hand)</p>
       </span>
-      <span class="input-field input-non-wrappable">
-        <mat-radio-group class="radio-group">
-          <mat-radio-button value="not at all"></mat-radio-button>
-          <mat-radio-button value="several days"></mat-radio-button>
-        </mat-radio-group>
+      <span class="input-field input-non-wrappable input-field__checkbox">
+        <mat-checkbox></mat-checkbox>
+        <mat-checkbox></mat-checkbox>
       </span>
-      <span class="input-field input-non-wrappable">
-        <mat-radio-group class="radio-group">
-          <mat-radio-button value="not at all"></mat-radio-button>
-          <mat-radio-button value="several days"></mat-radio-button>
-        </mat-radio-group>
+      <span class="input-field input-non-wrappable input-field__checkbox">
+        <mat-checkbox></mat-checkbox>
+        <mat-checkbox></mat-checkbox>
       </span>
     </div>
     <div class="question">
       <span class="question__text">
         <p>Striking Match (match)</p>
       </span>
-      <span class="input-field input-non-wrappable">
-        <mat-radio-group class="radio-group">
-          <mat-radio-button value="not at all"></mat-radio-button>
-          <mat-radio-button value="several days"></mat-radio-button>
-        </mat-radio-group>
+      <span class="input-field input-non-wrappable input-field__checkbox">
+        <mat-checkbox></mat-checkbox>
+        <mat-checkbox></mat-checkbox>
       </span>
-      <span class="input-field input-non-wrappable">
-        <mat-radio-group class="radio-group">
-          <mat-radio-button value="not at all"></mat-radio-button>
-          <mat-radio-button value="several days"></mat-radio-button>
-        </mat-radio-group>
+      <span class="input-field input-non-wrappable input-field__checkbox">
+        <mat-checkbox></mat-checkbox>
+        <mat-checkbox></mat-checkbox>
       </span>
     </div>
     <div class="question">
       <span class="question__text">
         <p>Opening box (lid)</p>
       </span>
-      <span class="input-field input-non-wrappable">
-        <mat-radio-group class="radio-group">
-          <mat-radio-button value="not at all"></mat-radio-button>
-          <mat-radio-button value="several days"></mat-radio-button>
-        </mat-radio-group>
+      <span class="input-field input-non-wrappable input-field__checkbox">
+        <mat-checkbox></mat-checkbox>
+        <mat-checkbox></mat-checkbox>
       </span>
-      <span class="input-field input-non-wrappable">
-        <mat-radio-group class="radio-group">
-          <mat-radio-button value="not at all"></mat-radio-button>
-          <mat-radio-button value="several days"></mat-radio-button>
-        </mat-radio-group>
+      <span class="input-field input-non-wrappable input-field__checkbox">
+        <mat-checkbox></mat-checkbox>
+        <mat-checkbox></mat-checkbox>
       </span>
     </div>
     <button class="hidden-form-btn" style="display: none" type="submit"></button>
@@ -835,333 +807,432 @@
 </ng-template>
 
 <ng-template #EMQTemplate>
-<form #surveyForm (ngSubmit)="onFormSubmit(surveyForm)">
-  <div class="question">
-    <span class="question__text">
-      <p>Forgetting where you have put something. Losing things around the house.</p>
-    </span>
-    <span class="input-field input-field-non-wrappable">
-      <mat-radio-group class="radio-group">
-        <mat-radio-button value="not at all">0</mat-radio-button>
-        <mat-radio-button value="several days">1</mat-radio-button>
-      </mat-radio-group>
-    </span>
+  <div class="instructions-block">
+    <h4><i class="fa fa-info-circle"></i> Instructions</h4>
+    <p>The 28 statements set out below are about forgetting things, something  everyone does to an extent. Please indicate how frequently the examples given have happened to you, (or  to  the  patient) over the last 3 months,  using the following scale:</p>
   </div>
-  <div class="question">
-    <span class="question__text">
-      <p>Failing to recognize places that you are told you have been to before.</p>
-    </span>
-    <span class="input-field input-field-non-wrappable">
-      <mat-radio-group class="radio-group">
-        <mat-radio-button value="yes">Yes</mat-radio-button>
-        <mat-radio-button value="no">No</mat-radio-button>
-      </mat-radio-group>
-    </span>
-  </div>
-  <div class="question">
-    <span class="question__text">
-      <p>Not remembering changes in you daily routine, such as a change in the place
-        where something is kept or a change in the time something happens. Following your
-        old routine by mistake.</p>
-    </span>
-    <span class="input-field input-field-non-wrappable">
-      <mat-radio-group class="radio-group">
-        <mat-radio-button value="yes">Yes</mat-radio-button>
-        <mat-radio-button value="no">No</mat-radio-button>
-      </mat-radio-group>
-    </span>
-  </div>
-  <div class="question">
-    <span class="question__text">
-      <p>Having to go back to check whether you have done something you meant to do.</p>
-    </span>
-    <span class="input-field input-field-non-wrappable">
-      <mat-radio-group class="radio-group">
-        <mat-radio-button value="yes">Yes</mat-radio-button>
-        <mat-radio-button value="no">No</mat-radio-button>
-      </mat-radio-group>
-    </span>
-  </div>
-  <div class="question">
-    <span class="question__text">
-      <p>Forgetting when it was that something happened; for example, whether it was
-        yesterday or last week.</p>
-    </span>
-    <span class="input-field input-field-non-wrappable">
-      <mat-radio-group class="radio-group">
-        <mat-radio-button value="yes">Yes</mat-radio-button>
-        <mat-radio-button value="no">No</mat-radio-button>
-      </mat-radio-group>
-    </span>
-  </div>
-  <div class="question">
-    <span class="question__text">
-      <p>Completely forgetting to take things with you, or leaving things behind and having to go back and fetch
-          them.</p>
-    </span>
-    <span class="input-field input-field-non-wrappable">
-      <mat-radio-group class="radio-group">
-        <mat-radio-button value="yes">Yes</mat-radio-button>
-        <mat-radio-button value="no">No</mat-radio-button>
-      </mat-radio-group>
-    </span>
-  </div>
-  <div class="question">
-    <span class="question__text">
-      <p>Forgetting you were told something yesterday or a few days ago, and maybe having to be reminded
-          about it.</p>
-    </span>
-    <span class="input-field input-field-non-wrappable">
-      <mat-radio-group class="radio-group">
-        <mat-radio-button value="yes">Yes</mat-radio-button>
-        <mat-radio-button value="no">No</mat-radio-button>
-      </mat-radio-group>
-    </span>
-  </div>
-  <div class="question">
-    <span class="question__text">
-      <p>Starting to read something (a book or an article in a newspaper or magazine) without realizing you have
-          already read it before.</p>
-    </span>
-    <span class="input-field input-field-non-wrappable">
-      <mat-radio-group class="radio-group">
-        <mat-radio-button value="yes">Yes</mat-radio-button>
-        <mat-radio-button value="no">No</mat-radio-button>
-      </mat-radio-group>
-    </span>
-  </div>
-  <div class="question">
-    <span class="question__text">
-      <p>Letting yourself ramble on, to speak about unimportant or irrelevant things.</p>
-    </span>
-    <span class="input-field input-field-non-wrappable">
-      <mat-radio-group class="radio-group">
-        <mat-radio-button value="yes">Yes</mat-radio-button>
-        <mat-radio-button value="no">No</mat-radio-button>
-      </mat-radio-group>
-    </span>
-  </div>
-  <div class="question">
-    <span class="question__text">
-      <p>Failing to recognize, by sight, close friends or relatives whom you meet frequently.</p>
-    </span>
-    <span class="input-field input-field-non-wrappable">
-      <mat-radio-group class="radio-group">
-        <mat-radio-button value="yes">Yes</mat-radio-button>
-        <mat-radio-button value="no">No</mat-radio-button>
-      </mat-radio-group>
-    </span>
-  </div>
-  <div class="question">
-    <span class="question__text">
-      <p>Having difficulty in picking up a new skill; for example, finding it hard to learn a new game, or to work
-          some new gadget after you have practised it once or twice.</p>
-    </span>
-    <span class="input-field input-field-non-wrappable">
-      <mat-radio-group class="radio-group">
-        <mat-radio-button value="yes">Yes</mat-radio-button>
-        <mat-radio-button value="no">No</mat-radio-button>
-      </mat-radio-group>
-    </span>
-  </div>
-  <div class="question">
-    <span class="question__text">
-      <p>Finding that a word is ‘on the tip of your tongue’. You know what it is but cannot quite find it.</p>
-    </span>
-    <span class="input-field input-field-non-wrappable">
-      <mat-radio-group class="radio-group">
-        <mat-radio-button value="yes">Yes</mat-radio-button>
-        <mat-radio-button value="no">No</mat-radio-button>
-      </mat-radio-group>
-    </span>
-  </div>
-  <div class="question">
-    <span class="question__text">
-      <p>Completely forgetting to do things you said you would do and you planned to do.</p>
-    </span>
-    <span class="input-field input-field-non-wrappable">
-      <mat-radio-group class="radio-group">
-        <mat-radio-button value="yes">Yes</mat-radio-button>
-        <mat-radio-button value="no">No</mat-radio-button>
-      </mat-radio-group>
-    </span>
-  </div>
-  <div class="question">
-    <span class="question__text">
-      <p>Forgetting important details of what you did or what happened to you the day before.</p>
-    </span>
-    <span class="input-field input-field-non-wrappable">
-      <mat-radio-group class="radio-group">
-        <mat-radio-button value="yes">Yes</mat-radio-button>
-        <mat-radio-button value="no">No</mat-radio-button>
-      </mat-radio-group>
-    </span>
-  </div>
-  <div class="question">
-    <span class="question__text">
-      <p>When talking to someone, forgetting what you have just said. Maybe saying, “What was I just talking
-          about?”</p>
-    </span>
-    <span class="input-field input-field-non-wrappable">
-      <mat-radio-group class="radio-group">
-        <mat-radio-button value="yes">Yes</mat-radio-button>
-        <mat-radio-button value="no">No</mat-radio-button>
-      </mat-radio-group>
-    </span>
-  </div>
-  <div class="question">
-    <span class="question__text">
-      <p>When reading a newspaper or magazine being unable to follow the thread of a story; losing track of what
-          it is about.</p>
-    </span>
-    <span class="input-field input-field-non-wrappable">
-      <mat-radio-group class="radio-group">
-        <mat-radio-button value="yes">Yes</mat-radio-button>
-        <mat-radio-button value="no">No</mat-radio-button>
-      </mat-radio-group>
-    </span>
-  </div>
-  <div class="question">
-    <span class="question__text">
-      <p>Forgetting to tell someone something important. Perhaps forgetting to pass on a message or remind
-          someone of something.</p>
-    </span>
-    <span class="input-field input-field-non-wrappable">
-      <mat-radio-group class="radio-group">
-        <mat-radio-button value="yes">Yes</mat-radio-button>
-        <mat-radio-button value="no">No</mat-radio-button>
-      </mat-radio-group>
-    </span>
-  </div>
-  <div class="question">
-    <span class="question__text">
-      <p>Forgetting important details about yourself; for example, your birthdate, or where you live.</p>
-    </span>
-    <span class="input-field input-field-non-wrappable">
-      <mat-radio-group class="radio-group">
-        <mat-radio-button value="yes">Yes</mat-radio-button>
-        <mat-radio-button value="no">No</mat-radio-button>
-      </mat-radio-group>
-    </span>
-  </div>
-  <div class="question">
-    <span class="question__text">
-      <p>Getting the details of what someone has told you mixed up and confused.</p>
-    </span>
-    <span class="input-field input-field-non-wrappable">
-      <mat-radio-group class="radio-group">
-        <mat-radio-button value="yes">Yes</mat-radio-button>
-        <mat-radio-button value="no">No</mat-radio-button>
-      </mat-radio-group>
-    </span>
-  </div>
-  <div class="question">
-    <span class="question__text">
-      <p>Telling someone a story or joke that you have told them once already.</p>
-    </span>
-    <span class="input-field input-field-non-wrappable">
-      <mat-radio-group class="radio-group">
-        <mat-radio-button value="yes">Yes</mat-radio-button>
-        <mat-radio-button value="no">No</mat-radio-button>
-      </mat-radio-group>
-    </span>
-  </div>
-  <div class="question">
-    <span class="question__text">
-      <p>Forgetting details of things you do regularly, whether at home or at work. For example,
-          forgetting details of what to do, or forgetting at what time to do it.</p>
-    </span>
-    <span class="input-field input-field-non-wrappable">
-      <mat-radio-group class="radio-group">
-        <mat-radio-button value="yes">Yes</mat-radio-button>
-        <mat-radio-button value="no">No</mat-radio-button>
-      </mat-radio-group>
-    </span>
-  </div>
-  <div class="question">
-    <span class="question__text">
-      <p>Finding that the faces of famous people seen on television or in photographs look unfamiliar.</p>
-    </span>
-    <span class="input-field input-field-non-wrappable">
-      <mat-radio-group class="radio-group">
-        <mat-radio-button value="yes">Yes</mat-radio-button>
-        <mat-radio-button value="no">No</mat-radio-button>
-      </mat-radio-group>
-    </span>
-  </div>
-  <div class="question">
-    <span class="question__text">
-      <p>Forgetting where things are normally kept or looking for them in the wrong place.</p>
-    </span>
-    <span class="input-field input-field-non-wrappable">
-      <mat-radio-group class="radio-group">
-        <mat-radio-button value="yes">Yes</mat-radio-button>
-        <mat-radio-button value="no">No</mat-radio-button>
-      </mat-radio-group>
-    </span>
-  </div>
-  <div class="question">
-    <span class="question__text">
-      <p>Getting lost or turning in the wrong direction on a journey, on a walk or in a building where you have
-          often been before.</p>
-    </span>
-    <span class="input-field input-field-non-wrappable">
-      <mat-radio-group class="radio-group">
-        <mat-radio-button value="yes">Yes</mat-radio-button>
-        <mat-radio-button value="no">No</mat-radio-button>
-      </mat-radio-group>
-    </span>
-  </div>
-  <div class="question">
-    <span class="question__text">
-      <p>Getting lost or turning in the wrong direction on a journey, on a walk or in a building where you have
-          only been once or twice before.</p>
-    </span>
-    <span class="input-field input-field-non-wrappable">
-      <mat-radio-group class="radio-group">
-        <mat-radio-button value="yes">Yes</mat-radio-button>
-        <mat-radio-button value="no">No</mat-radio-button>
-      </mat-radio-group>
-    </span>
-  </div>
-  <div class="question">
-    <span class="question__text">
-      <p>Doing some routine things twice by mistake. For example, putting 2 lots of tea in the teapot or going to
-          brush/comb your hair when you have just done so.</p>
-    </span>
-    <span class="input-field input-field-non-wrappable">
-      <mat-radio-group class="radio-group">
-        <mat-radio-button value="yes">Yes</mat-radio-button>
-        <mat-radio-button value="no">No</mat-radio-button>
-      </mat-radio-group>
-    </span>
-  </div>
-  <div class="question">
-    <span class="question__text">
-      <p>Repeating to someone what you have just told them or asking the same question twice.</p>
-    </span>
-    <span class="input-field input-field-non-wrappable">
-      <mat-radio-group class="radio-group">
-        <mat-radio-button value="yes">Yes</mat-radio-button>
-        <mat-radio-button value="no">No</mat-radio-button>
-      </mat-radio-group>
-    </span>
-  </div>
-  <button class="hidden-form-btn" style="display: none" type="submit"></button>
-</form>
+  <form
+    #surveyForm
+    [formGroup]="surveyFormGroup"
+    (ngSubmit)="onFormSubmit(surveyForm)">
+    <div *ngIf="showFormError"
+      class="invalid">
+      Please Fill in all required values
+    </div>
+    <div class="question">
+      <span class="question__text">
+        <p>Forgetting where you have put something. Losing things around the house.</p>
+      </span>
+      <span class="input-field input-field-non-wrappable">
+        <mat-form-field>
+          <mat-select placeholder="Select an option" formControlName="q1">
+            <mat-option *ngFor="let option of emqOptions" [value]="option.value">
+              {{ option.value }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </span>
+    </div>
+    <div class="question">
+      <span class="question__text">
+        <p>Failing to recognize places that you are told you have been to before.</p>
+      </span>
+      <span class="input-field input-field-non-wrappable">
+        <mat-form-field>
+          <mat-select placeholder="Select an option" formControlName="q2">
+            <mat-option *ngFor="let option of emqOptions" [value]="option.value">
+              {{ option.value }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </span>
+    </div>
+    <div class="question">
+      <span class="question__text">
+        <p>Not remembering changes in you daily routine, such as a change in the place
+          where something is kept or a change in the time something happens. Following your
+          old routine by mistake.</p>
+      </span>
+      <span class="input-field input-field-non-wrappable">
+        <mat-form-field>
+          <mat-select placeholder="Select an option" formControlName="q3">
+            <mat-option *ngFor="let option of emqOptions" [value]="option.value">
+              {{ option.value }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </span>
+    </div>
+    <div class="question">
+      <span class="question__text">
+        <p>Having to go back to check whether you have done something you meant to do.</p>
+      </span>
+      <span class="input-field input-field-non-wrappable">
+        <mat-form-field>
+          <mat-select placeholder="Select an option" formControlName="q4">
+            <mat-option *ngFor="let option of emqOptions" [value]="option.value">
+              {{ option.value }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </span>
+    </div>
+    <div class="question">
+      <span class="question__text">
+        <p>Forgetting when it was that something happened; for example, whether it was
+          yesterday or last week.</p>
+      </span>
+      <span class="input-field input-field-non-wrappable">
+        <mat-form-field>
+          <mat-select placeholder="Select an option" formControlName="q5">
+            <mat-option *ngFor="let option of emqOptions" [value]="option.value">
+              {{ option.value }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </span>
+    </div>
+    <div class="question">
+      <span class="question__text">
+        <p>Completely forgetting to take things with you, or leaving things behind and having to go back and fetch
+            them.</p>
+      </span>
+      <span class="input-field input-field-non-wrappable">
+        <mat-form-field>
+          <mat-select placeholder="Select an option" formControlName="q6">
+            <mat-option *ngFor="let option of emqOptions" [value]="option.value">
+              {{ option.value }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </span>
+    </div>
+    <div class="question">
+      <span class="question__text">
+        <p>Forgetting you were told something yesterday or a few days ago, and maybe having to be reminded
+            about it.</p>
+      </span>
+      <span class="input-field input-field-non-wrappable">
+        <mat-form-field>
+          <mat-select placeholder="Select an option" formControlName="q7">
+            <mat-option *ngFor="let option of emqOptions" [value]="option.value">
+              {{ option.value }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </span>
+    </div>
+    <div class="question">
+      <span class="question__text">
+        <p>Starting to read something (a book or an article in a newspaper or magazine) without realizing you have
+            already read it before.</p>
+      </span>
+      <span class="input-field input-field-non-wrappable">
+        <mat-form-field>
+          <mat-select placeholder="Select an option" formControlName="q8">
+            <mat-option *ngFor="let option of emqOptions" [value]="option.value">
+              {{ option.value }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </span>
+    </div>
+    <div class="question">
+      <span class="question__text">
+        <p>Letting yourself ramble on, to speak about unimportant or irrelevant things.</p>
+      </span>
+      <span class="input-field input-field-non-wrappable">
+        <mat-form-field>
+          <mat-select placeholder="Select an option" formControlName="q9">
+            <mat-option *ngFor="let option of emqOptions" [value]="option.value">
+              {{ option.value }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </span>
+    </div>
+    <div class="question">
+      <span class="question__text">
+        <p>Failing to recognize, by sight, close friends or relatives whom you meet frequently.</p>
+      </span>
+      <span class="input-field input-field-non-wrappable">
+        <mat-form-field>
+          <mat-select placeholder="Select an option" formControlName="q10">
+            <mat-option *ngFor="let option of emqOptions" [value]="option.value">
+              {{ option.value }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </span>
+    </div>
+    <div class="question">
+      <span class="question__text">
+        <p>Having difficulty in picking up a new skill; for example, finding it hard to learn a new game, or to work
+            some new gadget after you have practised it once or twice.</p>
+      </span>
+      <span class="input-field input-field-non-wrappable">
+        <mat-form-field>
+          <mat-select placeholder="Select an option" formControlName="q11">
+            <mat-option *ngFor="let option of emqOptions" [value]="option.value">
+              {{ option.value }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </span>
+    </div>
+    <div class="question">
+      <span class="question__text">
+        <p>Finding that a word is ‘on the tip of your tongue’. You know what it is but cannot quite find it.</p>
+      </span>
+      <span class="input-field input-field-non-wrappable">
+        <mat-form-field>
+          <mat-select placeholder="Select an option" formControlName="q12">
+            <mat-option *ngFor="let option of emqOptions" [value]="option.value">
+              {{ option.value }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </span>
+    </div>
+    <div class="question">
+      <span class="question__text">
+        <p>Completely forgetting to do things you said you would do and you planned to do.</p>
+      </span>
+      <span class="input-field input-field-non-wrappable">
+        <mat-form-field>
+          <mat-select placeholder="Select an option" formControlName="q13">
+            <mat-option *ngFor="let option of emqOptions" [value]="option.value">
+              {{ option.value }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </span>
+    </div>
+    <div class="question">
+      <span class="question__text">
+        <p>Forgetting important details of what you did or what happened to you the day before.</p>
+      </span>
+      <span class="input-field input-field-non-wrappable">
+        <mat-form-field>
+          <mat-select placeholder="Select an option" formControlName="q14">
+            <mat-option *ngFor="let option of emqOptions" [value]="option.value">
+              {{ option.value }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </span>
+    </div>
+    <div class="question">
+      <span class="question__text">
+        <p>When talking to someone, forgetting what you have just said. Maybe saying, “What was I just talking
+            about?”</p>
+      </span>
+      <span class="input-field input-field-non-wrappable">
+        <mat-form-field>
+          <mat-select placeholder="Select an option" formControlName="q15">
+            <mat-option *ngFor="let option of emqOptions" [value]="option.value">
+              {{ option.value }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </span>
+    </div>
+    <div class="question">
+      <span class="question__text">
+        <p>When reading a newspaper or magazine being unable to follow the thread of a story; losing track of what
+            it is about.</p>
+      </span>
+      <span class="input-field input-field-non-wrappable">
+        <mat-form-field>
+          <mat-select placeholder="Select an option" formControlName="q16">
+            <mat-option *ngFor="let option of emqOptions" [value]="option.value">
+              {{ option.value }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </span>
+    </div>
+    <div class="question">
+      <span class="question__text">
+        <p>Forgetting to tell someone something important. Perhaps forgetting to pass on a message or remind
+            someone of something.</p>
+      </span>
+      <span class="input-field input-field-non-wrappable">
+        <mat-form-field>
+          <mat-select placeholder="Select an option" formControlName="q17">
+            <mat-option *ngFor="let option of emqOptions" [value]="option.value">
+              {{ option.value }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </span>
+    </div>
+    <div class="question">
+      <span class="question__text">
+        <p>Forgetting important details about yourself; for example, your birthdate, or where you live.</p>
+      </span>
+      <span class="input-field input-field-non-wrappable">
+        <mat-form-field>
+          <mat-select placeholder="Select an option" formControlName="q18">
+            <mat-option *ngFor="let option of emqOptions" [value]="option.value">
+              {{ option.value }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </span>
+    </div>
+    <div class="question">
+      <span class="question__text">
+        <p>Getting the details of what someone has told you mixed up and confused.</p>
+      </span>
+      <span class="input-field input-field-non-wrappable">
+        <mat-form-field>
+          <mat-select placeholder="Select an option" formControlName="q19">
+            <mat-option *ngFor="let option of emqOptions" [value]="option.value">
+              {{ option.value }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </span>
+    </div>
+    <div class="question">
+      <span class="question__text">
+        <p>Telling someone a story or joke that you have told them once already.</p>
+      </span>
+      <span class="input-field input-field-non-wrappable">
+        <mat-form-field>
+          <mat-select placeholder="Select an option" formControlName="q20">
+            <mat-option *ngFor="let option of emqOptions" [value]="option.value">
+              {{ option.value }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </span>
+    </div>
+    <div class="question">
+      <span class="question__text">
+        <p>Forgetting details of things you do regularly, whether at home or at work. For example,
+            forgetting details of what to do, or forgetting at what time to do it.</p>
+      </span>
+      <span class="input-field input-field-non-wrappable">
+        <mat-form-field>
+          <mat-select placeholder="Select an option" formControlName="q21">
+            <mat-option *ngFor="let option of emqOptions" [value]="option.value">
+              {{ option.value }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </span>
+    </div>
+    <div class="question">
+      <span class="question__text">
+        <p>Finding that the faces of famous people seen on television or in photographs look unfamiliar.</p>
+      </span>
+      <span class="input-field input-field-non-wrappable">
+        <mat-form-field>
+          <mat-select placeholder="Select an option" formControlName="q22">
+            <mat-option *ngFor="let option of emqOptions" [value]="option.value">
+              {{ option.value }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </span>
+    </div>
+    <div class="question">
+      <span class="question__text">
+        <p>Forgetting where things are normally kept or looking for them in the wrong place.</p>
+      </span>
+      <span class="input-field input-field-non-wrappable">
+        <mat-form-field>
+          <mat-select placeholder="Select an option" formControlName="q23">
+            <mat-option *ngFor="let option of emqOptions" [value]="option.value">
+              {{ option.value }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </span>
+    </div>
+    <div class="question">
+      <span class="question__text">
+        <p>Getting lost or turning in the wrong direction on a journey, on a walk or in a building where you have
+            often been before.</p>
+      </span>
+      <span class="input-field input-field-non-wrappable">
+        <mat-form-field>
+          <mat-select placeholder="Select an option" formControlName="q24">
+            <mat-option *ngFor="let option of emqOptions" [value]="option.value">
+              {{ option.value }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </span>
+    </div>
+    <div class="question">
+      <span class="question__text">
+        <p>Getting lost or turning in the wrong direction on a journey, on a walk or in a building where you have
+            only been once or twice before.</p>
+      </span>
+      <span class="input-field input-field-non-wrappable">
+        <mat-form-field>
+          <mat-select placeholder="Select an option" formControlName="q25">
+            <mat-option *ngFor="let option of emqOptions" [value]="option.value">
+              {{ option.value }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </span>
+    </div>
+    <div class="question">
+      <span class="question__text">
+        <p>Doing some routine things twice by mistake. For example, putting 2 lots of tea in the teapot or going to
+            brush/comb your hair when you have just done so.</p>
+      </span>
+      <span class="input-field input-field-non-wrappable">
+        <mat-form-field>
+          <mat-select placeholder="Select an option" formControlName="q26">
+            <mat-option *ngFor="let option of emqOptions" [value]="option.value">
+              {{ option.value }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </span>
+    </div>
+    <div class="question">
+      <span class="question__text">
+        <p>Repeating to someone what you have just told them or asking the same question twice.</p>
+      </span>
+      <span class="input-field input-field-non-wrappable">
+        <mat-form-field>
+          <mat-select placeholder="Select an option" formControlName="q27">
+            <mat-option *ngFor="let option of emqOptions" [value]="option.value">
+              {{ option.value }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </span>
+    </div>
+    <button class="hidden-form-btn" style="display: none" type="submit"></button>
+  </form>
 </ng-template>
 
 <ng-template #SDFTemplate>
+  <div class="instructions-block">
+    <h4><i class="fa fa-info-circle"></i> Instructions</h4>
+    <p>PLEASE AVOID USING SLEEP AIDS WHILE WEARING THE MOTION WATCH AND  KEEPING YOURSLEEP DIARY</p>
+  </div>
 <form #surveyForm (ngSubmit)="onFormSubmit(surveyForm)">
   <div class="question">
     <span class="question__text">
       <p>What time did you getinto bed?</p>
     </span>
     <span class="input-field input-field-non-wrappable">
-      <mat-radio-group class="radio-group">
-        <mat-radio-button value="not at all">0</mat-radio-button>
-        <mat-radio-button value="several days">1</mat-radio-button>
-      </mat-radio-group>
+      <mat-form-field>
+        <mat-select placeholder="Select an option" formControlName="q28">
+          <mat-option *ngFor="let option of emqOptions" [value]="option.value">
+            {{ option.value }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
     </span>
   </div>
   <div class="question">
@@ -1169,10 +1240,13 @@
       <p>How long did it takeyou to fall asleep?</p>
     </span>
     <span class="input-field input-field-non-wrappable">
-      <mat-radio-group class="radio-group">
-        <mat-radio-button value="yes">Yes</mat-radio-button>
-        <mat-radio-button value="no">No</mat-radio-button>
-      </mat-radio-group>
+      <mat-form-field>
+        <mat-select placeholder="Select an option" formControlName="q29">
+          <mat-option *ngFor="let option of emqOptions" [value]="option.value">
+            {{ option.value }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
     </span>
   </div>
   <div class="question">
@@ -1180,10 +1254,13 @@
       <p>How many times didyou wake up, notcounting the final time?</p>
     </span>
     <span class="input-field input-field-non-wrappable">
-      <mat-radio-group class="radio-group">
-        <mat-radio-button value="yes">Yes</mat-radio-button>
-        <mat-radio-button value="no">No</mat-radio-button>
-      </mat-radio-group>
+      <mat-form-field>
+        <mat-select placeholder="Select an option" formControlName="q30">
+          <mat-option *ngFor="let option of emqOptions" [value]="option.value">
+            {{ option.value }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
     </span>
   </div>
   <div class="question">
@@ -1191,10 +1268,13 @@
       <p>In total, how long didthese awakenings last?</p>
     </span>
     <span class="input-field input-field-non-wrappable">
-      <mat-radio-group class="radio-group">
-        <mat-radio-button value="yes">Yes</mat-radio-button>
-        <mat-radio-button value="no">No</mat-radio-button>
-      </mat-radio-group>
+      <mat-form-field>
+        <mat-select placeholder="Select an option" formControlName="q31">
+          <mat-option *ngFor="let option of emqOptions" [value]="option.value">
+            {{ option.value }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
     </span>
   </div>
   <div class="question">
@@ -1202,10 +1282,13 @@
       <p>What time was yourfinal awakening?</p>
     </span>
     <span class="input-field input-field-non-wrappable">
-      <mat-radio-group class="radio-group">
-        <mat-radio-button value="yes">Yes</mat-radio-button>
-        <mat-radio-button value="no">No</mat-radio-button>
-      </mat-radio-group>
+      <mat-form-field>
+        <mat-select placeholder="Select an option" formControlName="q32">
+          <mat-option *ngFor="let option of emqOptions" [value]="option.value">
+            {{ option.value }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
     </span>
   </div>
   <div class="question">
@@ -1213,10 +1296,13 @@
       <p>What time did you finish trying to sleep?</p>
     </span>
     <span class="input-field input-field-non-wrappable">
-      <mat-radio-group class="radio-group">
-        <mat-radio-button value="yes">Yes</mat-radio-button>
-        <mat-radio-button value="no">No</mat-radio-button>
-      </mat-radio-group>
+      <mat-form-field>
+        <mat-select placeholder="Select an option" formControlName="q33">
+          <mat-option *ngFor="let option of emqOptions" [value]="option.value">
+            {{ option.value }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
     </span>
   </div>
   <div class="question">
@@ -1224,10 +1310,13 @@
       <p>How would you ratethe quality of yoursleep?</p>
     </span>
     <span class="input-field input-field-non-wrappable">
-      <mat-radio-group class="radio-group">
-        <mat-radio-button value="yes">Yes</mat-radio-button>
-        <mat-radio-button value="no">No</mat-radio-button>
-      </mat-radio-group>
+      <mat-form-field>
+        <mat-select placeholder="Select an option" formControlName="q34">
+          <mat-option *ngFor="let option of emqOptions" [value]="option.value">
+            {{ option.value }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
     </span>
   </div>
   <div class="question">
@@ -1235,10 +1324,13 @@
       <p>Comments (if applicable)</p>
     </span>
     <span class="input-field input-field-non-wrappable">
-      <mat-radio-group class="radio-group">
-        <mat-radio-button value="yes">Yes</mat-radio-button>
-        <mat-radio-button value="no">No</mat-radio-button>
-      </mat-radio-group>
+      <mat-form-field>
+        <mat-select placeholder="Select an option" formControlName="q35">
+          <mat-option *ngFor="let option of emqOptions" [value]="option.value">
+            {{ option.value }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
     </span>
   </div>
   <button class="hidden-form-btn" style="display: none" type="submit"></button>
@@ -1246,16 +1338,35 @@
 </ng-template>
 
 <ng-template #SDSTemplate>
-  <form #surveyForm (ngSubmit)="onFormSubmit(surveyForm)">
+  <div class="instructions-block">
+    <h4><i class="fa fa-info-circle"></i> Instructions</h4>
+    <p>This questionnaire consists of several statements about your spatial  and
+    navigational abilities, preferences, and experiences. After each statement,
+    please indicate your level of agreement with the statementon a scale from
+    1 to 7 where "1" means you strongly agree that the statement applies to you,
+    "7" means you strongly disagree that the statement applies to you and the
+    numbers in between means you somewhat agree or somewhat disagree. "4" means you neither agree nor disagree.</p>
+  </div>
+  <form
+    #surveyForm
+    [formGroup]="surveyFormGroup"
+    (ngSubmit)="onFormSubmit(surveyForm)">
+    <div *ngIf="showFormError"
+      class="invalid">
+      Please Fill in all required values
+    </div>
     <div class="question">
       <span class="question__text">
         <p>I am very good at giving directions.</p>
       </span>
       <span class="input-field input-field-non-wrappable">
-        <mat-radio-group class="radio-group">
-          <mat-radio-button value="not at all">0</mat-radio-button>
-          <mat-radio-button value="several days">1</mat-radio-button>
-        </mat-radio-group>
+        <mat-form-field>
+          <mat-select placeholder="Select an option" formControlName="q1">
+            <mat-option *ngFor="let option of sdsOptions" [value]="option.value">
+              {{ option.value }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
       </span>
     </div>
     <div class="question">
@@ -1263,10 +1374,13 @@
         <p>I have a poor memory for where I left things.</p>
       </span>
       <span class="input-field input-field-non-wrappable">
-        <mat-radio-group class="radio-group">
-          <mat-radio-button value="yes">Yes</mat-radio-button>
-          <mat-radio-button value="no">No</mat-radio-button>
-        </mat-radio-group>
+        <mat-form-field>
+          <mat-select placeholder="Select an option" formControlName="q2">
+            <mat-option *ngFor="let option of sdsOptions" [value]="option.value">
+              {{ option.value }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
       </span>
     </div>
     <div class="question">
@@ -1274,10 +1388,13 @@
         <p>I am very good at judging distances.</p>
       </span>
       <span class="input-field input-field-non-wrappable">
-        <mat-radio-group class="radio-group">
-          <mat-radio-button value="yes">Yes</mat-radio-button>
-          <mat-radio-button value="no">No</mat-radio-button>
-        </mat-radio-group>
+        <mat-form-field>
+          <mat-select placeholder="Select an option" formControlName="q3">
+            <mat-option *ngFor="let option of sdsOptions" [value]="option.value">
+              {{ option.value }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
       </span>
     </div>
     <div class="question">
@@ -1285,10 +1402,13 @@
         <p>My "sense of direction" is very good.</p>
       </span>
       <span class="input-field input-field-non-wrappable">
-        <mat-radio-group class="radio-group">
-          <mat-radio-button value="yes">Yes</mat-radio-button>
-          <mat-radio-button value="no">No</mat-radio-button>
-        </mat-radio-group>
+        <mat-form-field>
+          <mat-select placeholder="Select an option" formControlName="q4">
+            <mat-option *ngFor="let option of sdsOptions" [value]="option.value">
+              {{ option.value }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
       </span>
     </div>
     <div class="question">
@@ -1296,10 +1416,13 @@
         <p>I tend to think of my environment in terms of cardinal directions (N, S, E, W).</p>
       </span>
       <span class="input-field input-field-non-wrappable">
-        <mat-radio-group class="radio-group">
-          <mat-radio-button value="yes">Yes</mat-radio-button>
-          <mat-radio-button value="no">No</mat-radio-button>
-        </mat-radio-group>
+        <mat-form-field>
+          <mat-select placeholder="Select an option" formControlName="q5">
+            <mat-option *ngFor="let option of sdsOptions" [value]="option.value">
+              {{ option.value }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
       </span>
     </div>
     <div class="question">
@@ -1307,10 +1430,13 @@
         <p>I very easily get lost in a new city.</p>
       </span>
       <span class="input-field input-field-non-wrappable">
-        <mat-radio-group class="radio-group">
-          <mat-radio-button value="yes">Yes</mat-radio-button>
-          <mat-radio-button value="no">No</mat-radio-button>
-        </mat-radio-group>
+        <mat-form-field>
+          <mat-select placeholder="Select an option" formControlName="q6">
+            <mat-option *ngFor="let option of sdsOptions" [value]="option.value">
+              {{ option.value }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
       </span>
     </div>
     <div class="question">
@@ -1318,10 +1444,13 @@
         <p>I enjoy reading maps.</p>
       </span>
       <span class="input-field input-field-non-wrappable">
-        <mat-radio-group class="radio-group">
-          <mat-radio-button value="yes">Yes</mat-radio-button>
-          <mat-radio-button value="no">No</mat-radio-button>
-        </mat-radio-group>
+        <mat-form-field>
+          <mat-select placeholder="Select an option" formControlName="q7">
+            <mat-option *ngFor="let option of sdsOptions" [value]="option.value">
+              {{ option.value }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
       </span>
     </div>
     <div class="question">
@@ -1329,10 +1458,13 @@
         <p>I have trouble understanding directions.</p>
       </span>
       <span class="input-field input-field-non-wrappable">
-        <mat-radio-group class="radio-group">
-          <mat-radio-button value="yes">Yes</mat-radio-button>
-          <mat-radio-button value="no">No</mat-radio-button>
-        </mat-radio-group>
+        <mat-form-field>
+          <mat-select placeholder="Select an option" formControlName="q8">
+            <mat-option *ngFor="let option of sdsOptions" [value]="option.value">
+              {{ option.value }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
       </span>
     </div>
     <div class="question">
@@ -1340,10 +1472,13 @@
         <p>I am very good at reading maps.</p>
       </span>
       <span class="input-field input-field-non-wrappable">
-        <mat-radio-group class="radio-group">
-          <mat-radio-button value="yes">Yes</mat-radio-button>
-          <mat-radio-button value="no">No</mat-radio-button>
-        </mat-radio-group>
+        <mat-form-field>
+          <mat-select placeholder="Select an option" formControlName="q9">
+            <mat-option *ngFor="let option of sdsOptions" [value]="option.value">
+              {{ option.value }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
       </span>
     </div>
     <div class="question">
@@ -1351,10 +1486,13 @@
         <p>I don't remember routes very well while riding as a passenger in a car.</p>
       </span>
       <span class="input-field input-field-non-wrappable">
-        <mat-radio-group class="radio-group">
-          <mat-radio-button value="yes">Yes</mat-radio-button>
-          <mat-radio-button value="no">No</mat-radio-button>
-        </mat-radio-group>
+        <mat-form-field>
+          <mat-select placeholder="Select an option" formControlName="q10">
+            <mat-option *ngFor="let option of sdsOptions" [value]="option.value">
+              {{ option.value }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
       </span>
     </div>
     <div class="question">
@@ -1362,10 +1500,13 @@
         <p>I don't enjoy giving directions.</p>
       </span>
       <span class="input-field input-field-non-wrappable">
-        <mat-radio-group class="radio-group">
-          <mat-radio-button value="yes">Yes</mat-radio-button>
-          <mat-radio-button value="no">No</mat-radio-button>
-        </mat-radio-group>
+        <mat-form-field>
+          <mat-select placeholder="Select an option" formControlName="q11">
+            <mat-option *ngFor="let option of sdsOptions" [value]="option.value">
+              {{ option.value }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
       </span>
     </div>
     <div class="question">
@@ -1373,10 +1514,13 @@
         <p>It's not important to me to know where I am.</p>
       </span>
       <span class="input-field input-field-non-wrappable">
-        <mat-radio-group class="radio-group">
-          <mat-radio-button value="yes">Yes</mat-radio-button>
-          <mat-radio-button value="no">No</mat-radio-button>
-        </mat-radio-group>
+        <mat-form-field>
+          <mat-select placeholder="Select an option" formControlName="q12">
+            <mat-option *ngFor="let option of sdsOptions" [value]="option.value">
+              {{ option.value }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
       </span>
     </div>
     <button class="hidden-form-btn" style="display: none" type="submit"></button>
@@ -1384,201 +1528,315 @@
 </ng-template>
 
 <ng-template #SPSQITemplate>
-<form #surveyForm (ngSubmit)="onFormSubmit(surveyForm)">
+  <div class="instructions-block">
+    <h4><i class="fa fa-info-circle"></i> Instructions</h4>
+    <p>The following questions relate to your usual sleep habits during the
+    m past month only. Your answers should indicate the most accurate reply
+    for the majority of days and nights in the past month. Please answer all questions.</p>
+  </div>
+<form
+  #surveyForm
+  [formGroup]="surveyFormGroup"
+  (ngSubmit)="onFormSubmit(surveyForm)">
+  <div *ngIf="showFormError"
+    class="invalid">
+    Please Fill in all required values
+  </div>
   <div class="question">
     <span class="question__text">
       <p>During the past month, when have you usually gone to bed at night?.</p>
     </span>
-
-    <mat-radio-group class="radio-group">
-      <mat-radio-button value="not at all">0</mat-radio-button>
-      <mat-radio-button value="several days">1</mat-radio-button>
-    </mat-radio-group>
+    <span class="input-field input-field-non-wrappable">
+      <mat-form-field>
+        <input
+          matInput
+          placeholder="value"
+          type="number"
+          formControlName="q1">
+        <span matSuffix>days/week</span>
+      </mat-form-field>
+    </span>
   </div>
   <div class="question">
     <span class="question__text">
       <p>During the past month, how long (in minutes) has it usually taken you to fall
         asleep each night</p>
     </span>
-    <mat-radio-group class="radio-group">
-      <mat-radio-button value="yes">Yes</mat-radio-button>
-      <mat-radio-button value="no">No</mat-radio-button>
-    </mat-radio-group>
+    <span class="input-field input-field-non-wrappable">
+      <mat-form-field>
+        <input
+          matInput
+          placeholder="value"
+          type="number"
+          formControlName="q2">
+        <span matSuffix>days/week</span>
+      </mat-form-field>
+    </span>
   </div>
   <div class="question">
     <span class="question__text">
       <p>During the past month, when have you usually gotten up in the morning</p>
     </span>
-    <mat-radio-group class="radio-group">
-      <mat-radio-button value="yes">Yes</mat-radio-button>
-      <mat-radio-button value="no">No</mat-radio-button>
-    </mat-radio-group>
+    <span class="input-field input-field-non-wrappable">
+      <mat-form-field>
+        <input
+          matInput
+          placeholder="value"
+          type="number"
+          formControlName="q3">
+        <span matSuffix>days/week</span>
+      </mat-form-field>
+    </span>
   </div>
   <div class="question">
     <span class="question__text">
       <p>During the past month, how many hours of actual sleep did you get at night?
         (This may be different than the number of hours you spend in bed)</p>
     </span>
-    <mat-radio-group class="radio-group">
-      <mat-radio-button value="yes">Yes</mat-radio-button>
-      <mat-radio-button value="no">No</mat-radio-button>
-    </mat-radio-group>
-  </div>
-  <div class="question">
-    <span class="question__text">
-      <p>During the past month, how often have you had trouble sleeping because you</p>
+    <span class="input-field input-field-non-wrappable">
+      <mat-form-field>
+        <input
+          matInput
+          placeholder="value"
+          type="number"
+          formControlName="q4">
+        <span matSuffix>days/week</span>
+      </mat-form-field>
     </span>
-    <mat-radio-group class="radio-group">
-      <mat-radio-button value="yes">Yes</mat-radio-button>
-      <mat-radio-button value="no">No</mat-radio-button>
-    </mat-radio-group>
+  </div>
+  <div class="instructions-block">
+    <h4><i class="fa fa-info-circle"></i> Instructions</h4>
+    <p>For each of the remaining questions, check the one best response. Please
+    answer all questions</p>
+    <p>During the past month, how often have you had trouble sleeping because you:</p>
   </div>
   <div class="question">
     <span class="question__text">
       <p>...cannot get to sleep within 30 minutes</p>
     </span>
-    <mat-radio-group class="radio-group">
-      <mat-radio-button value="yes">Yes</mat-radio-button>
-      <mat-radio-button value="no">No</mat-radio-button>
-    </mat-radio-group>
+    <span class="input-field input-field-non-wrappable">
+      <mat-form-field>
+        <mat-select placeholder="Select an option" formControlName="q5">
+          <mat-option *ngFor="let option of sdsOptions" [value]="option.value">
+            {{ option.value }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </span>
   </div>
   <div class="question">
     <span class="question__text">
       <p>...wake up in the middle of the night or early morning</p>
     </span>
-    <mat-radio-group class="radio-group">
-      <mat-radio-button value="yes">Yes</mat-radio-button>
-      <mat-radio-button value="no">No</mat-radio-button>
-    </mat-radio-group>
+    <span class="input-field input-field-non-wrappable">
+      <mat-form-field>
+        <mat-select placeholder="Select an option" formControlName="q6">
+          <mat-option *ngFor="let option of sdsOptions" [value]="option.value">
+            {{ option.value }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </span>
   </div>
   <div class="question">
     <span class="question__text">
       <p>...have to get up to use the bathroom</p>
     </span>
-    <mat-radio-group class="radio-group">
-      <mat-radio-button value="yes">Yes</mat-radio-button>
-      <mat-radio-button value="no">No</mat-radio-button>
-    </mat-radio-group>
+    <span class="input-field input-field-non-wrappable">
+      <mat-form-field>
+        <mat-select placeholder="Select an option" formControlName="q7">
+          <mat-option *ngFor="let option of sdsOptions" [value]="option.value">
+            {{ option.value }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </span>
   </div>
   <div class="question">
     <span class="question__text">
       <p>...cannot breathe comfortably</p>
     </span>
-    <mat-radio-group class="radio-group">
-      <mat-radio-button value="yes">Yes</mat-radio-button>
-      <mat-radio-button value="no">No</mat-radio-button>
-    </mat-radio-group>
+    <span class="input-field input-field-non-wrappable">
+      <mat-form-field>
+        <mat-select placeholder="Select an option" formControlName="q8">
+          <mat-option *ngFor="let option of sdsOptions" [value]="option.value">
+            {{ option.value }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </span>
   </div>
   <div class="question">
     <span class="question__text">
       <p>...cough or snore loudly</p>
     </span>
-    <mat-radio-group class="radio-group">
-      <mat-radio-button value="yes">Yes</mat-radio-button>
-      <mat-radio-button value="no">No</mat-radio-button>
-    </mat-radio-group>
+    <span class="input-field input-field-non-wrappable">
+      <mat-form-field>
+        <mat-select placeholder="Select an option" formControlName="q9">
+          <mat-option *ngFor="let option of sdsOptions" [value]="option.value">
+            {{ option.value }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </span>
   </div>
   <div class="question">
     <span class="question__text">
       <p>...feel too cold</p>
     </span>
-    <mat-radio-group class="radio-group">
-      <mat-radio-button value="yes">Yes</mat-radio-button>
-      <mat-radio-button value="no">No</mat-radio-button>
-    </mat-radio-group>
+    <span class="input-field input-field-non-wrappable">
+      <mat-form-field>
+        <mat-select placeholder="Select an option" formControlName="q10">
+          <mat-option *ngFor="let option of sdsOptions" [value]="option.value">
+            {{ option.value }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </span>
   </div>
   <div class="question">
     <span class="question__text">
       <p>...feel too hot</p>
     </span>
-    <mat-radio-group class="radio-group">
-      <mat-radio-button value="yes">Yes</mat-radio-button>
-      <mat-radio-button value="no">No</mat-radio-button>
-    </mat-radio-group>
+    <span class="input-field input-field-non-wrappable">
+      <mat-form-field>
+        <mat-select placeholder="Select an option" formControlName="q11">
+          <mat-option *ngFor="let option of sdsOptions" [value]="option.value">
+            {{ option.value }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </span>
   </div>
   <div class="question">
     <span class="question__text">
       <p>...had bad dreams</p>
     </span>
-    <mat-radio-group class="radio-group">
-      <mat-radio-button value="yes">Yes</mat-radio-button>
-      <mat-radio-button value="no">No</mat-radio-button>
-    </mat-radio-group>
+    <span class="input-field input-field-non-wrappable">
+      <mat-form-field>
+        <mat-select placeholder="Select an option" formControlName="q12">
+          <mat-option *ngFor="let option of sdsOptions" [value]="option.value">
+            {{ option.value }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </span>
   </div>
   <div class="question">
     <span class="question__text">
       <p>...have pains</p>
     </span>
-    <mat-radio-group class="radio-group">
-      <mat-radio-button value="yes">Yes</mat-radio-button>
-      <mat-radio-button value="no">No</mat-radio-button>
-    </mat-radio-group>
+    <span class="input-field input-field-non-wrappable">
+      <mat-form-field>
+        <mat-select placeholder="Select an option" formControlName="q13">
+          <mat-option *ngFor="let option of sdsOptions" [value]="option.value">
+            {{ option.value }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </span>
   </div>
   <div class="question">
     <span class="question__text">
       <p>Other reason(s), please describe</p>
     </span>
-    <mat-radio-group class="radio-group">
-      <mat-radio-button value="yes">Yes</mat-radio-button>
-      <mat-radio-button value="no">No</mat-radio-button>
-    </mat-radio-group>
+    <span class="input-field input-field-non-wrappable">
+      <mat-form-field>
+        <input
+          matInput
+          placeholder="value"
+          type="number"
+          formControlName="q13">
+        <span matSuffix>days/week</span>
+      </mat-form-field>
+    </span>
   </div>
   <div class="question">
     <span class="question__text">
       <p>How often during the past month have you had trouble sleeping because of this</p>
     </span>
-    <mat-radio-group class="radio-group">
-      <mat-radio-button value="yes">Yes</mat-radio-button>
-      <mat-radio-button value="no">No</mat-radio-button>
-    </mat-radio-group>
+    <span class="input-field input-field-non-wrappable">
+      <mat-form-field>
+        <mat-select placeholder="Select an option" formControlName="q14">
+          <mat-option *ngFor="let option of sdsOptions" [value]="option.value">
+            {{ option.value }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </span>
   </div>
   <div class="question">
     <span class="question__text">
       <p>During the past month, how would you rate your sleep quality overall?</p>
     </span>
-    <mat-radio-group class="radio-group">
-      <mat-radio-button value="yes">Yes</mat-radio-button>
-      <mat-radio-button value="no">No</mat-radio-button>
-    </mat-radio-group>
+    <span class="input-field input-field-non-wrappable">
+      <mat-form-field>
+        <mat-select placeholder="Select an option" formControlName="q15">
+          <mat-option *ngFor="let option of sdsOptions" [value]="option.value">
+            {{ option.value }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </span>
   </div>
   <div class="question">
     <span class="question__text">
       <p>During the past month, how often have you taken medicine (prescribed or "over
         the counter") to help you sleep</p>
     </span>
-    <mat-radio-group class="radio-group">
-      <mat-radio-button value="yes">Yes</mat-radio-button>
-      <mat-radio-button value="no">No</mat-radio-button>
-    </mat-radio-group>
+    <span class="input-field input-field-non-wrappable">
+      <mat-form-field>
+        <mat-select placeholder="Select an option" formControlName="q16">
+          <mat-option *ngFor="let option of sdsOptions" [value]="option.value">
+            {{ option.value }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </span>
   </div>
   <div class="question">
     <span class="question__text">
       <p>During the past month, how often have you had trouble staying awake while driving,
         eating meals, or engaging in social activity</p>
     </span>
-    <mat-radio-group class="radio-group">
-      <mat-radio-button value="yes">Yes</mat-radio-button>
-      <mat-radio-button value="no">No</mat-radio-button>
-    </mat-radio-group>
+    <span class="input-field input-field-non-wrappable">
+      <mat-form-field>
+        <mat-select placeholder="Select an option" formControlName="q17">
+          <mat-option *ngFor="let option of sdsOptions" [value]="option.value">
+            {{ option.value }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </span>
   </div>
   <div class="question">
     <span class="question__text">
       <p>During the past month, how much of a problem has it been for you to keep up
         enough enthusiasm to get things done?</p>
     </span>
-    <mat-radio-group class="radio-group">
-      <mat-radio-button value="yes">Yes</mat-radio-button>
-      <mat-radio-button value="no">No</mat-radio-button>
-    </mat-radio-group>
+    <span class="input-field input-field-non-wrappable">
+      <mat-form-field>
+        <mat-select placeholder="Select an option" formControlName="q18">
+          <mat-option *ngFor="let option of sdsOptions" [value]="option.value">
+            {{ option.value }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </span>
   </div>
   <div class="question">
     <span class="question__text">
       <p>Do you have a bed partner or a roommate?</p>
     </span>
-    <mat-radio-group class="radio-group">
-      <mat-radio-button value="yes">Yes</mat-radio-button>
-      <mat-radio-button value="no">No</mat-radio-button>
-    </mat-radio-group>
+    <span class="input-field input-field-non-wrappable">
+      <mat-form-field>
+        <mat-select placeholder="Select an option" formControlName="q19">
+          <mat-option *ngFor="let option of sdsOptions" [value]="option.value">
+            {{ option.value }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </span>
   </div>
   <div>
     <p>If you have a roommate or bed partner, ask him/her how often in the past month you have had...</p>
@@ -1587,62 +1845,100 @@
     <span class="question__text">
       <p>...loud snoring</p>
     </span>
-    <mat-radio-group class="radio-group">
-      <mat-radio-button value="yes">Yes</mat-radio-button>
-      <mat-radio-button value="no">No</mat-radio-button>
-    </mat-radio-group>
+    <span class="input-field input-field-non-wrappable">
+      <mat-form-field>
+        <mat-select placeholder="Select an option" formControlName="q20">
+          <mat-option *ngFor="let option of sdsOptions" [value]="option.value">
+            {{ option.value }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </span>
   </div>
   <div class="question">
     <span class="question__text">
       <p>...long pauses between breaths while asleep</p>
     </span>
-    <mat-radio-group class="radio-group">
-      <mat-radio-button value="yes">Yes</mat-radio-button>
-      <mat-radio-button value="no">No</mat-radio-button>
-    </mat-radio-group>
+    <span class="input-field input-field-non-wrappable">
+      <mat-form-field>
+        <mat-select placeholder="Select an option" formControlName="q21">
+          <mat-option *ngFor="let option of sdsOptions" [value]="option.value">
+            {{ option.value }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </span>
   </div>
   <div class="question">
     <span class="question__text">
       <p>...legs twitching or jerking while you sleep</p>
     </span>
-    <mat-radio-group class="radio-group">
-      <mat-radio-button value="yes">Yes</mat-radio-button>
-      <mat-radio-button value="no">No</mat-radio-button>
-    </mat-radio-group>
+    <span class="input-field input-field-non-wrappable">
+      <mat-form-field>
+        <mat-select placeholder="Select an option" formControlName="q22">
+          <mat-option *ngFor="let option of sdsOptions" [value]="option.value">
+            {{ option.value }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </span>
   </div>
   <div class="question">
     <span class="question__text">
       <p>...episodes of disorientation or confusion during sleep</p>
     </span>
-    <mat-radio-group class="radio-group">
-      <mat-radio-button value="yes">Yes</mat-radio-button>
-      <mat-radio-button value="no">No</mat-radio-button>
-    </mat-radio-group>
+    <span class="input-field input-field-non-wrappable">
+      <mat-form-field>
+        <mat-select placeholder="Select an option" formControlName="q23">
+          <mat-option *ngFor="let option of sdsOptions" [value]="option.value">
+            {{ option.value }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </span>
   </div>
   <div class="question">
     <span class="question__text">
       <p>...Other restlessness while you sleep. Please describe:</p>
     </span>
-    <mat-radio-group class="radio-group">
-      <mat-radio-button value="yes">Yes</mat-radio-button>
-      <mat-radio-button value="no">No</mat-radio-button>
-    </mat-radio-group>
+    <span class="input-field input-field-non-wrappable">
+      <mat-form-field>
+        <mat-select placeholder="Select an option" formControlName="q24">
+          <mat-option *ngFor="let option of sdsOptions" [value]="option.value">
+            {{ option.value }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </span>
   </div>
   <button class="hidden-form-btn" style="display: none" type="submit"></button>
 </form>
 </ng-template>
 
 <ng-template #SNGTemplate>
-  <form #surveyForm (ngSubmit)="onFormSubmit(surveyForm)">
+  <div class="instructions-block">
+    <h4><i class="fa fa-info-circle"></i> Instructions</h4>
+    <p>We are interested in learning more about your nutrition and healthy  living goals. Please describe your current goals and any barriers that are  preventing you from achieving them.</p>
+  </div>
+  <form
+    #surveyForm
+    [formGroup]="surveyFormGroup"
+    (ngSubmit)="onFormSubmit(surveyForm)">
+    <div *ngIf="showFormError"
+      class="invalid">
+      Please Fill in all required values
+    </div>
     <div class="question">
       <span class="question__text">
         <p>What are your nutrition and healthy living goals?</p>
       </span>
       <span class="input-field input-field-non-wrappable">
-        <mat-radio-group class="radio-group">
-          <mat-radio-button value="not at all">0</mat-radio-button>
-          <mat-radio-button value="several days">1</mat-radio-button>
-        </mat-radio-group>
+        <mat-form-field>
+          <textarea
+            matInput
+            placeholder="value"
+            formControlName="q1"></textarea>
+        </mat-form-field>
       </span>
     </div>
     <div class="question">
@@ -1650,10 +1946,12 @@
         <p>What barriers are you facing to prevent you from achieving these goals?</p>
       </span>
       <span class="input-field input-field-non-wrappable">
-        <mat-radio-group class="radio-group">
-          <mat-radio-button value="yes">Yes</mat-radio-button>
-          <mat-radio-button value="no">No</mat-radio-button>
-        </mat-radio-group>
+        <mat-form-field>
+          <textarea
+            matInput
+            placeholder="value"
+            formControlName="q2"></textarea>
+        </mat-form-field>
       </span>
     </div>
     <button class="hidden-form-btn" style="display: none" type="submit"></button>
@@ -1661,17 +1959,31 @@
 </ng-template>
 
 <ng-template #SPSSTemplate>
-<form #surveyForm (ngSubmit)="onFormSubmit(surveyForm)">
+  <div class="instructions-block">
+    <h4><i class="fa fa-info-circle"></i> Instructions</h4>
+    <p>The questions in this scale ask you about your feelings and thoughts during the last month. In each case, you will be asked to indicate by circling how often you felt or thought a certain way.</p>
+  </div>
+  <form
+    #surveyForm
+    [formGroup]="surveyFormGroup"
+    (ngSubmit)="onFormSubmit(surveyForm)">
+  <div *ngIf="showFormError"
+    class="invalid">
+    Please Fill in all required values
+  </div>
   <div class="question">
     <span class="question__text">
       <p>In the last month, how often have you been upset because of
           something that happened unexpectedly?</p>
     </span>
     <span class="input-field input-field-non-wrappable">
-      <mat-radio-group class="radio-group">
-        <mat-radio-button value="not at all">0</mat-radio-button>
-        <mat-radio-button value="several days">1</mat-radio-button>
-      </mat-radio-group>
+      <mat-form-field>
+        <mat-select placeholder="Select an option" formControlName="q1">
+          <mat-option *ngFor="let option of spssOptions" [value]="option.value">
+            {{ option.value }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
     </span>
   </div>
   <div class="question">
@@ -1680,10 +1992,13 @@
           control the important things in your life?</p>
     </span>
     <span class="input-field input-field-non-wrappable">
-      <mat-radio-group class="radio-group">
-        <mat-radio-button value="yes">Yes</mat-radio-button>
-        <mat-radio-button value="no">No</mat-radio-button>
-      </mat-radio-group>
+      <mat-form-field>
+        <mat-select placeholder="Select an option" formControlName="q2">
+          <mat-option *ngFor="let option of spssOptions" [value]="option.value">
+            {{ option.value }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
     </span>
   </div>
   <div class="question">
@@ -1691,10 +2006,13 @@
       <p>In the last month, how often have you felt nervous and “stressed”?</p>
     </span>
     <span class="input-field input-field-non-wrappable">
-      <mat-radio-group class="radio-group">
-        <mat-radio-button value="yes">Yes</mat-radio-button>
-        <mat-radio-button value="no">No</mat-radio-button>
-      </mat-radio-group>
+      <mat-form-field>
+        <mat-select placeholder="Select an option" formControlName="q3">
+          <mat-option *ngFor="let option of spssOptions" [value]="option.value">
+            {{ option.value }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
     </span>
   </div>
   <div class="question">
@@ -1703,10 +2021,13 @@
           ability to handle your personal problems?</p>
     </span>
     <span class="input-field input-field-non-wrappable">
-      <mat-radio-group class="radio-group">
-      <mat-radio-button value="yes">Yes</mat-radio-button>
-      <mat-radio-button value="no">No</mat-radio-button>
-      </mat-radio-group>
+      <mat-form-field>
+        <mat-select placeholder="Select an option" formControlName="q4">
+          <mat-option *ngFor="let option of spssOptions" [value]="option.value">
+            {{ option.value }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
     </span>
   </div>
   <div class="question">
@@ -1715,10 +2036,13 @@
           your way?</p>
     </span>
     <span class="input-field input-field-non-wrappable">
-      <mat-radio-group class="radio-group">
-      <mat-radio-button value="yes">Yes</mat-radio-button>
-      <mat-radio-button value="no">No</mat-radio-button>
-      </mat-radio-group>
+      <mat-form-field>
+        <mat-select placeholder="Select an option" formControlName="q5">
+          <mat-option *ngFor="let option of spssOptions" [value]="option.value">
+            {{ option.value }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
     </span>
   </div>
   <div class="question">
@@ -1727,10 +2051,13 @@
           with all the things that you had to do?</p>
     </span>
     <span class="input-field input-field-non-wrappable">
-      <mat-radio-group class="radio-group">
-      <mat-radio-button value="yes">Yes</mat-radio-button>
-      <mat-radio-button value="no">No</mat-radio-button>
-      </mat-radio-group>
+      <mat-form-field>
+        <mat-select placeholder="Select an option" formControlName="q6">
+          <mat-option *ngFor="let option of spssOptions" [value]="option.value">
+            {{ option.value }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
     </span>
   </div>
   <div class="question">
@@ -1739,10 +2066,13 @@
           in your life?</p>
     </span>
     <span class="input-field input-field-non-wrappable">
-      <mat-radio-group class="radio-group">
-      <mat-radio-button value="yes">Yes</mat-radio-button>
-      <mat-radio-button value="no">No</mat-radio-button>
-      </mat-radio-group>
+      <mat-form-field>
+        <mat-select placeholder="Select an option" formControlName="q7">
+          <mat-option *ngFor="let option of spssOptions" [value]="option.value">
+            {{ option.value }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
     </span>
   </div>
   <div class="question">
@@ -1751,10 +2081,13 @@
           things?</p>
     </span>
     <span class="input-field input-field-non-wrappable">
-      <mat-radio-group class="radio-group">
-      <mat-radio-button value="yes">Yes</mat-radio-button>
-      <mat-radio-button value="no">No</mat-radio-button>
-      </mat-radio-group>
+      <mat-form-field>
+        <mat-select placeholder="Select an option" formControlName="q8">
+          <mat-option *ngFor="let option of spssOptions" [value]="option.value">
+            {{ option.value }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
     </span>
   </div>
   <div class="question">
@@ -1763,10 +2096,13 @@
           things that were outside of your control?</p>
     </span>
     <span class="input-field input-field-non-wrappable">
-      <mat-radio-group class="radio-group">
-      <mat-radio-button value="yes">Yes</mat-radio-button>
-      <mat-radio-button value="no">No</mat-radio-button>
-      </mat-radio-group>
+      <mat-form-field>
+        <mat-select placeholder="Select an option" formControlName="q9">
+          <mat-option *ngFor="let option of spssOptions" [value]="option.value">
+            {{ option.value }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
     </span>
   </div>
   <div class="question">
@@ -1775,10 +2111,13 @@
           so high that you could not overcome them?</p>
     </span>
     <span class="input-field input-field-non-wrappable">
-      <mat-radio-group class="radio-group">
-      <mat-radio-button value="yes">Yes</mat-radio-button>
-      <mat-radio-button value="no">No</mat-radio-button>
-      </mat-radio-group>
+      <mat-form-field>
+        <mat-select placeholder="Select an option" formControlName="q10">
+          <mat-option *ngFor="let option of spssOptions" [value]="option.value">
+            {{ option.value }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
     </span>
   </div>
   <button class="hidden-form-btn" style="display: none" type="submit"></button>
