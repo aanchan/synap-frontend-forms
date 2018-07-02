@@ -67,6 +67,10 @@ export class SurveyService {
       title: 'Motor Function Assessment',
       formID: 13
     },
+    {
+      title: 'Participant Weight History',
+      formID: 14
+    },
   ];
 
   constructor(private http: HttpClient) { }

@@ -38,6 +38,9 @@
   <ng-container *ngSwitchCase="'MFATemplate'">
     <ng-container *ngTemplateOutlet="MFATemplate"></ng-container>
   </ng-container>
+  <ng-container *ngSwitchCase="'PWHTemplate'">
+    <ng-container *ngTemplateOutlet="PWHTemplate"></ng-container>
+  </ng-container>
 </ng-container>
 
 <ng-template #PARQTemplate>
@@ -2125,16 +2128,40 @@
 </ng-template>
 
 <ng-template #CHAMPSTemplate>
-<form #surveyForm (ngSubmit)="onFormSubmit(surveyForm)">
-  <div class="question">
-    <span class="question__text">
-      <p>Visit with friends or family (other than those you live with)?</p>
+   <div class="instructions-block">
+    <h4><i class="fa fa-info-circle"></i> Instructions</h4>
+    <p>This questionnaire is about activities that you may have done in the past
+    4 weeks. The questions on the following pages are similar to the example
+    shown below:</p>
+    <blockquote>
+      <p>If you DID the activity in the past 4 weeks:</p>
+      <ul>
+        <li>Step #1 - Check the YES box</li>
+        <li>Step #2 - Think about <em>how many</em> TIMES <em>a week</em> you
+        usually did it, and write your response in the space provided.</li>
+        <li>Circle how many TOTAL HOURS <em>in a typical week</em> you did the activity.</li>
+      </ul>
+    </blockquote>
+    <p><b>Here is an example of how Mrs. Jones would answer question #1: </b>
+      Mrs. Jones usually visits her friends Maria and Olga <em>twice a
+      week.</em> She usually spends <em>One</em> hour on Monday with Maria and
+      <em>two</em> hours on Wednesday with Olga. Therefore, the total hours a
+      week that she visits with friends is <em>3</em> hours a week.</p>
+  </div>
+  <form
+    #surveyForm
+    [formGroup]="surveyFormGroup"
+    (ngSubmit)="onFormSubmit(surveyForm)">
+  <div *ngIf="showFormError"
+    class="invalid">
+    Please Fill in all required values
+  </div>
+  <div class="question-th">
+    <span class="question-th__text">
+      <p>In a typical week during the past 4 weeks, did you ...</p>
     </span>
-    <span class="input-field input-field-non-wrappable">
-      <mat-radio-group class="radio-group">
-        <mat-radio-button value="not at all">0</mat-radio-button>
-        <mat-radio-button value="several days">1</mat-radio-button>
-      </mat-radio-group>
+    <span class="question-th__text question-th-span-2">
+      <p>How many TOTAL <em>hours a week</em> did you usually do it?</p>
     </span>
   </div>
   <div class="question">
@@ -2142,10 +2169,27 @@
       <p>Visit with friends or family (other than those you live with)?</p>
     </span>
     <span class="input-field input-field-non-wrappable">
-      <mat-radio-group class="radio-group">
-        <mat-radio-button value="yes">Yes</mat-radio-button>
-        <mat-radio-button value="no">No</mat-radio-button>
-      </mat-radio-group>
+      <mat-form-field>
+        <mat-select placeholder="Select an option" formControlName="q1">
+          <mat-option *ngFor="let option of champsOptions" [value]="option.value">
+            {{ option.value }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </span>
+  </div>
+  <div class="question">
+    <span class="question__text">
+      <p>Visit with friends or family (other than those you live with)?</p>
+    </span>
+    <span class="input-field input-field-non-wrappable">
+      <mat-form-field>
+        <mat-select placeholder="Select an option" formControlName="q2">
+          <mat-option *ngFor="let option of champsOptions" [value]="option.value">
+            {{ option.value }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
     </span>
   </div>
   <div class="question">
@@ -2153,10 +2197,13 @@
       <p>Go to the senior center?</p>
     </span>
     <span class="input-field input-field-non-wrappable">
-      <mat-radio-group class="radio-group">
-        <mat-radio-button value="yes">Yes</mat-radio-button>
-        <mat-radio-button value="no">No</mat-radio-button>
-      </mat-radio-group>
+      <mat-form-field>
+        <mat-select placeholder="Select an option" formControlName="q3">
+          <mat-option *ngFor="let option of champsOptions" [value]="option.value">
+            {{ option.value }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
     </span>
   </div>
   <div class="question">
@@ -2164,10 +2211,13 @@
       <p>Do volunteer work?</p>
     </span>
     <span class="input-field input-field-non-wrappable">
-      <mat-radio-group class="radio-group">
-        <mat-radio-button value="yes">Yes</mat-radio-button>
-        <mat-radio-button value="no">No</mat-radio-button>
-      </mat-radio-group>
+      <mat-form-field>
+        <mat-select placeholder="Select an option" formControlName="q4">
+          <mat-option *ngFor="let option of champsOptions" [value]="option.value">
+            {{ option.value }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
     </span>
   </div>
   <div class="question">
@@ -2175,10 +2225,13 @@
       <p>Attend church or take part in church activities?</p>
     </span>
     <span class="input-field input-field-non-wrappable">
-      <mat-radio-group class="radio-group">
-        <mat-radio-button value="yes">Yes</mat-radio-button>
-        <mat-radio-button value="no">No</mat-radio-button>
-      </mat-radio-group>
+      <mat-form-field>
+        <mat-select placeholder="Select an option" formControlName="q5">
+          <mat-option *ngFor="let option of champsOptions" [value]="option.value">
+            {{ option.value }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
     </span>
   </div>
   <div class="question">
@@ -2186,10 +2239,13 @@
       <p>Attend other club or group meetings?</p>
     </span>
     <span class="input-field input-field-non-wrappable">
-      <mat-radio-group class="radio-group">
-        <mat-radio-button value="yes">Yes</mat-radio-button>
-        <mat-radio-button value="no">No</mat-radio-button>
-      </mat-radio-group>
+      <mat-form-field>
+        <mat-select placeholder="Select an option" formControlName="q6">
+          <mat-option *ngFor="let option of champsOptions" [value]="option.value">
+            {{ option.value }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
     </span>
   </div>
   <div class="question">
@@ -2197,10 +2253,13 @@
       <p>Use a computer?</p>
     </span>
     <span class="input-field input-field-non-wrappable">
-      <mat-radio-group class="radio-group">
-        <mat-radio-button value="yes">Yes</mat-radio-button>
-        <mat-radio-button value="no">No</mat-radio-button>
-      </mat-radio-group>
+      <mat-form-field>
+        <mat-select placeholder="Select an option" formControlName="q7">
+          <mat-option *ngFor="let option of champsOptions" [value]="option.value">
+            {{ option.value }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
     </span>
   </div>
   <div class="question">
@@ -2208,10 +2267,13 @@
       <p>Dance (such as square, folk, line, ballroom) (do not count aerobic dance here)?</p>
     </span>
     <span class="input-field input-field-non-wrappable">
-      <mat-radio-group class="radio-group">
-        <mat-radio-button value="yes">Yes</mat-radio-button>
-        <mat-radio-button value="no">No</mat-radio-button>
-      </mat-radio-group>
+      <mat-form-field>
+        <mat-select placeholder="Select an option" formControlName="q8">
+          <mat-option *ngFor="let option of champsOptions" [value]="option.value">
+            {{ option.value }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
     </span>
   </div>
   <div class="question">
@@ -2219,10 +2281,13 @@
       <p>Do woodworking, needlework, drawing, or other arts or crafts?</p>
     </span>
     <span class="input-field input-field-non-wrappable">
-      <mat-radio-group class="radio-group">
-        <mat-radio-button value="yes">Yes</mat-radio-button>
-        <mat-radio-button value="no">No</mat-radio-button>
-      </mat-radio-group>
+      <mat-form-field>
+        <mat-select placeholder="Select an option" formControlName="q9">
+          <mat-option *ngFor="let option of champsOptions" [value]="option.value">
+            {{ option.value }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
     </span>
   </div>
   <div class="question">
@@ -2230,10 +2295,13 @@
       <p>Play golf, carrying or pulling your equipment (count walking time only)?</p>
     </span>
     <span class="input-field input-field-non-wrappable">
-      <mat-radio-group class="radio-group">
-        <mat-radio-button value="yes">Yes</mat-radio-button>
-        <mat-radio-button value="no">No</mat-radio-button>
-      </mat-radio-group>
+      <mat-form-field>
+        <mat-select placeholder="Select an option" formControlName="q10">
+          <mat-option *ngFor="let option of champsOptions" [value]="option.value">
+            {{ option.value }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
     </span>
   </div>
   <div class="question">
@@ -2241,10 +2309,13 @@
       <p>Attend a concert, movie, lecture, or sport event?</p>
     </span>
     <span class="input-field input-field-non-wrappable">
-      <mat-radio-group class="radio-group">
-        <mat-radio-button value="yes">Yes</mat-radio-button>
-        <mat-radio-button value="no">No</mat-radio-button>
-      </mat-radio-group>
+      <mat-form-field>
+        <mat-select placeholder="Select an option" formControlName="q11">
+          <mat-option *ngFor="let option of champsOptions" [value]="option.value">
+            {{ option.value }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
     </span>
   </div>
   <div class="question">
@@ -2252,10 +2323,13 @@
       <p>Play cards, bingo, or board games with other people?</p>
     </span>
     <span class="input-field input-field-non-wrappable">
-      <mat-radio-group class="radio-group">
-        <mat-radio-button value="yes">Yes</mat-radio-button>
-        <mat-radio-button value="no">No</mat-radio-button>
-      </mat-radio-group>
+      <mat-form-field>
+        <mat-select placeholder="Select an option" formControlName="q12">
+          <mat-option *ngFor="let option of champsOptions" [value]="option.value">
+            {{ option.value }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
     </span>
   </div>
   <div class="question">
@@ -2263,10 +2337,13 @@
       <p>Shoot pool or billiards?</p>
     </span>
     <span class="input-field input-field-non-wrappable">
-      <mat-radio-group class="radio-group">
-        <mat-radio-button value="yes">Yes</mat-radio-button>
-        <mat-radio-button value="no">No</mat-radio-button>
-      </mat-radio-group>
+      <mat-form-field>
+        <mat-select placeholder="Select an option" formControlName="q13">
+          <mat-option *ngFor="let option of champsOptions" [value]="option.value">
+            {{ option.value }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
     </span>
   </div>
   <div class="question">
@@ -2274,10 +2351,13 @@
       <p>Play singles tennis (do not count doubles)?</p>
     </span>
     <span class="input-field input-field-non-wrappable">
-      <mat-radio-group class="radio-group">
-        <mat-radio-button value="yes">Yes</mat-radio-button>
-        <mat-radio-button value="no">No</mat-radio-button>
-      </mat-radio-group>
+      <mat-form-field>
+        <mat-select placeholder="Select an option" formControlName="q14">
+          <mat-option *ngFor="let option of champsOptions" [value]="option.value">
+            {{ option.value }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
     </span>
   </div>
   <div class="question">
@@ -2285,10 +2365,13 @@
       <p>Skate (ice, roller, in-line)?</p>
     </span>
     <span class="input-field input-field-non-wrappable">
-      <mat-radio-group class="radio-group">
-        <mat-radio-button value="yes">Yes</mat-radio-button>
-        <mat-radio-button value="no">No</mat-radio-button>
-      </mat-radio-group>
+      <mat-form-field>
+        <mat-select placeholder="Select an option" formControlName="q15">
+          <mat-option *ngFor="let option of champsOptions" [value]="option.value">
+            {{ option.value }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
     </span>
   </div>
   <div class="question">
@@ -2296,10 +2379,13 @@
       <p>Play a musical instrument?</p>
     </span>
     <span class="input-field input-field-non-wrappable">
-      <mat-radio-group class="radio-group">
-        <mat-radio-button value="yes">Yes</mat-radio-button>
-        <mat-radio-button value="no">No</mat-radio-button>
-      </mat-radio-group>
+      <mat-form-field>
+        <mat-select placeholder="Select an option" formControlName="q16">
+          <mat-option *ngFor="let option of champsOptions" [value]="option.value">
+            {{ option.value }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
     </span>
   </div>
   <div class="question">
@@ -2307,10 +2393,13 @@
       <p>Read?</p>
     </span>
     <span class="input-field input-field-non-wrappable">
-      <mat-radio-group class="radio-group">
-        <mat-radio-button value="yes">Yes</mat-radio-button>
-        <mat-radio-button value="no">No</mat-radio-button>
-      </mat-radio-group>
+      <mat-form-field>
+        <mat-select placeholder="Select an option" formControlName="q17">
+          <mat-option *ngFor="let option of champsOptions" [value]="option.value">
+            {{ option.value }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
     </span>
   </div>
   <div class="question">
@@ -2318,10 +2407,13 @@
       <p>Do heavy work around the house (such as washing windows, cleaning gutters)?</p>
     </span>
     <span class="input-field input-field-non-wrappable">
-      <mat-radio-group class="radio-group">
-        <mat-radio-button value="yes">Yes</mat-radio-button>
-        <mat-radio-button value="no">No</mat-radio-button>
-      </mat-radio-group>
+      <mat-form-field>
+        <mat-select placeholder="Select an option" formControlName="q18">
+          <mat-option *ngFor="let option of champsOptions" [value]="option.value">
+            {{ option.value }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
     </span>
   </div>
   <div class="question">
@@ -2329,10 +2421,13 @@
       <p>Do light work around the house (such as sweeping or vacuuming)?</p>
     </span>
     <span class="input-field input-field-non-wrappable">
-      <mat-radio-group class="radio-group">
-        <mat-radio-button value="yes">Yes</mat-radio-button>
-        <mat-radio-button value="no">No</mat-radio-button>
-      </mat-radio-group>
+      <mat-form-field>
+        <mat-select placeholder="Select an option" formControlName="q19">
+          <mat-option *ngFor="let option of champsOptions" [value]="option.value">
+            {{ option.value }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
     </span>
   </div>
   <div class="question">
@@ -2340,10 +2435,13 @@
       <p>Do heavy gardening (such as spading, raking)?</p>
     </span>
     <span class="input-field input-field-non-wrappable">
-      <mat-radio-group class="radio-group">
-        <mat-radio-button value="yes">Yes</mat-radio-button>
-        <mat-radio-button value="no">No</mat-radio-button>
-      </mat-radio-group>
+      <mat-form-field>
+        <mat-select placeholder="Select an option" formControlName="q20">
+          <mat-option *ngFor="let option of champsOptions" [value]="option.value">
+            {{ option.value }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
     </span>
   </div>
   <div class="question">
@@ -2351,10 +2449,13 @@
       <p>Do light gardening (such as watering plants)?</p>
     </span>
     <span class="input-field input-field-non-wrappable">
-      <mat-radio-group class="radio-group">
-        <mat-radio-button value="yes">Yes</mat-radio-button>
-        <mat-radio-button value="no">No</mat-radio-button>
-      </mat-radio-group>
+      <mat-form-field>
+        <mat-select placeholder="Select an option" formControlName="q21">
+          <mat-option *ngFor="let option of champsOptions" [value]="option.value">
+            {{ option.value }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
     </span>
   </div>
   <div class="question">
@@ -2362,10 +2463,13 @@
       <p>Work on your car, truck, lawn mower, or other machinery?</p>
     </span>
     <span class="input-field input-field-non-wrappable">
-      <mat-radio-group class="radio-group">
-        <mat-radio-button value="yes">Yes</mat-radio-button>
-        <mat-radio-button value="no">No</mat-radio-button>
-      </mat-radio-group>
+      <mat-form-field>
+        <mat-select placeholder="Select an option" formControlName="q22">
+          <mat-option *ngFor="let option of champsOptions" [value]="option.value">
+            {{ option.value }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
     </span>
   </div>
   <div class="question">
@@ -2373,10 +2477,13 @@
       <p>Jog or run?</p>
     </span>
     <span class="input-field input-field-non-wrappable">
-      <mat-radio-group class="radio-group">
-        <mat-radio-button value="yes">Yes</mat-radio-button>
-        <mat-radio-button value="no">No</mat-radio-button>
-      </mat-radio-group>
+      <mat-form-field>
+        <mat-select placeholder="Select an option" formControlName="q23">
+          <mat-option *ngFor="let option of champsOptions" [value]="option.value">
+            {{ option.value }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
     </span>
   </div>
   <div class="question">
@@ -2384,10 +2491,13 @@
       <p>Walk uphill or hike uphill (count only uphill part)?</p>
     </span>
     <span class="input-field input-field-non-wrappable">
-      <mat-radio-group class="radio-group">
-        <mat-radio-button value="yes">Yes</mat-radio-button>
-        <mat-radio-button value="no">No</mat-radio-button>
-      </mat-radio-group>
+      <mat-form-field>
+        <mat-select placeholder="Select an option" formControlName="q24">
+          <mat-option *ngFor="let option of champsOptions" [value]="option.value">
+            {{ option.value }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
     </span>
   </div>
   <div class="question">
@@ -2395,10 +2505,13 @@
       <p>Walk fast or briskly for exercise (do not count walking leisurely or uphill)?</p>
     </span>
     <span class="input-field input-field-non-wrappable">
-      <mat-radio-group class="radio-group">
-        <mat-radio-button value="yes">Yes</mat-radio-button>
-        <mat-radio-button value="no">No</mat-radio-button>
-      </mat-radio-group>
+      <mat-form-field>
+        <mat-select placeholder="Select an option" formControlName="q25">
+          <mat-option *ngFor="let option of champsOptions" [value]="option.value">
+            {{ option.value }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
     </span>
   </div>
   <div class="question">
@@ -2406,10 +2519,13 @@
       <p>Walk to do errands (such as to/from a store or to take children to school – count walk time only)?</p>
     </span>
     <span class="input-field input-field-non-wrappable">
-      <mat-radio-group class="radio-group">
-        <mat-radio-button value="yes">Yes</mat-radio-button>
-        <mat-radio-button value="no">No</mat-radio-button>
-      </mat-radio-group>
+      <mat-form-field>
+        <mat-select placeholder="Select an option" formControlName="q26">
+          <mat-option *ngFor="let option of champsOptions" [value]="option.value">
+            {{ option.value }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
     </span>
   </div>
   <div class="question">
@@ -2417,10 +2533,13 @@
       <p>Walk leisurely for exercise or pleasure?</p>
     </span>
     <span class="input-field input-field-non-wrappable">
-      <mat-radio-group class="radio-group">
-        <mat-radio-button value="yes">Yes</mat-radio-button>
-        <mat-radio-button value="no">No</mat-radio-button>
-      </mat-radio-group>
+      <mat-form-field>
+        <mat-select placeholder="Select an option" formControlName="q27">
+          <mat-option *ngFor="let option of champsOptions" [value]="option.value">
+            {{ option.value }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
     </span>
   </div>
   <div class="question">
@@ -2428,10 +2547,13 @@
       <p>Ride a bicycle or stationary cycle?</p>
     </span>
     <span class="input-field input-field-non-wrappable">
-      <mat-radio-group class="radio-group">
-        <mat-radio-button value="yes">Yes</mat-radio-button>
-        <mat-radio-button value="no">No</mat-radio-button>
-      </mat-radio-group>
+      <mat-form-field>
+        <mat-select placeholder="Select an option" formControlName="q28">
+          <mat-option *ngFor="let option of champsOptions" [value]="option.value">
+            {{ option.value }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
     </span>
   </div>
   <div class="question">
@@ -2439,10 +2561,13 @@
       <p>Do other aerobic machines such as rowing, or step machines (do not count treadmill or stationary cycle)?</p>
     </span>
     <span class="input-field input-field-non-wrappable">
-      <mat-radio-group class="radio-group">
-        <mat-radio-button value="yes">Yes</mat-radio-button>
-        <mat-radio-button value="no">No</mat-radio-button>
-      </mat-radio-group>
+      <mat-form-field>
+        <mat-select placeholder="Select an option" formControlName="q29">
+          <mat-option *ngFor="let option of champsOptions" [value]="option.value">
+            {{ option.value }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
     </span>
   </div>
   <div class="question">
@@ -2450,10 +2575,13 @@
       <p>Do water exercises (do not count other swimming)?</p>
     </span>
     <span class="input-field input-field-non-wrappable">
-      <mat-radio-group class="radio-group">
-        <mat-radio-button value="yes">Yes</mat-radio-button>
-        <mat-radio-button value="no">No</mat-radio-button>
-      </mat-radio-group>
+      <mat-form-field>
+        <mat-select placeholder="Select an option" formControlName="q30">
+          <mat-option *ngFor="let option of champsOptions" [value]="option.value">
+            {{ option.value }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
     </span>
   </div>
   <div class="question">
@@ -2461,10 +2589,13 @@
       <p>Swim moderately or fast?</p>
     </span>
     <span class="input-field input-field-non-wrappable">
-      <mat-radio-group class="radio-group">
-        <mat-radio-button value="yes">Yes</mat-radio-button>
-        <mat-radio-button value="no">No</mat-radio-button>
-      </mat-radio-group>
+      <mat-form-field>
+        <mat-select placeholder="Select an option" formControlName="q31">
+          <mat-option *ngFor="let option of champsOptions" [value]="option.value">
+            {{ option.value }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
     </span>
   </div>
   <div class="question">
@@ -2472,10 +2603,13 @@
       <p>Swim gently?</p>
     </span>
     <span class="input-field input-field-non-wrappable">
-      <mat-radio-group class="radio-group">
-        <mat-radio-button value="yes">Yes</mat-radio-button>
-        <mat-radio-button value="no">No</mat-radio-button>
-      </mat-radio-group>
+      <mat-form-field>
+        <mat-select placeholder="Select an option" formControlName="q32">
+          <mat-option *ngFor="let option of champsOptions" [value]="option.value">
+            {{ option.value }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
     </span>
   </div>
   <div class="question">
@@ -2483,10 +2617,13 @@
       <p>Do stretching or flexibility exercises (do not count yoga or Tai-chi)?</p>
     </span>
     <span class="input-field input-field-non-wrappable">
-      <mat-radio-group class="radio-group">
-        <mat-radio-button value="yes">Yes</mat-radio-button>
-        <mat-radio-button value="no">No</mat-radio-button>
-      </mat-radio-group>
+      <mat-form-field>
+        <mat-select placeholder="Select an option" formControlName="q33">
+          <mat-option *ngFor="let option of champsOptions" [value]="option.value">
+            {{ option.value }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
     </span>
   </div>
   <div class="question">
@@ -2494,10 +2631,13 @@
       <p>Do yoga or Tai-chi?</p>
     </span>
     <span class="input-field input-field-non-wrappable">
-      <mat-radio-group class="radio-group">
-        <mat-radio-button value="yes">Yes</mat-radio-button>
-        <mat-radio-button value="no">No</mat-radio-button>
-      </mat-radio-group>
+      <mat-form-field>
+        <mat-select placeholder="Select an option" formControlName="q34">
+          <mat-option *ngFor="let option of champsOptions" [value]="option.value">
+            {{ option.value }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
     </span>
   </div>
   <div class="question">
@@ -2505,10 +2645,13 @@
       <p>Do aerobics or aerobic dancing?</p>
     </span>
     <span class="input-field input-field-non-wrappable">
-      <mat-radio-group class="radio-group">
-        <mat-radio-button value="yes">Yes</mat-radio-button>
-        <mat-radio-button value="no">No</mat-radio-button>
-      </mat-radio-group>
+      <mat-form-field>
+        <mat-select placeholder="Select an option" formControlName="q35">
+          <mat-option *ngFor="let option of champsOptions" [value]="option.value">
+            {{ option.value }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
     </span>
   </div>
   <div class="question">
@@ -2517,10 +2660,13 @@
         than 5 lbs., weight machines, or push-ups)?</p>
     </span>
     <span class="input-field input-field-non-wrappable">
-      <mat-radio-group class="radio-group">
-        <mat-radio-button value="yes">Yes</mat-radio-button>
-        <mat-radio-button value="no">No</mat-radio-button>
-      </mat-radio-group>
+      <mat-form-field>
+        <mat-select placeholder="Select an option" formControlName="q36">
+          <mat-option *ngFor="let option of champsOptions" [value]="option.value">
+            {{ option.value }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
     </span>
   </div>
   <div class="question">
@@ -2529,10 +2675,13 @@
         or elastic bands)?</p>
     </span>
     <span class="input-field input-field-non-wrappable">
-      <mat-radio-group class="radio-group">
-        <mat-radio-button value="yes">Yes</mat-radio-button>
-        <mat-radio-button value="no">No</mat-radio-button>
-      </mat-radio-group>
+      <mat-form-field>
+        <mat-select placeholder="Select an option" formControlName="q37">
+          <mat-option *ngFor="let option of champsOptions" [value]="option.value">
+            {{ option.value }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
     </span>
   </div>
   <div class="question">
@@ -2541,10 +2690,13 @@
         exercises (do not count strength training)?</p>
     </span>
     <span class="input-field input-field-non-wrappable">
-      <mat-radio-group class="radio-group">
-        <mat-radio-button value="yes">Yes</mat-radio-button>
-        <mat-radio-button value="no">No</mat-radio-button>
-      </mat-radio-group>
+      <mat-form-field>
+        <mat-select placeholder="Select an option" formControlName="q38">
+          <mat-option *ngFor="let option of champsOptions" [value]="option.value">
+            {{ option.value }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
     </span>
   </div>
   <div class="question">
@@ -2552,10 +2704,13 @@
       <p>Play basketball, soccer, or racquetball (do not count time on sidelines)?</p>
     </span>
     <span class="input-field input-field-non-wrappable">
-      <mat-radio-group class="radio-group">
-        <mat-radio-button value="yes">Yes</mat-radio-button>
-        <mat-radio-button value="no">No</mat-radio-button>
-      </mat-radio-group>
+      <mat-form-field>
+        <mat-select placeholder="Select an option" formControlName="q39">
+          <mat-option *ngFor="let option of champsOptions" [value]="option.value">
+            {{ option.value }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
     </span>
   </div>
   <div class="question">
@@ -2563,10 +2718,13 @@
       <p>Any other types of physical activity not previously mentioned (please specify)?</p>
     </span>
     <span class="input-field input-field-non-wrappable">
-      <mat-radio-group class="radio-group">
-        <mat-radio-button value="yes">Yes</mat-radio-button>
-        <mat-radio-button value="no">No</mat-radio-button>
-      </mat-radio-group>
+      <mat-form-field>
+        <mat-select placeholder="Select an option" formControlName="q40">
+          <mat-option *ngFor="let option of champsOptions" [value]="option.value">
+            {{ option.value }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
     </span>
   </div>
   <button class="hidden-form-btn" style="display: none" type="submit"></button>
@@ -2574,9 +2732,22 @@
 </ng-template>
 
 <ng-template #SBSATemplate>
-<form #surveyForm (ngSubmit)="onFormSubmit(surveyForm)">
-  <div>
-    <h4>Stop</h4>
+  <div class="instructions-block">
+    <h4><i class="fa fa-info-circle"></i> Instructions</h4>
+    <p>Please answer all questions</p>
+  </div>
+  <form
+    #surveyForm
+    [formGroup]="surveyFormGroup"
+    (ngSubmit)="onFormSubmit(surveyForm)">
+  <div *ngIf="showFormError"
+    class="invalid">
+    Please Fill in all required values
+  </div>
+  <div class="question-th">
+    <span class="question-th__text">
+      <p>STOP</p>
+    </span>
   </div>
   <div class="question">
     <span class="question__text">
@@ -2584,9 +2755,9 @@
           enough to be heard through closed doors)?</p>
     </span>
     <span class="input-field input-field-non-wrappable">
-      <mat-radio-group class="radio-group">
-        <mat-radio-button value="not at all">0</mat-radio-button>
-        <mat-radio-button value="several days">1</mat-radio-button>
+      <mat-radio-group class="radio-group" formControlName="q1">
+        <mat-radio-button value="yes">Yes</mat-radio-button>
+        <mat-radio-button value="no">No</mat-radio-button>
       </mat-radio-group>
     </span>
   </div>
@@ -2596,7 +2767,7 @@
           daytime?</p>
     </span>
     <span class="input-field input-field-non-wrappable">
-      <mat-radio-group class="radio-group">
+      <mat-radio-group class="radio-group" formControlName="q2">
         <mat-radio-button value="yes">Yes</mat-radio-button>
         <mat-radio-button value="no">No</mat-radio-button>
       </mat-radio-group>
@@ -2608,7 +2779,7 @@
           your sleep?</p>
     </span>
     <span class="input-field input-field-non-wrappable">
-      <mat-radio-group class="radio-group">
+      <mat-radio-group class="radio-group" formControlName="q3">
         <mat-radio-button value="yes">Yes</mat-radio-button>
         <mat-radio-button value="no">No</mat-radio-button>
       </mat-radio-group>
@@ -2620,21 +2791,23 @@
           PRESSURE?</p>
     </span>
     <span class="input-field input-field-non-wrappable">
-      <mat-radio-group class="radio-group">
+      <mat-radio-group class="radio-group" formControlName="q4">
         <mat-radio-button value="yes">Yes</mat-radio-button>
         <mat-radio-button value="no">No</mat-radio-button>
       </mat-radio-group>
     </span>
   </div>
-  <div>
-    <h4>Bang</h4>
+  <div class="question-th">
+    <span class="question-th__text">
+      <p>BANG</p>
+    </span>
   </div>
   <div class="question">
     <span class="question__text">
       <p>BMI more than 35kg/m2?</p>
     </span>
     <span class="input-field input-field-non-wrappable">
-      <mat-radio-group class="radio-group">
+      <mat-radio-group class="radio-group" formControlName="q5">
         <mat-radio-button value="yes">Yes</mat-radio-button>
         <mat-radio-button value="no">No</mat-radio-button>
       </mat-radio-group>
@@ -2645,7 +2818,7 @@
       <p>AGE over 50 years old?</p>
     </span>
     <span class="input-field input-field-non-wrappable">
-      <mat-radio-group class="radio-group">
+      <mat-radio-group class="radio-group" formControlName="q6">
         <mat-radio-button value="yes">Yes</mat-radio-button>
         <mat-radio-button value="no">No</mat-radio-button>
       </mat-radio-group>
@@ -2656,7 +2829,7 @@
       <p>NECK circumference > 16 inches (40cm)?</p>
     </span>
     <span class="input-field input-field-non-wrappable">
-      <mat-radio-group class="radio-group">
+      <mat-radio-group class="radio-group" formControlName="q7">
         <mat-radio-button value="yes">Yes</mat-radio-button>
         <mat-radio-button value="no">No</mat-radio-button>
       </mat-radio-group>
@@ -2667,7 +2840,7 @@
       <p>GENDER: Male?</p>
     </span>
     <span class="input-field input-field-non-wrappable">
-      <mat-radio-group class="radio-group">
+      <mat-radio-group class="radio-group" formControlName="q8">
         <mat-radio-button value="yes">Yes</mat-radio-button>
         <mat-radio-button value="no">No</mat-radio-button>
       </mat-radio-group>
@@ -2738,7 +2911,96 @@
 </form>
 </ng-template>
 
-<ng-template #SFFTemplate>
+<ng-template #PWHTemplate>
+  <div class="instructions-block">
+    <h4><i class="fa fa-info-circle"></i> Instructions</h4>
+    <p>Please answer all questions</p>
+  </div>
+  <form
+    #surveyForm
+    [formGroup]="surveyFormGroup"
+    (ngSubmit)="onFormSubmit(surveyForm)">
+  <div *ngIf="showFormError"
+    class="invalid">
+    Please Fill in all required values
+  </div>
+  <div class="question">
+    <span class="question__text">
+      <p>What is your current weight?</p>
+    </span>
+    <span class="input-field input-field-non-wrappable">
+      <mat-form-field>
+        <input
+          matInput
+          placeholder="value"
+          type="number"
+          formControlName="q1">
+        <span matSuffix>lbs</span>
+      </mat-form-field>
+    </span>
+  </div>
+  <div class="question">
+    <span class="question__text">
+      <p>What is your usual weight (e.g. in the last year) ?</p>
+    </span>
+    <span class="input-field input-field-non-wrappable">
+      <mat-form-field>
+        <input
+          matInput
+          placeholder="value"
+          type="number"
+          formControlName="q2">
+        <span matSuffix>lbs</span>
+      </mat-form-field>
+    </span>
+  </div>
+  <div class="question">
+    <span class="question__text">
+      <p>If your current weight differs from your usual weight, please indicate
+      the time period over which this weight change occured</p>
+    </span>
+    <span class="input-field input-field-non-wrappable">
+      <mat-form-field>
+        <mat-select placeholder="Select an option" formControlName="q3">
+          <mat-option *ngFor="let option of pwhOptions1" [value]="option.value">
+            {{ option.value }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </span>
+  </div>
+  <div class="question">
+    <span class="question__text">
+      <p>If your current weight differs from your usual weight, was this weight
+      change voluntary?</p>
+    </span>
+    <span class="input-field input-field-non-wrappable">
+      <mat-form-field>
+        <mat-select placeholder="Select an option" formControlName="q4">
+          <mat-option *ngFor="let option of pwhOptions2" [value]="option.value">
+            {{ option.value }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </span>
+  </div>
+  <div class="question">
+    <span class="question__text">
+      <p>Have there been any changes in your dietary intake (relative to your
+      normal intake) ?</p>
+    </span>
+    <span class="input-field input-field-non-wrappable">
+      <mat-form-field>
+        <mat-select placeholder="Select an option" formControlName="q5">
+          <mat-option *ngFor="let option of pwhOptions3" [value]="option.value">
+            {{ option.value }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </span>
+  </div>
+  <button class="hidden-form-btn" style="display: none" type="submit"></button>
+</form>
 </ng-template>
 
 <ng-template #SNATemplate>

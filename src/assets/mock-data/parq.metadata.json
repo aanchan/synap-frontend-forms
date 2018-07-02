@@ -62,17 +62,25 @@
     {
       "id": 11,
       "title": "CHAMPS Activities Questionnaier for Older Adults",
-      "prefix": "CHAMPS"
+      "prefix": "CHAMPS",
+      "qCount": 40
     },
     {
       "id": 12,
       "title": "STOP-BANG Sleep Apnea Questionnaire",
-      "prefix": "SBSA"
+      "prefix": "SBSA",
+      "qCount": 8
     },
     {
       "id": 13,
       "title": "Motor Function Assessment",
       "prefix": "MFA"
+    },
+    {
+      "id": 14,
+      "title": "Participant Weight History",
+      "prefix": "PWH",
+      "qCount": 5
     }
   ]
 }

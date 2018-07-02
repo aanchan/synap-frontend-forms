@@ -63,6 +63,33 @@ export class TemplateLoaderComponent implements OnInit {
     {value: 'Very often'}
   ];
 
+  champsOptions = [
+    {value: 'Less than 1 hour'},
+    {value: '1 - 2.5 hours'},
+    {value: '3 - 4.5 hours'},
+    {value: '5 - 6.5 hours'},
+    {value: '7 - 8.5 hours'},
+    {value: '9 or more hours'},
+  ];
+
+  pwhOptions1 = [
+    {value: 'Days'},
+    {value: 'Weeks'},
+    {value: 'Months'},
+    {value: 'Year'}
+  ];
+
+  pwhOptions2 = [
+    {value: 'Yes'},
+    {value: 'No'}
+  ];
+
+  pwhOptions3 = [
+    {value: 'Yes, there has beeen an increase in my dietary intake'},
+    {value: 'Yes, there has beeen an decrease in my dietary intake'},
+    {value: 'No, there has been no change in my dietary intake'}
+  ];
+
   constructor(
     private surService: SurveyService,
     private fb: FormBuilder,
