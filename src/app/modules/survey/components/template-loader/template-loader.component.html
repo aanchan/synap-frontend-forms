@@ -41,6 +41,9 @@
   <ng-container *ngSwitchCase="'PWHTemplate'">
     <ng-container *ngTemplateOutlet="PWHTemplate"></ng-container>
   </ng-container>
+  <ng-container *ngSwitchCase="'SASTTemplate'">
+    <ng-container *ngTemplateOutlet="SASTTemplate"></ng-container>
+  </ng-container>
 </ng-container>
 
 <ng-template #PARQTemplate>
@@ -2997,6 +3000,122 @@
           </mat-option>
         </mat-select>
       </mat-form-field>
+    </span>
+  </div>
+  <button class="hidden-form-btn" style="display: none" type="submit"></button>
+</form>
+</ng-template>
+
+<ng-template #SASTTemplate>
+  <div class="instructions-block">
+    <h4><i class="fa fa-info-circle"></i> Instructions</h4>
+    <p>Please answer all questions</p>
+  </div>
+  <form
+    #surveyForm
+    [formGroup]="surveyFormGroup"
+    (ngSubmit)="onFormSubmit(surveyForm)">
+  <div *ngIf="showFormError"
+    class="invalid">
+    Please Fill in all required values
+  </div>
+  <div class="question">
+    <span class="question__text">
+      <h4>Snoring?</h4>
+      <p>Do you find that you snore very loudly (loud enough to be heard through
+      closed doors or your bed-partner elbows you for snoring at night) ?</p>
+    </span>
+    <span class="input-field input-field-non-wrappable">
+      <mat-radio-group class="radio-group" formControlName="q1">
+        <mat-radio-button value="yes">Yes</mat-radio-button>
+        <mat-radio-button value="no">No</mat-radio-button>
+      </mat-radio-group>
+    </span>
+  </div>
+  <div class="question">
+    <span class="question__text">
+      <h4>Tired ?</h4>
+      <p>Do you often feel tired, fatigued or sleep during the daytime (such as
+      falling asleep during driving or talking to someone) ?</p>
+    </span>
+    <span class="input-field input-field-non-wrappable">
+      <mat-radio-group class="radio-group" formControlName="q2">
+        <mat-radio-button value="yes">Yes</mat-radio-button>
+        <mat-radio-button value="no">No</mat-radio-button>
+      </mat-radio-group>
+    </span>
+  </div>
+  <div class="question">
+    <span class="question__text">
+      <h4>Observed ?</h4>
+      <p>Has anyone observed you stop breathing or choking/gasping during your
+      sleep ?</p>
+    </span>
+    <span class="input-field input-field-non-wrappable">
+      <mat-radio-group class="radio-group" formControlName="q3">
+        <mat-radio-button value="yes">Yes</mat-radio-button>
+        <mat-radio-button value="no">No</mat-radio-button>
+      </mat-radio-group>
+    </span>
+  </div>
+  <div class="question">
+    <span class="question__text">
+      <h4>Blood Pressure ?</h4>
+      <p>Do you have or are you being treated for high blood pressure ?</p>
+    </span>
+    <span class="input-field input-field-non-wrappable">
+      <mat-radio-group class="radio-group" formControlName="q4">
+        <mat-radio-button value="yes">Yes</mat-radio-button>
+        <mat-radio-button value="no">No</mat-radio-button>
+      </mat-radio-group>
+    </span>
+  </div>
+  <div class="question">
+    <span class="question__text">
+      <h4>BMI ?</h4>
+      <p>Are you obese/very overweight (BMI more than 35kg/m2) ?</p>
+    </span>
+    <span class="input-field input-field-non-wrappable">
+      <mat-radio-group class="radio-group" formControlName="q5">
+        <mat-radio-button value="yes">Yes</mat-radio-button>
+        <mat-radio-button value="no">No</mat-radio-button>
+      </mat-radio-group>
+    </span>
+  </div>
+  <div class="question">
+    <span class="question__text">
+      <h4>Age ?</h4>
+      <p>Are you you over 50 years old ?</p>
+    </span>
+    <span class="input-field input-field-non-wrappable">
+      <mat-radio-group class="radio-group" formControlName="q6">
+        <mat-radio-button value="yes">Yes</mat-radio-button>
+        <mat-radio-button value="no">No</mat-radio-button>
+      </mat-radio-group>
+    </span>
+  </div>
+  <div class="question">
+    <span class="question__text">
+      <h4>Neck Thickness ?</h4>
+      <p>Is your neck circumference greater than 16 inches ?</p>
+    </span>
+    <span class="input-field input-field-non-wrappable">
+      <mat-radio-group class="radio-group" formControlName="q7">
+        <mat-radio-button value="yes">Yes</mat-radio-button>
+        <mat-radio-button value="no">No</mat-radio-button>
+      </mat-radio-group>
+    </span>
+  </div>
+  <div class="question">
+    <span class="question__text">
+      <h4>Gender ?</h4>
+      <p>Are you male ?</p>
+    </span>
+    <span class="input-field input-field-non-wrappable">
+      <mat-radio-group class="radio-group" formControlName="q8">
+        <mat-radio-button value="yes">Yes</mat-radio-button>
+        <mat-radio-button value="no">No</mat-radio-button>
+      </mat-radio-group>
     </span>
   </div>
   <button class="hidden-form-btn" style="display: none" type="submit"></button>
